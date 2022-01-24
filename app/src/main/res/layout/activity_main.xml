@@ -24,12 +24,15 @@
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/homeBottomNav"
+        android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@id/bottom_content"
         app:labelVisibilityMode="labeled"
         app:menu="@menu/bottom_nav" />
+
     <LinearLayout
+        android:visibility="gone"
         android:id="@+id/bottom_content"
         android:layout_width="match_parent"
         android:layout_height="30dp"

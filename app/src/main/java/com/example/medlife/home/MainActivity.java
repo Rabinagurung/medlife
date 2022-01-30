@@ -32,8 +32,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
-        getWindow().setStatusBarColor(Color.WHITE);
         setContentView(R.layout.activity_main);
         bottomNavigationView = findViewById(R.id.homeBottomNav);
         homeFragment = new HomeFragment();

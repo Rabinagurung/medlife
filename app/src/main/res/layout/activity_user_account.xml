@@ -150,12 +150,6 @@
         </LinearLayout>
     </ScrollView>
 
-    <LinearLayout
-        android:id="@+id/bottom_content"
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:layout_alignParentBottom="true"
-        android:background="@color/blue"
-        android:orientation="horizontal" />
+
 
 </RelativeLayout>

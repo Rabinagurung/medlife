@@ -37,8 +37,8 @@
                 android:layout_weight="1"
                 android:text="Purple Hoodie"
                 android:textColor="@color/black"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+                android:textSize="12sp"
+                 />
 
             <ImageView
                 android:id="@+id/removeCartIV"

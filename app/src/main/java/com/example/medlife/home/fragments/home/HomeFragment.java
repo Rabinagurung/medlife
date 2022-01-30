@@ -1,10 +1,13 @@
 package com.example.medlife.home.fragments.home;
 
+import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -48,6 +51,7 @@ public class HomeFragment extends Fragment {
     RecyclerView allProductRV, categoryRV;
     ProgressBar loadingProgress;
     SliderView imageSlider;
+    LinearLayout callPLL, supportCallLL;
     TextView viewAll;
 
 
@@ -65,18 +69,40 @@ public class HomeFragment extends Fragment {
         categoryRV = view.findViewById(R.id.categoryRV);
         loadingProgress = view.findViewById(R.id.loadingProgress);
         imageSlider = view.findViewById(R.id.imageSlider);
-        viewAll=view.findViewById(R.id.viewAllCategory);
+        viewAll = view.findViewById(R.id.viewAllCategory);
+        callPLL = view.findViewById(R.id.callPharmacistLL);
+        supportCallLL = view.findViewById(R.id.callSupportLL);
+        callPLL.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                call("+9779814146808");
+            }
+        });
+        supportCallLL.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                call("+9779819176870");
+            }
+        });
+
         serverCall();
         getCategoriesOnline();
         getSliders();
         getAllCategory();
     }
 
+    private void call(String number) {
+
+        Intent intent = new Intent(Intent.ACTION_DIAL);
+        intent.setData(Uri.parse("tel:" + number));
+        startActivity(intent);
+    }
+
     private void getAllCategory() {
         viewAll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               
+
             }
         });
     }
@@ -117,6 +143,7 @@ public class HomeFragment extends Fragment {
         imageSlider.startAutoCycle();
 
     }
+
 
     private void getCategoriesOnline() {
         Call<CategoryResponse> getCategories = ApiClient.getClient().getCategories();
@@ -179,9 +206,11 @@ public class HomeFragment extends Fragment {
 
     private void setProdctRecyclerView(List<Product> products) {
         allProductRV.setHasFixedSize(true);
-        GridLayoutManager layoutManager = new GridLayoutManager(getActivity(), 2);
-        allProductRV.setLayoutManager(layoutManager);
-        ShopAdapter shopAdapter = new ShopAdapter(products, getContext(),false);
+//        GridLayoutManager layoutManager = new GridLayoutManager(getActivity(), 2);
+        allProductRV.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
+
+//        allProductRV.setLayoutManager(layoutManager);
+        ShopAdapter shopAdapter = new ShopAdapter(products, getContext(), false);
         allProductRV.setAdapter(shopAdapter);
     }
 

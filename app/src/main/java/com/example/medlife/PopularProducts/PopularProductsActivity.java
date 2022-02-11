@@ -56,12 +56,17 @@ public class PopularProductsActivity extends AppCompatActivity {
     }
 
     private void serverCall() {
-//        toggleLoading(true);
+        toggleLoading(true);
         Call<AllProductResponse> allProductResponseCall = ApiClient.getClient().getAllProducts();
         allProductResponseCall.enqueue(new Callback<AllProductResponse>() {
             @Override
             public void onResponse(Call<AllProductResponse> call, Response<AllProductResponse> response) {
-//                showPopularProducts(response.body().getProducts());
+                if (response.isSuccessful()){
+                    toggleLoading(false);
+                    if (!response.body().getError()) {
+                        showPopularProducts(response.body().getProducts());
+                    }
+                }
 
             }
 

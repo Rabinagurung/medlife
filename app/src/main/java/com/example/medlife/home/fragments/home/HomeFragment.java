@@ -106,14 +106,14 @@ public class HomeFragment extends Fragment {
             }
         });
 
-//        viewAllCategory.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(getContext(), CategoryActivity.class);
-//                startActivity(intent);
-//            }
-//
-//        });
+        viewAllCategory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), CategoryActivity.class);
+                startActivity(intent);
+            }
+
+        });
 
         viewAllProducts.setOnClickListener(new View.OnClickListener() {
             @Override

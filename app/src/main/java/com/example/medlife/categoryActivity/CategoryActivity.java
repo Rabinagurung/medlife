@@ -9,6 +9,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 
@@ -16,7 +17,9 @@ import com.example.medlife.R;
 import com.example.medlife.api.ApiClient;
 import com.example.medlife.api.response.AllProductResponse;
 import com.example.medlife.api.response.Category;
+import com.example.medlife.api.response.CategoryResponse;
 import com.example.medlife.api.response.Product;
+import com.example.medlife.home.fragments.home.adapters.CategoryAdapter;
 import com.example.medlife.home.fragments.home.adapters.ShopAdapter;
 
 import java.util.List;
@@ -36,14 +39,11 @@ public class CategoryActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category);
-        if (getIntent().getSerializableExtra(CATEGORY_DATA_KEY) == null)
-            finish();
         allProductsRV = findViewById(R.id.allProductRV);
         loadingProgress = findViewById(R.id.loadingProgress);
         emptyIV = findViewById(R.id.emptyIV);
 
-        category = (Category) getIntent().getSerializableExtra(CATEGORY_DATA_KEY);
-        getSupportActionBar().setTitle(category.getName());
+        getSupportActionBar().setTitle("Categories");
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getCategoryOnline();
@@ -51,27 +51,25 @@ public class CategoryActivity extends AppCompatActivity {
 
     private void getCategoryOnline() {
         toggleLoading(true);
-        Call<AllProductResponse> getProductsByCategory = ApiClient.getClient().getProductsByCategory(category.getId());
-        getProductsByCategory.enqueue(new Callback<AllProductResponse>() {
+        Call<CategoryResponse> getAllCategories = ApiClient.getClient().getCategories();
+        getAllCategories.enqueue(new Callback<CategoryResponse>() {
             @Override
-            public void onResponse(Call<AllProductResponse> call, Response<AllProductResponse> response) {
-                if (response.isSuccessful()) {
+            public void onResponse(Call<CategoryResponse> call, Response<CategoryResponse> response) {
+                if (response.isSuccessful()){
                     toggleLoading(false);
                     if (!response.body().getError()) {
-                        if (response.body().getProducts().size() == 0)
-                            showEmptyLayout();
-                        else
-                            showCategoriesProducts(response.body().getProducts());
+                        showCategoriesOnline(response.body().getCategories());
                     }
                 }
             }
 
             @Override
-            public void onFailure(Call<AllProductResponse> call, Throwable t) {
-                toggleLoading(false);
-                Toast.makeText(CategoryActivity.this, "An Unknown Error Occoured", Toast.LENGTH_SHORT).show();
+            public void onFailure(Call<CategoryResponse> call, Throwable t) {
+
             }
         });
+
+
     }
 
     private void showEmptyLayout() {
@@ -89,12 +87,16 @@ public class CategoryActivity extends AppCompatActivity {
         }
     }
 
-    private void showCategoriesProducts(List<Product> products) {
+    private void showCategoriesOnline(List<Category> categories) {
         allProductsRV.setHasFixedSize(true);
-        GridLayoutManager layoutManager = new GridLayoutManager(this, 2);
+        GridLayoutManager layoutManager = new GridLayoutManager(this, 3);
         allProductsRV.setLayoutManager(layoutManager);
-        ShopAdapter shopAdapter = new ShopAdapter(products, this, false, false);
+        CategoryAdapter shopAdapter = new CategoryAdapter(categories, this, true);
         allProductsRV.setAdapter(shopAdapter);
+
+
+
+
     }
 
     void toggleLoading(boolean toggle) {

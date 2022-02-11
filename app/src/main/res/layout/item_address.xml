@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/addressLL"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
     android:background="@color/off_white">
 
@@ -68,25 +68,7 @@
 
     </LinearLayout>
 
-<!--    <LinearLayout-->
-<!--        android:id="@+id/addLocationLL"-->
-<!--        android:layout_width="300dp"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_gravity="center"-->
-<!--        android:background="@drawable/rectangle_login"-->
-<!--        android:padding="14dp">-->
 
-<!--        <TextView-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="Add New Location"-->
-<!--            android:textSize="15dp"-->
-<!--            android:gravity="center"/>-->
-
-<!--    </LinearLayout>-->
-
-
-
-    </LinearLayout>
+</LinearLayout>
 
 

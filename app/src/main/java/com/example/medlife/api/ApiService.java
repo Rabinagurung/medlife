@@ -1,7 +1,6 @@
 package com.example.medlife.api;
 
 
-
 import com.example.medlife.api.response.AddressResponse;
 import com.example.medlife.api.response.AllProductResponse;
 import com.example.medlife.api.response.CategoryResponse;
@@ -74,7 +73,9 @@ public interface ApiService {
     @DELETE("/ecommerce/api/v1/wishlist")
     Call<RegisterResponse> deleteFromWishlist(@Header("Apikey") String apikey, @Query("w_id") int wishlistID);
 
-
+    @FormUrlEncoded
+    @POST("/ecommerce/api/v1/address")
+    Call<AddressResponse> addAddress(@Header("Apikey") String apikey, @Field("city") String city, @Field("street") String street, @Field("province") String province, @Field("description") String description);
 
 
     @GET("/ecommerce/api/v1/address")

@@ -4,162 +4,166 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/off_white"
+    android:orientation="vertical"
     tools:context=".Profile.UserProfile.UserProfileActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:layout_margin="10dp"
         android:background="@color/white"
-        android:layout_margin="10dp">
+        android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:background="@color/white"
-        android:layout_margin="@dimen/normal_spacing"
-        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/normal_spacing"
+            android:background="@color/white"
+            android:orientation="horizontal">
 
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".5"
+                android:layout_gravity="center"
+                android:text="Basic Profile"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+
+            <ImageView
+                android:id="@+id/editInfoLL"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_edit" />
+
+
+        </LinearLayout>
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_gravity="center"
             android:scaleType="centerCrop"
             android:src="@drawable/ic_user"
             app:civ_border_color="@color/priceGray"
-            app:civ_border_width="1dp"
-            android:layout_gravity="center"
-            />
+            app:civ_border_width="1dp" />
 
-        <ImageView
-            android:id="@+id/editInfoLL"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_edit"
-            android:layout_gravity="end"/>
-
-
-
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_margin="@dimen/normal_spacing">
-
-        <TextView
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:text="Full Name"
-            android:textColor="@color/black"
-            android:textSize="18dp"/>
-
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Rabina Gurung"
-            android:textColor="@color/navy_blue"
-            android:textSize="18dp"
-            android:layout_marginLeft="45dp" />
+            android:layout_margin="@dimen/normal_spacing"
+            android:orientation="horizontal">
 
-    </LinearLayout>
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="Full Name"
+                android:textColor="@color/black"
+                android:textSize="18dp" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_margin="@dimen/normal_spacing">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="45dp"
+                android:text="Rabina Gurung"
+                android:textColor="@color/navy_blue"
+                android:textSize="18dp" />
 
-        <TextView
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:text="Age"
-            android:textColor="@color/black"
-            android:textSize="18dp"/>
+        </LinearLayout>
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="21"
-            android:textColor="@color/navy_blue"
-            android:textSize="18dp"
-            android:layout_marginLeft="45dp"/>
+            android:layout_margin="@dimen/normal_spacing"
+            android:orientation="horizontal">
 
-    </LinearLayout>
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="Age"
+                android:textColor="@color/black"
+                android:textSize="18dp" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_margin="@dimen/normal_spacing">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="45dp"
+                android:text="21"
+                android:textColor="@color/navy_blue"
+                android:textSize="18dp" />
 
-        <TextView
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:text="Gender"
-            android:textColor="@color/black"
-            android:textSize="18dp"/>
+        </LinearLayout>
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Female"
-            android:textColor="@color/navy_blue"
-            android:textSize="18dp"
-            android:layout_marginLeft="45dp"/>
+            android:layout_margin="@dimen/normal_spacing"
+            android:orientation="horizontal">
 
-    </LinearLayout>
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="Gender"
+                android:textColor="@color/black"
+                android:textSize="18dp" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_margin="@dimen/normal_spacing">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="45dp"
+                android:text="Female"
+                android:textColor="@color/navy_blue"
+                android:textSize="18dp" />
 
-        <TextView
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:text="Blood Type"
-            android:textColor="@color/black"
-            android:textSize="18dp"/>
+        </LinearLayout>
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="A+"
-            android:textColor="@color/navy_blue"
-            android:textSize="18dp"
-            android:layout_marginLeft="45dp"/>
+            android:layout_margin="@dimen/normal_spacing"
+            android:orientation="horizontal">
 
-    </LinearLayout>
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="Blood Type"
+                android:textColor="@color/black"
+                android:textSize="18dp" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_margin="@dimen/normal_spacing">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="45dp"
+                android:text="A+"
+                android:textColor="@color/navy_blue"
+                android:textSize="18dp" />
 
-        <TextView
-            android:layout_width="100dp"
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Email ID"
-            android:textColor="@color/black"
-            android:textSize="18dp"/>
+            android:layout_margin="@dimen/normal_spacing"
+            android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:text="rabina@gmail.com"
-            android:textColor="@color/navy_blue"
-            android:textSize="18dp"
-            android:layout_marginLeft="45dp"/>
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="Email ID"
+                android:textColor="@color/black"
+                android:textSize="18dp" />
 
-    </LinearLayout>
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="45dp"
+                android:text="rabina@gmail.com"
+                android:textColor="@color/navy_blue"
+                android:textSize="18dp" />
+
+        </LinearLayout>
 
     </LinearLayout>
 

@@ -15,8 +15,9 @@
     <string name="isLoggedKey">isl</string>
     <string name="home">Home</string>
     <string name="cart">Cart</string>
-    <string name="wishlist">WishList</string>
+    <!--    <string name="wishlist">WishList</string>-->
     <string name="profile">Profile</string>
+    <string name="aboutUs">About Us</string>
 
     <string name="isLogged" translatable="false">issl</string>
     <string name="api_key" translatable="false">apk</string>
@@ -43,6 +44,76 @@
     <string name="add_to_cart">Add to Cart</string>
     <string name="upload_prescription">Upload Prescription</string>
     <string name="find_medicines">Find Medicines</string>
+
+    <string name="privacy_policy1"> The words "we," "our" and "us" are referred to as "MedLife" and identify personally identifiable or personal information which can be collected, how the data is used and how you choose to use the information that we use, which are described in this Policy.</string>
+
+    <string name="privacy_policy_2">We intend to protect your privacy in relation to the terms set out in this website’s Terms of Use Agreement. Only authorized MedLife members to use any details provided by you or a medical doctor-approved by you on a need to know basis. In order to secure personal and health information, we continuously monitor our systems and records. In order to prosecute and/or pursue civil proceedings to recover damages against the liable parties, we investigate all allegations and such acts. Any user not agree to any of the conditions hereof shall immediately leave the website. MedLife disclaims all liabilities arising thereof, provided you do not agree with the policy, and you still have access to the website and provide your personal information.</string>
+
+    <string name="terms_conditions">Terms and Conditions </string>
+
+    <string name="terms_conditions_1">Welcome to the MedLife (also referred here as “we", "us", "MedLife"," the mobile application ").We, as an online marketplace provide various health products and services.</string>
+
+    <string name="terms_conditions_2">You are subjected to agree upon all the terms and conditions mentioned herein with the access,visit or use of any of the services or information of the website along with its related sub-domains, mobile app, and services. So, before you use the App, please read these Terms carefully as you agree to be bound by them. Please, do not register with or continue the use of this website if any Terms mentioned here are not acceptable to you. </string>
+
+    <string name="creating_account">1. CREATING ACCOUNT:</string>
+
+    <string name="creating_account_1.1">1.1 Using some app features (e.g. ordering products, posting rating), you need to set up an account at medlife.com.np and as needed in the customer information form, provide certain information about yourself, including your name, gender, e-mail address, password and billing/delivery address. Our Privacy Policy protects all your registration information.</string>
+
+    <string name="creating_account_1.2"> 1.2 Your username and password for your MedLife’s account are personal. You cannot transfer your account and are liable for your MedLife’s account activities.</string>
+
+    <string name="privacy_policy">2. PRIVACY POLICY: </string>
+
+    <string name="privacy_policy_2.1">2.1 In accordance with our Privacy Policy, your personal identifiable information will be used. Refer to our Privacy Policy to understand our practice of collecting, utilizing and disclosing your personal information, which governs your medlife.com.np visit as well.</string>
+
+    <string name="privacy_policy_2.2"> 2.2 We understand that the privacy of all the information you provide is essential. We will do everything we can to make a cautious and sensitive use of it. Such information is never exchanged with other businesses or third party service providers</string>
+
+    <string name="security_policy">3. SECURITY POLICY:</string>
+
+    <string name="security_desc"> All transactions in medlife.com.np are safe when ordering online. The 256 bit Secure Sockets Layer (SSL) encryption technology is used to encrypt your personal information, before it has been transmitted over the Internet, which ensures confidentiality and high security levels.</string>
+
+    <string name="use_of_info">4. USE OF INFORMATION ON THE APP:</string>
+
+    <string name="use_of_info_4.1"> 4.1 The material on this app is not a replacement for specialized medical advice or care. You must not make medical decisions, and if you have any questions about your medical condition, you should seek advice from qualified healthcare professionals.</string>
+
+    <string name="use_of_info_4.2">4.2 No viewpoints or views included in the app content is supported by medlife.com.np, or other information that our services offer. Sending any request or query about our products does not create a professional relationship between you and medlife.com.np.</string>
+
+    <string name="disclaimer">5. DISCLAIMER OF WARRANTIES AND LIMITATION OF LIABILITY:</string>
+
+    <string name="disclaimer_5.1">5.1 All of the content, products or services that are included in this app are made available to you by medlife.com.np on an “as is” and “as available” basis, either expressed or implicated, in particular, in the degree permitted by law applicable we preclude warranties of any kind. You expressly consent to be solely responsible for your use of this app.</string>
+
+    <string name="disclaimer_5.2">5.2 The adequacy, currency or comprehensiveness of app content cannot be guaranteed by medlife.com.np. The reliability, consistency or protection of products available on the app is not assured or endorsed by medlife.com.np.</string>
+
+    <string name="prescription_policy">6. PRESCRIPTION MEDICATION POLICY: </string>\
+
+    <string name="prescription_6.1">6.1 A completely licensed and regulated pharmacy, medlife.com.np takes all the steps required to comply entirely with the laws and regulations laid down in the delivery of prescription drugs. You acknowledge and accept the following conditions for the purchasing of all prescription medicines with the ordering of your prescription medicines.</string>
+
+    <string name="prescription_6.2">6.2 To order a prescription drug(s), you confirm by e-mail that you are sending us a scanned copy of your valid prescription(s), and the inspection and acceptance of this medication by our professional pharmacists is subsequent. </string>
+
+    <string name="prescription_6.3">6.3 Should our pharmacists have any questions or concerns about a prescription(s), you permit them to check the validity of the prescription with an external doctor network.</string>
+
+    <string name="return_refund">7. RETURN AND REFUND POLICY:</string>
+
+    <string name="return_policy"> Return Policy: </string>
+
+    <string name="return_desc">We make every effort to ensure that your goods are delivered to your specifications. If you receive an incomplete, damaged or incorrect order, to ensure prompt resolution, please inform MedLife Customer Support immediately or within 10 working days of receipt. Please note that if you do not contact us within 10 working days of receipt, medlife.com.np shall accept no responsibility for such delivery problems.</string>
+
+    <string name="return_exceptions">Please note that for the following product categories we cannot provide substitutes or exchanges: Equipment and Ortho Support. medlife.com.np reserves the right, as indicated on the respective product pages, to deny returns (or refunds) for certain products, which is marked as "Note: This item cannot be returned for a refund or exchange."</string>
+
+    <string name="refund_policy">Refund Policy:</string>
+
+    <string name="refund_desc">We at medlife.com.np make sure you are entirely satisfied with our products. We do our best and on the basis of the following conditions, we will gladly grant a full refund:</string>
+
+    <string name="refund_possible">Possible full refund if:</string>
+
+    <string name="point_1"> a. you got a faulty item;</string>
+
+    <string name="point_2"> b. during transit the item(s) ordered are lost or damaged;</string>
+
+    <string name="point_3"> c. the ordered item(s) is past its expiry date </string>
+
+    <string name="request_fund">For a refund, simply e-mail us the specifics of your order, including why you request a refund. We take customer feedback seriously and use it for the continuous improvement of our service quality.</string>
+
+    <string name="request_contact">For questions, please contact our Helpdesk at 9814146808, 9819176870, email us at medlife@gmail.com or contact our Customer Service Managers.</string>
 
 
 </resources>

@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    tools:context=".home.TermsOfUseActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="10dp"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/terms_conditions"
+            android:textColor="@color/navy_blue"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:layout_gravity="center" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/terms_conditions_1"
+            android:textColor="@color/black"
+            android:textSize="13dp"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="center"
+            android:justificationMode="inter_word"
+            android:padding="5dp"
+            />
+
+        <TextView
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/terms_conditions_2"
+            android:textColor="@color/black"
+            android:textSize="13dp"
+            android:layout_marginTop="5dp"
+            android:justificationMode="inter_word"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/creating_account"
+            android:textColor="@color/navy_blue"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:layout_marginTop="@dimen/normal_spacing"
+            android:layout_gravity="center" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/creating_account_1.1"
+            android:textColor="@color/black"
+            android:textSize="13dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:justificationMode="inter_word"
+            android:padding="5dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/creating_account_1.2"
+            android:textColor="@color/black"
+            android:textSize="13dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:justificationMode="inter_word"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/privacy_policy"
+            android:textColor="@color/navy_blue"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:layout_marginTop="@dimen/normal_spacing"
+            android:layout_gravity="center" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/privacy_policy_2.1"
+            android:textColor="@color/black"
+            android:textSize="13dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:justificationMode="inter_word"
+            android:padding="5dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/privacy_policy_2.2"
+            android:textColor="@color/black"
+            android:textSize="13dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:justificationMode="inter_word"
+            android:padding="5dp"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/security_policy"
+            android:textColor="@color/navy_blue"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:layout_marginTop="@dimen/normal_spacing"
+            android:layout_marginLeft="5dp"
+            android:layout_gravity="center" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/security_desc"
+            android:textColor="@color/black"
+            android:textSize="13dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:justificationMode="inter_word"
+            android:padding="5dp" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/use_of_info"
+            android:textColor="@color/navy_blue"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:layout_marginTop="@dimen/normal_spacing"
+            android:layout_marginLeft="5dp"
+            android:layout_gravity="center" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/use_of_info_4.1"
+            android:textColor="@color/black"
+            android:textSize="13dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:justificationMode="inter_word"
+            android:padding="5dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/use_of_info_4.2"
+            android:textColor="@color/black"
+            android:textSize="13dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:justificationMode="inter_word"
+            android:padding="5dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/disclaimer"
+            android:textColor="@color/navy_blue"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:layout_marginTop="@dimen/normal_spacing"
+            android:layout_marginLeft="5dp"
+            android:layout_gravity="center" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/disclaimer_5.1"
+            android:textColor="@color/black"
+            android:textSize="13dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:justificationMode="inter_word"
+            android:padding="5dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/disclaimer_5.2"
+            android:textColor="@color/black"
+            android:textSize="13dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:justificationMode="inter_word"
+            android:padding="5dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/prescription_policy"
+            android:textColor="@color/navy_blue"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:layout_marginTop="@dimen/normal_spacing"
+            android:layout_marginLeft="5dp"
+            android:layout_gravity="center" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/prescription_6.1"
+            android:textColor="@color/black"
+            android:textSize="13dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:justificationMode="inter_word"
+            android:padding="5dp"/>
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/prescription_6.3"
+            android:textColor="@color/black"
+            android:textSize="13dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:justificationMode="inter_word"
+            android:padding="5dp"/>
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/return_refund"
+            android:textColor="@color/navy_blue"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:layout_marginTop="@dimen/normal_spacing"
+            android:layout_marginLeft="5dp"
+            android:layout_gravity="center" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/return_policy"
+            android:textColor="@color/black"
+            android:textSize="13dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:justificationMode="inter_word"
+            android:padding="5dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/return_desc"
+            android:textColor="@color/black"
+            android:textSize="13dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:justificationMode="inter_word"
+            android:padding="5dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Return Policy Exceptions:"
+            android:textColor="@color/black"
+            android:textSize="13dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/return_exceptions"
+            android:textColor="@color/black"
+            android:textSize="13dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:justificationMode="inter_word"
+            android:padding="5dp"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/refund_policy"
+            android:textColor="@color/black"
+            android:textSize="13dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/refund_desc"
+            android:textColor="@color/black"
+            android:textSize="13dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:justificationMode="inter_word"
+            android:padding="5dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/refund_possible"
+            android:textColor="@color/black"
+            android:textSize="13dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/point_1"
+            android:textColor="@color/black"
+            android:textSize="13dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/point_2"
+            android:textColor="@color/black"
+            android:textSize="13dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/point_3"
+            android:textColor="@color/black"
+            android:textSize="13dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="How to Request a Refund:"
+            android:textColor="@color/black"
+            android:textSize="13dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/request_fund"
+            android:textColor="@color/black"
+            android:textSize="13dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:justificationMode="inter_word"
+            android:padding="5dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/request_contact"
+            android:textColor="@color/black"
+            android:textSize="13dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="20dp"
+            android:justificationMode="inter_word"
+            android:padding="5dp"/>
+
+
+
+    </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

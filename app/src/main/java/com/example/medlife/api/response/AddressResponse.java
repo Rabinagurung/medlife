@@ -9,7 +9,7 @@ public class AddressResponse {
 
 @SerializedName("adresses")
 @Expose
-private List<Adress> adresses = null;
+private List<Address> adresses = null;
 @SerializedName("error")
 @Expose
 private Boolean error;
@@ -17,11 +17,11 @@ private Boolean error;
 @Expose
 private String message;
 
-public List<Adress> getAdresses() {
+public List<Address> getAdresses() {
 return adresses;
 }
 
-public void setAdresses(List<Adress> adresses) {
+public void setAdresses(List<Address> adresses) {
 this.adresses = adresses;
 }
 

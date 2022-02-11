@@ -13,10 +13,72 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Appcommerce">
         <activity
+            android:name=".checkout.address.AddNewLocationActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.DayNight.Dialog.MinWidth"/>
+        <activity
+            android:name=".Profile.Security.ChangePasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Profile.UserProfile.EditProfileActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Light.Dialog.MinWidth" />
+        <activity
+            android:name=".Profile.Logout.LogoutActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Profile.Security.SecurityActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Profile.Location.LocationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Profile.Orders.OrdersActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Profile.Wishlist.WishlistActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Profile.UserProfile.UserProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Profile.ProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".home.ContactUsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".home.OurTeamActivity"
+            android:exported="false" />
+        <activity
+            android:name=".home.TermsOfUseActivity"
+            android:exported="false" />
+        <activity
+            android:name=".home.PolicesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".home.AboutMedLifeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PopularProducts.PopularProductsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".uploadPrescription.PrescriptionSubmissionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".uploadPrescription.ConfirmationActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Light.Dialog.MinWidth" />
+        <activity
+            android:name=".uploadPrescription.UploadPrescriptionDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".uploadPrescription.UploadPrescriptionActivity"
+            android:exported="false" />
+        <activity
             android:name=".checkout.orderComplete.OrderCompleteActivity"
             android:exported="false"
             android:theme="@style/Theme.HomeTheme" />
-
         <activity
             android:name=".checkout.address.AddressActivity"
             android:exported="false" />

@@ -15,10 +15,10 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.medlife.PopularProducts.PopularProductsActivity;
 import com.example.medlife.R;
 import com.example.medlife.api.ApiClient;
 import com.example.medlife.api.response.AllProductResponse;
@@ -27,12 +27,12 @@ import com.example.medlife.api.response.CategoryResponse;
 import com.example.medlife.api.response.Product;
 import com.example.medlife.api.response.Slider;
 import com.example.medlife.api.response.SliderResponse;
-import com.example.medlife.home.fragments.CartFragment;
-import com.example.medlife.home.fragments.CategoryFragment;
-import com.example.medlife.home.fragments.ProfileFragment;
+import com.example.medlife.categoryActivity.CategoryActivity;
 import com.example.medlife.home.fragments.home.adapters.CategoryAdapter;
 import com.example.medlife.home.fragments.home.adapters.ShopAdapter;
 import com.example.medlife.home.fragments.home.adapters.SliderAdapter;
+import com.example.medlife.uploadPrescription.UploadPrescriptionActivity;
+import com.example.medlife.Profile.ProfileActivity;
 import com.example.medlife.utils.DataHolder;
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
 import com.smarteist.autoimageslider.SliderAnimations;
@@ -42,6 +42,7 @@ import com.smarteist.autoimageslider.SliderView;
 import java.util.ArrayList;
 import java.util.List;
 
+import de.hdodenhof.circleimageview.CircleImageView;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -51,8 +52,9 @@ public class HomeFragment extends Fragment {
     RecyclerView allProductRV, categoryRV;
     ProgressBar loadingProgress;
     SliderView imageSlider;
-    LinearLayout callPLL, supportCallLL;
-    TextView viewAll;
+    LinearLayout callPLL, supportCallLL, uploadPrescriptionLL;
+    CircleImageView userProfileLL;
+    TextView viewAllCategory, viewAllProducts;
 
 
     @Override
@@ -69,9 +71,12 @@ public class HomeFragment extends Fragment {
         categoryRV = view.findViewById(R.id.categoryRV);
         loadingProgress = view.findViewById(R.id.loadingProgress);
         imageSlider = view.findViewById(R.id.imageSlider);
-        viewAll = view.findViewById(R.id.viewAllCategory);
+        viewAllCategory = view.findViewById(R.id.viewAllCategory);
+        viewAllProducts = view.findViewById(R.id.viewAllProducts);
         callPLL = view.findViewById(R.id.callPharmacistLL);
         supportCallLL = view.findViewById(R.id.callSupportLL);
+        uploadPrescriptionLL = view.findViewById(R.id.uploadPrescriptionLL);
+        userProfileLL = view.findViewById(R.id.userProfileLL);
         callPLL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -82,6 +87,40 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 call("+9779819176870");
+            }
+        });
+
+        uploadPrescriptionLL.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), UploadPrescriptionActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        userProfileLL.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), ProfileActivity.class);
+                startActivity(intent);
+            }
+        });
+
+//        viewAllCategory.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(getContext(), CategoryActivity.class);
+//                startActivity(intent);
+//            }
+//
+//        });
+
+        viewAllProducts.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), PopularProductsActivity.class);
+                startActivity(intent);
+
             }
         });
 
@@ -99,9 +138,11 @@ public class HomeFragment extends Fragment {
     }
 
     private void getAllCategory() {
-        viewAll.setOnClickListener(new View.OnClickListener() {
+        viewAllCategory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent = new Intent(getContext(), CategoryActivity.class);
+                startActivity(intent);
 
             }
         });
@@ -191,7 +232,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onResponse(Call<AllProductResponse> call, Response<AllProductResponse> response) {
                 toggleLoading(false);
-                setProdctRecyclerView(response.body().getProducts());
+                setProductRecyclerView(response.body().getProducts());
 
             }
 
@@ -204,13 +245,13 @@ public class HomeFragment extends Fragment {
 
     }
 
-    private void setProdctRecyclerView(List<Product> products) {
+    private void setProductRecyclerView(List<Product> products) {
         allProductRV.setHasFixedSize(true);
 //        GridLayoutManager layoutManager = new GridLayoutManager(getActivity(), 2);
         allProductRV.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
 
 //        allProductRV.setLayoutManager(layoutManager);
-        ShopAdapter shopAdapter = new ShopAdapter(products, getContext(), false);
+        ShopAdapter shopAdapter = new ShopAdapter(products, getContext(), false, false);
         allProductRV.setAdapter(shopAdapter);
     }
 

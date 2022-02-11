@@ -66,7 +66,6 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
                 android:layout_marginTop="10dp"
-
                 android:text="@string/forget"
                 android:textColor="@color/blue"
                 android:textSize="15dp"
@@ -74,29 +73,16 @@
         </LinearLayout>
 
 
-
-<!--        <android.widget.Button-->
-<!--            android:id="@+id/loginbtn"-->
-<!--            android:layout_marginTop="15dp"-->
-<!--            android:layout_width="200dp"-->
-<!--            android:layout_height="40dp"-->
-<!--            android:layout_gravity="center"-->
-<!--            android:background="@drawable/rectangle_login"-->
-<!--            android:text="Login"-->
-<!--            android:textColor="@color/white">-->
-
-<!--        </android.widget.Button>-->
-
         <LinearLayout
             android:id="@+id/loginLL"
             android:layout_width="200dp"
-            android:layout_gravity="center"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_marginTop="20dp"
             android:background="@drawable/rectange_box"
+            android:backgroundTint="@color/blue"
             android:onClick="onLoginClicked"
             android:orientation="horizontal"
-            android:backgroundTint="@color/blue"
             android:padding="16dp">
 
             <TextView

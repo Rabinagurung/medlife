@@ -34,10 +34,10 @@ public class SingleProductActivity extends AppCompatActivity {
     public static String key = "pKey";
     Product product;
     SliderView imageSlider;
-    ProgressBar addingCartPR;
+//    ProgressBar addingCartPR;
     ImageView backIV, plusIV, minusIV;
     TextView name, price, desc, oldPrice, quantityTV;
-    LinearLayout addToCartLL;
+    LinearLayout addToCartLL,wishListLL;
     int quantity = 1;
     boolean isAdding = false;
 
@@ -56,7 +56,8 @@ public class SingleProductActivity extends AppCompatActivity {
         quantityTV = findViewById(R.id.quantityTV);
         oldPrice = findViewById(R.id.productOldPriceTV);
         addToCartLL = findViewById(R.id.addToCartLL);
-        addingCartPR = findViewById(R.id.addingCartPR);
+        wishListLL = findViewById(R.id.wishListLL);
+//        addingCartPR = findViewById(R.id.addingCartPR);
         desc = findViewById(R.id.decTV);
         plusIV = findViewById(R.id.plusIV);
         minusIV = findViewById(R.id.minusIV);
@@ -91,8 +92,8 @@ public class SingleProductActivity extends AppCompatActivity {
             Slider slider = new Slider();
             slider.setImage(images.get(i));
             sliders.add(slider);
-
         }
+
         SliderAdapter sliderAdapter = new SliderAdapter(sliders, this, false);
         sliderAdapter.setClickLister(new SliderAdapter.OnSliderClickLister() {
             @Override
@@ -130,10 +131,9 @@ public class SingleProductActivity extends AppCompatActivity {
         });
 
         addToCartLL.setOnClickListener(v -> {
-
             if (!isAdding) {
                 isAdding = true;
-                addingToggle(true);
+//                addingToggle(true);
 
                 String key = SharedPrefUtils.getString(this, getString(R.string.api_key));
                 System.out.println("1111111111111 api key is : "+key );
@@ -144,9 +144,8 @@ public class SingleProductActivity extends AppCompatActivity {
                         if (response.isSuccessful()) {
                             Toast.makeText(getApplicationContext(), response.body().getMessage(), Toast.LENGTH_SHORT).show();
                         }
-                        addingToggle(false);
+//                        addingToggle(false);
                         isAdding = false;
-
                     }
 
                     @Override
@@ -160,17 +159,50 @@ public class SingleProductActivity extends AppCompatActivity {
             }
 
         });
+
+        wishListLL.setOnClickListener(v -> {
+
+            if (!isAdding) {
+                isAdding = true;
+//                addingToggle(true);
+
+                String key = SharedPrefUtils.getString(this, getString(R.string.api_key));
+                System.out.println("1111111111111 api key is : " + key);
+                Call<AllProductResponse> wishlist = ApiClient.getClient().addToWishlist(key, product.getId(), quantity);
+                wishlist.enqueue(new Callback<AllProductResponse>() {
+                    @Override
+                    public void onResponse(Call<AllProductResponse> call, Response<AllProductResponse> response) {
+                        if (response.isSuccessful()) {
+                            Toast.makeText(getApplicationContext(), response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+
+//                        addingToggle(false);
+                        isAdding = false;
+                    }
+
+                    @Override
+                    public void onFailure(Call<AllProductResponse> call, Throwable t) {
+
+                    }
+                });
+            }
+            else {
+                Toast.makeText(getApplicationContext(), "Adding Already!!", Toast.LENGTH_SHORT).show();
+
+            }
+
+            });
     }
 
     private void setQuantity() {
         quantityTV.setText(quantity + "");
     }
 
-    private void addingToggle(Boolean b) {
-        if (b)
-            addingCartPR.setVisibility(View.VISIBLE);
-        else {
-            addingCartPR.setVisibility(View.GONE);
-        }
-    }
+//    private void addingToggle(Boolean b) {
+//        if (b)
+//            addingCartPR.setVisibility(View.VISIBLE);
+//        else {
+//            addingCartPR.setVisibility(View.GONE);
+//        }
+//    }
 }

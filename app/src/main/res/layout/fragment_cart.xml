@@ -15,15 +15,17 @@
         <androidx.appcompat.widget.Toolbar
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/blue">
+            android:background="@color/blue"
+            android:layout_marginLeft="-16dp">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="My Cart"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-
+                android:text="Cart"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:textStyle="bold"
                 />
 
 

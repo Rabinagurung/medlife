@@ -33,6 +33,7 @@ import retrofit2.Response;
 
 
 public class CartFragment extends Fragment {
+   // public static String WISHLIST_TO_CART_PRODUCTS = "DATA";
     RecyclerView allProductRV;
     List<Product> products;
     TextView totalPriceTv;
@@ -54,6 +55,8 @@ public class CartFragment extends Fragment {
         totalPriceTv = view.findViewById(R.id.totalPriceTv);
         addToCartLL = view.findViewById(R.id.addToCartLL);
         swipeRefresh = view.findViewById(R.id.swipeRefresh);
+       // allProductResponse = (AllProductResponse) getActivity().getIntent().getSerializableExtra(WISHLIST_TO_CART_PRODUCTS);
+
         addToCartLL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -76,7 +79,7 @@ public class CartFragment extends Fragment {
     }
 
     private void getCartItems() {
-System.out.println("111111111111111111111 cart call");
+        System.out.println("111111111111111111111 cart call");
         String key = SharedPrefUtils.getString(getActivity(), getString(R.string.api_key));
         Call<AllProductResponse> cartItemsCall = ApiClient.getClient().getMyCart(key);
         cartItemsCall.enqueue(new Callback<AllProductResponse>() {
@@ -104,7 +107,7 @@ System.out.println("111111111111111111111 cart call");
         allProductRV.setHasFixedSize(true);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         allProductRV.setLayoutManager(layoutManager);
-        ShopAdapter shopAdapter = new ShopAdapter(products, getContext(), true);
+        ShopAdapter shopAdapter = new ShopAdapter(products, getContext(), true, false);
         shopAdapter.setCartItemClick(new ShopAdapter.CartItemClick() {
             @Override
             public void onRemoveCart(int position) {

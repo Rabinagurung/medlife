@@ -93,7 +93,7 @@ public class CategoryActivity extends AppCompatActivity {
         allProductsRV.setHasFixedSize(true);
         GridLayoutManager layoutManager = new GridLayoutManager(this, 2);
         allProductsRV.setLayoutManager(layoutManager);
-        ShopAdapter shopAdapter = new ShopAdapter(products, this, false);
+        ShopAdapter shopAdapter = new ShopAdapter(products, this, false, false);
         allProductsRV.setAdapter(shopAdapter);
     }
 

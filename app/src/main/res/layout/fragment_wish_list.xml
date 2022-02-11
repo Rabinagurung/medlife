@@ -1,16 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/priceGray"
-    tools:context=".home.fragments.WishListFragment">
+    tools:context=".home.fragments.CartFragment">
 
-    <TextView
-        android:textSize="22sp"
-        android:layout_width="wrap_content"
-        android:layout_centerInParent="true"
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello from Wishlist Fragment" />
+        android:layout_marginLeft="-16dp">
 
-</RelativeLayout>
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/blue">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="WishList"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:textStyle="bold"
+                />
+
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+
+        android:id="@+id/swipeRefresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".home.fragments.CartFragment">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/allProductRV"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/normal_spacing" />
+
+            <LinearLayout
+                android:id="@+id/addToCartLL"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="@dimen/normal_spacing"
+                android:layout_marginTop="@dimen/normal_spacing"
+                android:layout_marginEnd="@dimen/normal_spacing"
+                android:layout_marginBottom="@dimen/normal_spacing"
+                android:background="@drawable/rectange_box"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginEnd="@dimen/normal_spacing"
+                    android:src="@drawable/ic_bag"
+                    app:tint="@color/white" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Add to Cart"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/totalPriceTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/small_spacing"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</LinearLayout>

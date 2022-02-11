@@ -18,7 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.medlife.R;
 import com.example.medlife.api.ApiClient;
-import com.example.medlife.api.response.Adress;
+import com.example.medlife.api.response.Address;
 import com.example.medlife.api.response.AllProductResponse;
 import com.example.medlife.api.response.Product;
 import com.example.medlife.api.response.RegisterResponse;
@@ -40,7 +40,7 @@ public class CheckOutActivity extends AppCompatActivity {
     ImageView backIv;
     RecyclerView allProductsRV;
     LinearLayout addressLL, checkOutLL;
-    Adress address;
+    Address address;
     TextView emptyAddressTv, cityStreetTV, provinceTV, totalTV, subTotalTV, shippingTV, totalPriceTv, discountTV;
     List<Product> products;
     double subTotalPrice = 0;
@@ -80,11 +80,14 @@ public class CheckOutActivity extends AppCompatActivity {
                 onBackPressed();
             }
         });
+
         addressLL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(CheckOutActivity.this, AddressActivity.class);
                 startActivityForResult(intent, 1);
+//                startActivity(intent);
+
             }
         });
         emptyAddressTv.setOnClickListener(new View.OnClickListener() {
@@ -111,7 +114,7 @@ public class CheckOutActivity extends AppCompatActivity {
 
         allProductsRV.setHasFixedSize(true);
         allProductsRV.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
-        ShopAdapter shopAdapter = new ShopAdapter(products, this, true);
+        ShopAdapter shopAdapter = new ShopAdapter(products, this, true, false);
         shopAdapter.setRemoveEnabled(false);
         allProductsRV.setAdapter(shopAdapter);
         setPrice();
@@ -124,13 +127,13 @@ public class CheckOutActivity extends AppCompatActivity {
 
             assert data != null;
             if (data.getSerializableExtra(AddressActivity.ADDRESS_SELECTED_KEY) != null) {
-                showSelectedAddress((Adress) data.getSerializableExtra(AddressActivity.ADDRESS_SELECTED_KEY));
+                showSelectedAddress((Address) data.getSerializableExtra(AddressActivity.ADDRESS_SELECTED_KEY));
 
             }
         }
     }
 
-    private void showSelectedAddress(Adress adress) {
+    private void showSelectedAddress(Address adress) {
         address = adress;
         emptyAddressTv.setVisibility(View.GONE);
         cityStreetTV.setText(adress.getCity() + " " + adress.getStreet());

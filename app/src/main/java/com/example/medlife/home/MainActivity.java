@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import com.example.medlife.R;
+import com.example.medlife.home.fragments.AboutUsFragment;
 import com.example.medlife.home.fragments.CartFragment;
 import com.example.medlife.home.fragments.CategoryFragment;
 import com.example.medlife.home.fragments.ProfileFragment;
@@ -26,7 +27,9 @@ public class MainActivity extends AppCompatActivity {
     CartFragment cartFragment;
     WishListFragment wishListFragment;
     CategoryFragment categoryFragment;
+    AboutUsFragment aboutUsFragment;
     Fragment currentFragment;
+
 
 
     @Override
@@ -56,23 +59,31 @@ public class MainActivity extends AppCompatActivity {
                         categoryFragment = new CategoryFragment();
                     changeFragment(categoryFragment);
                     return true;
+
                 } if (item.getTitle().equals(getString(R.string.cart))) {
                     if (cartFragment == null)
                         cartFragment = new CartFragment();
                     changeFragment(cartFragment);
                     return true;
                 }
-                if (item.getTitle().equals(getString(R.string.wishlist))) {
-                    if (wishListFragment == null)
-                        wishListFragment = new WishListFragment();
-                    changeFragment(wishListFragment);
-                    return true;
-
-                }
+//                if (item.getTitle().equals(getString(R.string.wishlist))) {
+//                    if (wishListFragment == null)
+//                        wishListFragment = new WishListFragment();
+//                    changeFragment(wishListFragment);
+//                    return true;
+//
+//                }
                 if (item.getTitle().equals(getString(R.string.profile))) {
                     if (profileFragment == null)
                         profileFragment = new ProfileFragment();
                     changeFragment(profileFragment);
+                    return true;
+                }
+
+                if (item.getTitle().equals(getString(R.string.aboutUs))) {
+                    if (aboutUsFragment == null)
+                        aboutUsFragment= new AboutUsFragment();
+                    changeFragment(aboutUsFragment);
                     return true;
                 }
                 return false;

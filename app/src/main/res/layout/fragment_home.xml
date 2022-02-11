@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/off_white"
     tools:context=".home.fragments.home.HomeFragment">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -13,39 +14,65 @@
 
         <androidx.appcompat.widget.Toolbar
             android:layout_width="match_parent"
-            android:layout_height="105dp"
+            android:layout_height="100dp"
             android:background="@color/blue">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
-                >
+                android:orientation="vertical">
 
-                <ImageView
-                    android:id="@+id/logo"
-                    android:layout_marginLeft="-10dp"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:src="@drawable/logo"
-                    android:layout_gravity="center"/>
 
-                <TextView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="-10dp"
-                    android:text="MedLife"
-                    android:textStyle="bold"
-                    android:textColor="@color/white"
-                    android:textSize="20dp"
-                    android:layout_gravity="center"/>
+                    android:layout_marginLeft="16dp"
+                    android:gravity="center">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        >
+
+                    <ImageView
+                        android:id="@+id/logo"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/logo" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="MedLife"
+                        android:textColor="@color/white"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/userProfileLL"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_marginStart="150dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_user"
+                        app:civ_border_color="@color/priceGray"
+                        app:civ_border_width="1dp"/>
+
+                </LinearLayout>
+
+
 
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
-                    android:layout_marginEnd="15dp"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
                     android:background="@drawable/search_box"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
@@ -61,12 +88,11 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Search Products"
-
-                        />
+                        android:text="Search Products" />
 
 
                 </LinearLayout>
+
 
 
 
@@ -79,17 +105,20 @@
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/normal_spacing">
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="16dp"
                 app:cardCornerRadius="6dp">
 
                 <com.smarteist.autoimageslider.SliderView
@@ -112,75 +141,64 @@
 
             </androidx.cardview.widget.CardView>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/normal_spacing"
+                android:orientation="horizontal">
 
                 <LinearLayout
-                    android:layout_marginStart="20dp"
-                    android:layout_marginEnd="20dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="20dp"
-                    >
+                    android:id="@+id/uploadPrescriptionLL"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/upload_rectangle"
+                    android:gravity="center">
 
-                    <LinearLayout
-                        android:layout_weight="1"
-                        android:layout_width="0dp"
-                        android:layout_height="60dp"
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/prescription" />
 
-                        android:background="@drawable/upload_rectangle"
-                       >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="UPLOAD \nPRESCRIPTION"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
 
-                        <TextView
-                            android:layout_width="100dp"
-                            android:layout_height="wrap_content"
-                            android:text="@string/upload_prescription"
-                            android:textColor="@color/white"
-                            android:textStyle="bold"
-                            android:layout_marginLeft="60dp"
-                            android:layout_marginTop="10dp"/>
 
-                        <ImageView
-                            android:layout_width="50dp"
-                            android:layout_height="60dp"
-                            android:src="@drawable/prescription"
-                            android:layout_marginLeft="-160dp"
-                            android:layout_marginTop="3dp"
-                            />
+                </LinearLayout>
 
-                    </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/callPharmacistLL"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/upload_rectangle"
+                    android:gravity="center_vertical">
 
-                    <LinearLayout
-                        android:id="@+id/callPharmacistLL"
-                        android:layout_weight="1"
-                        android:layout_width="0dp"
-                        android:layout_height="60dp"
-                        android:background="@drawable/upload_rectangle"
-                        android:layout_marginLeft="21dp"
-                        >
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:src="@drawable/call_pharmacist" />
 
-                        <TextView
-                            android:layout_width="100dp"
-                            android:layout_height="wrap_content"
-                            android:text="CALL PHARMACIST"
-                            android:textColor="@color/white"
-                            android:textStyle="bold"
-                            android:layout_marginLeft="50dp"
-                            android:layout_marginTop="10dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:text="CALL \nPHARMACIST"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
 
-                        <ImageView
-                            android:layout_width="50dp"
-                            android:layout_height="70dp"
-                            android:layout_marginLeft="-150dp"
-                            android:layout_marginTop="-5dp"
-                            android:src="@drawable/callpharmacist" />
-
-                    </LinearLayout>
 
 
                 </LinearLayout>
 
 
-
+            </LinearLayout>
 
 
 
@@ -188,9 +206,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="14dp"
-                android:layout_marginTop="10dp">
+                android:layout_marginTop="@dimen/normal_spacing"
+                android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -202,10 +219,13 @@
 
                 <TextView
                     android:id="@+id/viewAllCategory"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="80dp"
+                    android:layout_height="30dp"
+                    android:gravity="center"
                     android:text="View All"
-                    android:textColor="@color/blue"
+                    android:background="@drawable/wishlist_rectangle"
+                    android:backgroundTint="@color/blue"
+                    android:textColor="@color/white"
                     android:textSize="14sp" />
             </LinearLayout>
 
@@ -214,23 +234,45 @@
                 android:id="@+id/categoryRV"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:orientation="horizontal" />
 
 
-            <TextView
+
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="@dimen/normal_spacing"
-                android:text="Popular Products"
-                android:textColor="@color/black"
-                android:textSize="18sp" />
+                android:layout_marginTop="@dimen/normal_spacing"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"
+                    android:text="Popular Products"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/viewAllProducts"
+                    android:layout_width="80dp"
+                    android:layout_height="30dp"
+                    android:gravity="center"
+                    android:text="View All"
+                    android:background="@drawable/wishlist_rectangle"
+                    android:backgroundTint="@color/blue"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
 
             <RelativeLayout
-                android:layout_marginLeft="@dimen/normal_spacing"
-                android:layout_marginTop="@dimen/normal_spacing"
-                android:layout_marginBottom="@dimen/normal_spacing"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="@dimen/normal_spacing"
                 app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
                 <androidx.recyclerview.widget.RecyclerView
@@ -249,31 +291,140 @@
             </RelativeLayout>
 
 
-
             <LinearLayout
                 android:id="@+id/callSupportLL"
-
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
+
                 android:background="@drawable/upload_rectangle"
-              android:layout_margin="@dimen/normal_spacing"
                 >
 
-                <TextView
-                    android:layout_width="100dp"
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginLeft="20dp"
+                    android:src="@drawable/customers_service" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="CALL Customer Service."
+                    android:orientation="vertical"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="15dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CUSTOMER SERVICE"
                     android:textColor="@color/white"
                     android:textStyle="bold"
-                    android:layout_marginLeft="50dp"
-                    android:layout_marginTop="10dp"/>
+                    android:textSize="15dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Contact for Order Status"
+                    android:textSize="12dp"/>
 
-                <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="70dp"
-                    android:layout_marginLeft="-150dp"
-                    android:layout_marginTop="-5dp"
-                    android:src="@drawable/callpharmacist" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="95dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="120dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/geniune"
+                        android:layout_gravity="center" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Genuine Products"
+                        android:textColor="@color/black"
+                        android:layout_marginTop="10dp"
+                        android:textSize="12dp"
+                        android:layout_gravity="center" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="100% Authentic"
+                        android:textColor="@color/black"
+                        android:textSize="8dp"
+                        android:layout_gravity="center" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="120dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/free_shipping"
+                        android:layout_gravity="center" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Free Shipping"
+                        android:textColor="@color/black"
+                        android:layout_marginTop="10dp"
+                        android:textSize="12dp"
+                        android:layout_gravity="center" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="orders above Rs500"
+                        android:textColor="@color/black"
+                        android:textSize="8dp"
+                        android:layout_gravity="center" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="120dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/tag"
+                        android:layout_gravity="center" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="100 brands"
+                        android:textColor="@color/black"
+                        android:layout_marginTop="10dp"
+                        android:textSize="12dp"
+                        android:layout_gravity="center" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="300+ products"
+                        android:textColor="@color/black"
+                        android:textSize="8dp"
+                        android:layout_gravity="center" />
+
+                </LinearLayout>
 
             </LinearLayout>
 

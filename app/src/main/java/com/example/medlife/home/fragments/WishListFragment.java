@@ -5,13 +5,34 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.example.medlife.R;
+import com.example.medlife.api.ApiClient;
+import com.example.medlife.api.response.AllProductResponse;
+import com.example.medlife.api.response.Product;
+import com.example.medlife.api.response.RegisterResponse;
+import com.example.medlife.home.fragments.home.adapters.ShopAdapter;
+import com.example.medlife.utils.SharedPrefUtils;
+
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 
 public class WishListFragment extends Fragment {
-
+    RecyclerView allProductRV;
+    List<Product> products;
+    SwipeRefreshLayout swipeRefresh;
+    AllProductResponse allProductResponse;
 
 
     @Override
@@ -20,4 +41,81 @@ public class WishListFragment extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_wish_list, container, false);
     }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        allProductRV = view.findViewById(R.id.allProductRV);
+        swipeRefresh = view.findViewById(R.id.swipeRefresh);
+
+    }
+
+    private void getCartItems() {
+        System.out.println("111111111111111111111 cart call");
+        String key = SharedPrefUtils.getString(getActivity(), getString(R.string.api_key));
+        Call<AllProductResponse> cartItemsCall = ApiClient.getClient().getMyCart(key);
+        cartItemsCall.enqueue(new Callback<AllProductResponse>() {
+            @Override
+            public void onResponse(Call<AllProductResponse> call, Response<AllProductResponse> response) {
+                swipeRefresh.setRefreshing(false);
+                if (response.isSuccessful()) {
+                    allProductResponse = response.body();
+                    products = response.body().getProducts();
+                    loadCartList();
+//                    setPrice();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<AllProductResponse> call, Throwable t) {
+                swipeRefresh.setRefreshing(false);
+            }
+        });
+    }
+
+    private void loadCartList(){
+        allProductRV.setHasFixedSize(true);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
+        allProductRV.setLayoutManager(layoutManager);
+        ShopAdapter shopAdapter = new ShopAdapter(products, getContext(), true, false);
+        shopAdapter.setCartItemClick(new ShopAdapter.CartItemClick() {
+            @Override
+            public void onRemoveCart(int position) {
+                String key = SharedPrefUtils.getString(getActivity(), "apk");
+//               Call<RegisterResponse> removeCartAll = ApiClient.getClient().deleteFromCart(key, products.get(position.getCartID());
+//                removeCartAll.enqueue(new Callback<RegisterResponse>() {
+//                    @Override
+//                    public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {
+//                        if (response.isSuccessful()){
+                products.remove(products.get(position));
+                shopAdapter.notifyItemRemoved(position);
+//                            setPrice();
+                        }
+//                    }
+
+//                   @Override
+//                    public void onFailure(Call<RegisterResponse> call, Throwable t) {
+
+//                   }
+//                });
+//            }
+        });
+        allProductRV.setAdapter(shopAdapter);
+
+    }
+    public void onResume(){
+        super.onResume();
+        getCartItems();
+    }
+
+//    private void setPrice() {
+//        double totalPrice = 0;
+//        for (int i = 0; i < products.size(); i++) {
+//            if (products.get(i).getDiscountPrice() != 0 || products.get(i).getDiscountPrice() != null)
+//                totalPrice = totalPrice + products.get(i).getDiscountPrice();
+//            else
+//                totalPrice = totalPrice + products.get(i).getPrice();
+//        }
+//        totalPriceTv.setText("( Rs. " + totalPrice + " )");
+//    }
 }

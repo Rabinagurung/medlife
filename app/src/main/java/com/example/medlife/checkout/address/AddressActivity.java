@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -12,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.medlife.R;
 import com.example.medlife.api.ApiClient;
 import com.example.medlife.api.response.AddressResponse;
-import com.example.medlife.api.response.Adress;
+import com.example.medlife.api.response.Address;
 import com.example.medlife.utils.SharedPrefUtils;
 
 
@@ -24,6 +26,7 @@ import retrofit2.Response;
 
 public class AddressActivity extends AppCompatActivity {
     RecyclerView addressRV;
+    LinearLayout addLocationLL;
     public static String ADDRESS_SELECTED_KEY = "DFa";
 
     @Override
@@ -31,12 +34,24 @@ public class AddressActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_address);
         addressRV = findViewById(R.id.addressRV);
+        addLocationLL = findViewById(R.id.addLocationLL);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setTitle("Select Address");
         getAddressOnline();
+        setClickListeners();
+
     }
 
+    private void setClickListeners(){
+        addLocationLL.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AddressActivity.this, AddNewLocationActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
     private void getAddressOnline() {
         String key = SharedPrefUtils.getString(this, getString(R.string.api_key));
         Call<AddressResponse> addressResponseCall = ApiClient.getClient().getMyAddresses(key);
@@ -55,13 +70,13 @@ public class AddressActivity extends AppCompatActivity {
         });
     }
 
-    private void listAddress(List<Adress> adresses) {
+    private void listAddress(List<Address> adresses) {
         addressRV.setHasFixedSize(true);
         addressRV.setLayoutManager(new LinearLayoutManager(this));
         AddressAdapter addressAdapter = new AddressAdapter(adresses, this);
         addressAdapter.setOnAddressItemClickListener(new AddressAdapter.OnAddressItemClickListener() {
             @Override
-            public void onAddressClick(int position, Adress adress) {
+            public void onAddressClick(int position, Address adress) {
                 Intent resultIntent = new Intent();
                 resultIntent.putExtra(ADDRESS_SELECTED_KEY, adress);
                 setResult(Activity.RESULT_OK, resultIntent);
@@ -80,4 +95,5 @@ public class AddressActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
+
 }

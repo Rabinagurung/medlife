@@ -34,6 +34,10 @@ public interface ApiService {
     Call<AllProductResponse> addToCart(@Header("Apikey") String apikey, @Field("p_id") int p, @Field("quantity") int q);
 
     @FormUrlEncoded
+    @POST("/ecommerce/api/v1/wishlist")
+    Call<AllProductResponse> addToWishlist(@Header("Apikey") String apikey, @Field("p_id") int p, @Field("quantity") int q);
+
+    @FormUrlEncoded
     @POST("/ecommerce/api/v1/order")
     Call<RegisterResponse> order(@Header("Apikey") String apikey,
                                  @Field("p_type") int p_type,
@@ -61,8 +65,16 @@ public interface ApiService {
     @GET("/ecommerce/api/v1/cart")
     Call<AllProductResponse> getMyCart(@Header("Apikey") String apikey);
 
+    @GET("/ecommerce/api/v1/wishlist")
+    Call<AllProductResponse> getMyWishlist(@Header("Apikey") String apikey);
+
     @DELETE("/ecommerce/api/v1/cart")
     Call<RegisterResponse> deleteFromCart(@Header("Apikey") String apikey, @Query("c_id") int cartID);
+
+    @DELETE("/ecommerce/api/v1/wishlist")
+    Call<RegisterResponse> deleteFromWishlist(@Header("Apikey") String apikey, @Query("w_id") int wishlistID);
+
+
 
 
     @GET("/ecommerce/api/v1/address")

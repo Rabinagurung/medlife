@@ -17,13 +17,13 @@ import com.example.medlife.api.response.Address;
 import java.util.List;
 
 public class AddressAdapter extends RecyclerView.Adapter<AddressAdapter.AddressViewHolder> {
-    List<Address> adressList;
+    List<Address> addressList;
     Context context;
     LayoutInflater inflater;
     OnAddressItemClickListener onAddressItemClickListener;
 
     public AddressAdapter(List<Address> adressList, Context context) {
-        this.adressList = adressList;
+        this.addressList = adressList;
         this.context = context;
         inflater = LayoutInflater.from(context);
     }
@@ -41,21 +41,21 @@ public class AddressAdapter extends RecyclerView.Adapter<AddressAdapter.AddressV
 
     @Override
     public void onBindViewHolder(@NonNull AddressViewHolder holder, int position) {
-        Address adress = adressList.get(position);
+        Address adress = addressList.get(position);
         holder.cityStreetTV.setText(adress.getCity() + " " + adress.getStreet());
         holder.provinceTV.setText(adress.getProvince());
         holder.decTV.setText(adress.getDescription());
         holder.addressLL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onAddressItemClickListener.onAddressClick(holder.getAdapterPosition(), adressList.get(holder.getAdapterPosition()));
+                onAddressItemClickListener.onAddressClick(holder.getAdapterPosition(), addressList.get(holder.getAdapterPosition()));
             }
         });
     }
 
     @Override
     public int getItemCount() {
-        return adressList.size();
+        return addressList.size();
     }
 
     public class AddressViewHolder extends RecyclerView.ViewHolder {

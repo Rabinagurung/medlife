@@ -44,6 +44,7 @@
         android:orientation="horizontal">
 
         <LinearLayout
+            android:id="@+id/cancelLL"
             android:layout_width="0dp"
             android:layout_height="45dp"
             android:layout_weight="1"
@@ -63,6 +64,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/okLL"
             android:layout_width="0dp"
             android:layout_height="45dp"
             android:layout_weight="1"

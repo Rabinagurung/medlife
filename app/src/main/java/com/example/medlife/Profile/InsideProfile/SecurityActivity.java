@@ -1,4 +1,4 @@
-package com.example.medlife.Profile.Security;
+package com.example.medlife.Profile.InsideProfile;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,7 +24,6 @@ public class SecurityActivity extends AppCompatActivity {
         changeButton = findViewById(R.id.changeButton);
         setClickListeners();
     }
-
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
@@ -45,6 +44,4 @@ public class SecurityActivity extends AppCompatActivity {
         });
 
     }
-
-
 }

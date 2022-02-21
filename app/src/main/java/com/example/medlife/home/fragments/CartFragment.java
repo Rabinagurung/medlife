@@ -33,7 +33,7 @@ import retrofit2.Response;
 
 
 public class CartFragment extends Fragment {
-   // public static String WISHLIST_TO_CART_PRODUCTS = "DATA";
+    public static String MOVE_TO_CART = "DATA";
     RecyclerView allProductRV;
     List<Product> products;
     TextView totalPriceTv;

@@ -80,7 +80,8 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ShopViewHolder
             @Override
             public void onClick(View v) {
                 Intent productPage = new Intent(context, SingleProductActivity.class);
-                productPage.putExtra(SingleProductActivity.key, productDataList.get(holder.getAdapterPosition()));
+                System.out.println(productDataList.get(holder.getAdapterPosition()).getImages());
+                productPage.putExtra(SingleProductActivity.DATA_KEY, productDataList.get(holder.getAdapterPosition()));
                 context.startActivity(productPage);
             }
         });

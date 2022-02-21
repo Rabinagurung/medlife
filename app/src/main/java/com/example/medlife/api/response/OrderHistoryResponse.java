@@ -21,9 +21,7 @@ public List<OrderHistory> getOrderHistory() {
 return orderHistory;
 }
 
-public void setOrderHistory(List<OrderHistory> orderHistory) {
-this.orderHistory = orderHistory;
-}
+public void setOrderHistory(List<OrderHistory> orderHistory) { this.orderHistory = orderHistory; }
 
 public Boolean getError() {
 return error;

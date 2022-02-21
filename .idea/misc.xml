@@ -46,6 +46,8 @@
         <entry key="..\:/Users/DELL/StudioProjects/medlife/app/src/main/res/drawable-v24/upload_rectangle.xml" value="0.2703125" />
         <entry key="..\:/Users/DELL/StudioProjects/medlife/app/src/main/res/drawable/addtocart_rectangle.xml" value="0.2703125" />
         <entry key="..\:/Users/DELL/StudioProjects/medlife/app/src/main/res/drawable/dotted_border.xml" value="0.2703125" />
+        <entry key="..\:/Users/DELL/StudioProjects/medlife/app/src/main/res/drawable/ic_baseline_add_circle_outline_24.xml" value="0.2703125" />
+        <entry key="..\:/Users/DELL/StudioProjects/medlife/app/src/main/res/drawable/ic_baseline_local_shipping_24.xml" value="0.2703125" />
         <entry key="..\:/Users/DELL/StudioProjects/medlife/app/src/main/res/drawable/ic_baseline_location_on_24.xml" value="0.14635416666666667" />
         <entry key="..\:/Users/DELL/StudioProjects/medlife/app/src/main/res/drawable/ic_camera.xml" value="0.1" />
         <entry key="..\:/Users/DELL/StudioProjects/medlife/app/src/main/res/drawable/ic_subtract.xml" value="0.2703125" />
@@ -57,8 +59,10 @@
         <entry key="..\:/Users/DELL/StudioProjects/medlife/app/src/main/res/drawable/wishlist_rectangle.xml" value="0.2703125" />
         <entry key="..\:/Users/DELL/StudioProjects/medlife/app/src/main/res/layout/activity_about_app.xml" value="0.24010416666666667" />
         <entry key="..\:/Users/DELL/StudioProjects/medlife/app/src/main/res/layout/activity_about_med_life.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/DELL/StudioProjects/medlife/app/src/main/res/layout/activity_add_category.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/DELL/StudioProjects/medlife/app/src/main/res/layout/activity_add_new_location.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/DELL/StudioProjects/medlife/app/src/main/res/layout/activity_address.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/DELL/StudioProjects/medlife/app/src/main/res/layout/activity_admin.xml" value="0.1" />
         <entry key="..\:/Users/DELL/StudioProjects/medlife/app/src/main/res/layout/activity_category.xml" value="0.2463768115942029" />
         <entry key="..\:/Users/DELL/StudioProjects/medlife/app/src/main/res/layout/activity_change_password.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/DELL/StudioProjects/medlife/app/src/main/res/layout/activity_check_out.xml" value="0.25416666666666665" />
@@ -66,7 +70,10 @@
         <entry key="..\:/Users/DELL/StudioProjects/medlife/app/src/main/res/layout/activity_confirmation2.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/DELL/StudioProjects/medlife/app/src/main/res/layout/activity_confirmation3.xml" value="0.24010416666666667" />
         <entry key="..\:/Users/DELL/StudioProjects/medlife/app/src/main/res/layout/activity_contact_us.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/DELL/StudioProjects/medlife/app/src/main/res/layout/activity_delete.xml" value="0.10925925925925926" />
         <entry key="..\:/Users/DELL/StudioProjects/medlife/app/src/main/res/layout/activity_edit_profile.xml" value="0.25052083333333336" />
+        <entry key="..\:/Users/DELL/StudioProjects/medlife/app/src/main/res/layout/activity_list_category.xml" value="0.2" />
+        <entry key="..\:/Users/DELL/StudioProjects/medlife/app/src/main/res/layout/activity_list_products.xml" value="0.10925925925925926" />
         <entry key="..\:/Users/DELL/StudioProjects/medlife/app/src/main/res/layout/activity_location.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/DELL/StudioProjects/medlife/app/src/main/res/layout/activity_logout.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/DELL/StudioProjects/medlife/app/src/main/res/layout/activity_main.xml" value="0.2463768115942029" />
@@ -80,6 +87,8 @@
         <entry key="..\:/Users/DELL/StudioProjects/medlife/app/src/main/res/layout/activity_profile.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/DELL/StudioProjects/medlife/app/src/main/res/layout/activity_security.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/DELL/StudioProjects/medlife/app/src/main/res/layout/activity_securityyyyyyyyy.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/DELL/StudioProjects/medlife/app/src/main/res/layout/activity_shop_adapter_admin.xml" value="0.1" />
+        <entry key="..\:/Users/DELL/StudioProjects/medlife/app/src/main/res/layout/activity_shop_view_holder.xml" value="0.1" />
         <entry key="..\:/Users/DELL/StudioProjects/medlife/app/src/main/res/layout/activity_single_product.xml" value="0.2463768115942029" />
         <entry key="..\:/Users/DELL/StudioProjects/medlife/app/src/main/res/layout/activity_splash_screen.xml" value="0.2463768115942029" />
         <entry key="..\:/Users/DELL/StudioProjects/medlife/app/src/main/res/layout/activity_terms_of_us.xml" value="0.25416666666666665" />
@@ -90,11 +99,14 @@
         <entry key="..\:/Users/DELL/StudioProjects/medlife/app/src/main/res/layout/activity_user_account.xml" value="0.2463768115942029" />
         <entry key="..\:/Users/DELL/StudioProjects/medlife/app/src/main/res/layout/activity_user_profile.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/DELL/StudioProjects/medlife/app/src/main/res/layout/activity_wish_list.xml" value="0.2485207100591716" />
+        <entry key="..\:/Users/DELL/StudioProjects/medlife/app/src/main/res/layout/activity_wishlist.xml" value="0.24010416666666667" />
+        <entry key="..\:/Users/DELL/StudioProjects/medlife/app/src/main/res/layout/custom_dialog_add_category.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/DELL/StudioProjects/medlife/app/src/main/res/layout/fragment_about_app.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/DELL/StudioProjects/medlife/app/src/main/res/layout/fragment_about_med_life.xml" value="0.24010416666666667" />
+        <entry key="..\:/Users/DELL/StudioProjects/medlife/app/src/main/res/layout/fragment_about_med_life2.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/DELL/StudioProjects/medlife/app/src/main/res/layout/fragment_about_us.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/DELL/StudioProjects/medlife/app/src/main/res/layout/fragment_blank.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/DELL/StudioProjects/medlife/app/src/main/res/layout/fragment_cart.xml" value="0.2463768115942029" />
+        <entry key="..\:/Users/DELL/StudioProjects/medlife/app/src/main/res/layout/fragment_cart.xml" value="0.17293233082706766" />
         <entry key="..\:/Users/DELL/StudioProjects/medlife/app/src/main/res/layout/fragment_category.xml" value="0.2463768115942029" />
         <entry key="..\:/Users/DELL/StudioProjects/medlife/app/src/main/res/layout/fragment_contact_us.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/DELL/StudioProjects/medlife/app/src/main/res/layout/fragment_home.xml" value="0.2" />
@@ -112,9 +124,10 @@
         <entry key="..\:/Users/DELL/StudioProjects/medlife/app/src/main/res/layout/item_category.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/DELL/StudioProjects/medlife/app/src/main/res/layout/item_category_no_image.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/DELL/StudioProjects/medlife/app/src/main/res/layout/item_product.xml" value="0.2463768115942029" />
+        <entry key="..\:/Users/DELL/StudioProjects/medlife/app/src/main/res/layout/item_product_admin.xml" value="0.1" />
         <entry key="..\:/Users/DELL/StudioProjects/medlife/app/src/main/res/layout/item_slider.xml" value="0.2463768115942029" />
         <entry key="..\:/Users/DELL/StudioProjects/medlife/app/src/main/res/layout/item_wishlist.xml" value="0.25052083333333336" />
-        <entry key="..\:/Users/DELL/StudioProjects/medlife/app/src/main/res/menu/bottom_nav.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/DELL/StudioProjects/medlife/app/src/main/res/menu/bottom_nav.xml" value="0.264" />
         <entry key="..\:/Users/DELL/StudioProjects/medlife/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.14635416666666667" />
         <entry key="app/src/main/res/drawable-v24/rectangle.xml" value="0.2359375" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.3880208333333333" />

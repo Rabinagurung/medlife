@@ -30,4 +30,9 @@ public class SharedPrefUtils {
         editor.putString(key, val);
         editor.apply();
     }
+
+    public static void clear(Context context){
+        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(context);
+        sharedPref.edit().clear().commit();
+    }
 }

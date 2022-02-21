@@ -1,9 +1,7 @@
 package com.example.medlife.home;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,7 +11,6 @@ import com.example.medlife.R;
 import com.example.medlife.home.fragments.AboutUsFragment;
 import com.example.medlife.home.fragments.CartFragment;
 import com.example.medlife.home.fragments.CategoryFragment;
-import com.example.medlife.home.fragments.ProfileFragment;
 import com.example.medlife.home.fragments.WishListFragment;
 import com.example.medlife.home.fragments.home.HomeFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -23,14 +20,10 @@ import com.google.android.material.navigation.NavigationBarView;
 public class MainActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
     HomeFragment homeFragment;
-    ProfileFragment profileFragment;
     CartFragment cartFragment;
-    WishListFragment wishListFragment;
     CategoryFragment categoryFragment;
     AboutUsFragment aboutUsFragment;
     Fragment currentFragment;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         bottomNavigationView = findViewById(R.id.homeBottomNav);
         homeFragment = new HomeFragment();
+        homeFragment.setBottomNavigationView(bottomNavigationView);
         currentFragment = homeFragment;
 
         getSupportFragmentManager().beginTransaction().add(R.id.homeFrameContainer, homeFragment).commit();
@@ -66,19 +60,8 @@ public class MainActivity extends AppCompatActivity {
                     changeFragment(cartFragment);
                     return true;
                 }
-//                if (item.getTitle().equals(getString(R.string.wishlist))) {
-//                    if (wishListFragment == null)
-//                        wishListFragment = new WishListFragment();
-//                    changeFragment(wishListFragment);
-//                    return true;
-//
-//                }
-                if (item.getTitle().equals(getString(R.string.profile))) {
-                    if (profileFragment == null)
-                        profileFragment = new ProfileFragment();
-                    changeFragment(profileFragment);
-                    return true;
-                }
+
+
 
                 if (item.getTitle().equals(getString(R.string.aboutUs))) {
                     if (aboutUsFragment == null)

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/off_white"
     android:orientation="vertical"
-    tools:context=".Profile.UserProfile.UserProfileActivity">
+    tools:context=".Profile.InsideProfile.UserProfileActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -46,7 +46,7 @@
             android:layout_height="90dp"
             android:layout_gravity="center"
             android:scaleType="centerCrop"
-            android:src="@drawable/ic_user"
+            android:src="@drawable/user_profile"
             app:civ_border_color="@color/priceGray"
             app:civ_border_width="1dp" />
 

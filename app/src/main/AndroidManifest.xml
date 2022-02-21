@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.medlife">
+    package="com.example.medlife" >
 
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
 
     <application
         android:allowBackup="true"
@@ -11,38 +18,45 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Appcommerce">
+        android:theme="@style/Theme.MedLife" >
         <activity
             android:name=".checkout.address.AddNewLocationActivity"
-            android:exported="false"
-            android:theme="@style/Theme.AppCompat.DayNight.Dialog.MinWidth"/>
-        <activity
-            android:name=".Profile.Security.ChangePasswordActivity"
             android:exported="false" />
         <activity
-            android:name=".Profile.UserProfile.EditProfileActivity"
-            android:exported="false"
-            android:theme="@style/Theme.AppCompat.Light.Dialog.MinWidth" />
-        <activity
-            android:name=".Profile.Logout.LogoutActivity"
+            android:name=".Profile.InsideProfile.WishlistActivity"
             android:exported="false" />
         <activity
-            android:name=".Profile.Security.SecurityActivity"
+            android:name=".Profile.InsideProfile.EditProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".Profile.Location.LocationActivity"
+            android:name=".Profile.InsideProfile.UserProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".Profile.Orders.OrdersActivity"
+            android:name=".Profile.InsideProfile.ChangePasswordActivity"
             android:exported="false" />
         <activity
-            android:name=".Profile.Wishlist.WishlistActivity"
+            android:name=".Profile.InsideProfile.SecurityActivity"
             android:exported="false" />
         <activity
-            android:name=".Profile.UserProfile.UserProfileActivity"
+            android:name=".Profile.InsideProfile.OrdersActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Profile.InsideProfile.LogoutActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Profile.InsideProfile.LocationActivity"
             android:exported="false" />
         <activity
             android:name=".Profile.ProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".admin.products.ListProductsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".admin.addCategory.ListCategoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".admin.AdminActivity"
             android:exported="false" />
         <activity
             android:name=".home.ContactUsActivity"
@@ -63,14 +77,14 @@
             android:name=".PopularProducts.PopularProductsActivity"
             android:exported="false" />
         <activity
-            android:name=".uploadPrescription.PrescriptionSubmissionActivity"
+            android:name=".uploadPrescription.PrescriptionSubmitActivity"
             android:exported="false" />
         <activity
             android:name=".uploadPrescription.ConfirmationActivity"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.Light.Dialog.MinWidth" />
         <activity
-            android:name=".uploadPrescription.UploadPrescriptionDetailsActivity"
+            android:name=".uploadPrescription.AddPrescriptionActivity"
             android:exported="false" />
         <activity
             android:name=".uploadPrescription.UploadPrescriptionActivity"
@@ -100,7 +114,7 @@
         <activity
             android:name=".splash.SplashScreenActivity"
             android:exported="true"
-            android:theme="@style/Theme.HomeTheme">
+            android:theme="@style/Theme.HomeTheme" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -110,7 +124,17 @@
         <activity
             android:name=".home.MainActivity"
             android:exported="true"
-            android:theme="@style/Theme.HomeTheme" />
+            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.example.android.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true" >
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
     </application>
 
 </manifest>

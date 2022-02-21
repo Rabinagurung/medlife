@@ -16,6 +16,149 @@
         android:id="@+id/cartMenu"
         android:icon="@drawable/ic_bag"
         android:title="@string/cart" />
+
+    <item
+        android:id="@+id/aboutUsMenu"
+        android:icon="@drawable/ic_user"
+        android:title="@string/aboutUs" />
+</menu>
+
+
+
+<!--    <uses-permission android:name="android.permission.CALL_PHONE" />-->
+<!--    <uses-permission android:name="android.permission.INTERNET" />-->
+<!--    <uses-permission android:name="android.permission.CAMERA" />-->
+<!--    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />-->
+<!--    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />-->
+
+<!--    <uses-feature-->
+<!--        android:name="android.hardware.camera"-->
+<!--        android:required="false" />-->
+
+<!--    <application-->
+<!--        android:allowBackup="true"-->
+<!--        android:icon="@mipmap/ic_launcher"-->
+<!--        android:label="@string/app_name"-->
+<!--        android:roundIcon="@mipmap/ic_launcher_round"-->
+<!--        android:supportsRtl="true"-->
+<!--        android:theme="@style/Theme.MedLife">-->
+<!--        <activity-->
+<!--            android:name=".Admin.products.ListProductsActivity"-->
+<!--            android:exported="false" />-->
+<!--        <activity-->
+<!--            android:name=".Admin.AdminActivity"-->
+<!--            android:exported="false" />-->
+<!--        <activity-->
+<!--            android:name=".checkout.address.AddNewLocationActivity"-->
+<!--            android:exported="false"-->
+<!--            android:theme="@style/Theme.AppCompat.DayNight.Dialog.MinWidth" />-->
+<!--        <activity-->
+<!--            android:name=".Profile.Security.ChangePasswordActivity"-->
+<!--            android:exported="false" />-->
+<!--        <activity-->
+<!--            android:name=".Profile.UserProfile.EditProfileActivity"-->
+<!--            android:exported="false"-->
+<!--            android:theme="@style/Theme.AppCompat.Light.Dialog.MinWidth" />-->
+<!--        <activity-->
+<!--            android:name=".Profile.Logout.LogoutActivity"-->
+<!--            android:exported="false" />-->
+<!--        <activity-->
+<!--            android:name=".Profile.Security.SecurityActivity"-->
+<!--            android:exported="false" />-->
+<!--        <activity-->
+<!--            android:name=".Profile.Location.LocationActivity"-->
+<!--            android:exported="false" />-->
+<!--        <activity-->
+<!--            android:name=".Profile.Orders.OrdersActivity"-->
+<!--            android:exported="false" />-->
+<!--        <activity-->
+<!--            android:name=".Profile.Wishlist.WishlistActivity"-->
+<!--            android:exported="false" />-->
+<!--        <activity-->
+<!--            android:name=".Profile.UserProfile.UserProfileActivity"-->
+<!--            android:exported="false" />-->
+<!--        <activity-->
+<!--            android:name=".Profile.ProfileActivity"-->
+<!--            android:exported="false"-->
+<!--            android:theme="@style/Theme.HomeTheme" />-->
+<!--        <activity-->
+<!--            android:name=".home.ContactUsActivity"-->
+<!--            android:exported="false" />-->
+<!--        <activity-->
+<!--            android:name=".home.OurTeamActivity"-->
+<!--            android:exported="false" />-->
+<!--        <activity-->
+<!--            android:name=".home.TermsOfUseActivity"-->
+<!--            android:exported="false" />-->
+<!--        <activity-->
+<!--            android:name=".home.PolicesActivity"-->
+<!--            android:exported="false" />-->
+<!--        <activity-->
+<!--            android:name=".home.AboutMedLifeActivity"-->
+<!--            android:exported="false" />-->
+<!--        <activity-->
+<!--            android:name=".PopularProducts.PopularProductsActivity"-->
+<!--            android:exported="false" />-->
+<!--        <activity-->
+<!--            android:name=".uploadPrescription.PrescriptionSubmitActivity"-->
+<!--            android:exported="false" />-->
+<!--        <activity-->
+<!--            android:name=".uploadPrescription.ConfirmationActivity"-->
+<!--            android:exported="false"-->
+<!--            android:theme="@style/Theme.AppCompat.Light.Dialog.MinWidth" />-->
+<!--        <activity-->
+<!--            android:name=".uploadPrescription.AddPrescriptionActivity"-->
+<!--            android:exported="false" />-->
+<!--        <activity-->
+<!--            android:name=".uploadPrescription.UploadPrescriptionActivity"-->
+<!--            android:exported="false" />-->
+<!--        <activity-->
+<!--            android:name=".checkout.orderComplete.OrderCompleteActivity"-->
+<!--            android:exported="false"-->
+<!--            android:theme="@style/Theme.HomeTheme" />-->
+<!--        <activity-->
+<!--            android:name=".checkout.address.AddressActivity"-->
+<!--            android:exported="false" />-->
+<!--        <activity-->
+<!--            android:name=".checkout.CheckOutActivity"-->
+<!--            android:exported="false"-->
+<!--            android:theme="@style/Theme.HomeTheme" />-->
+<!--        <activity-->
+<!--            android:name=".categoryActivity.CategoryActivity"-->
+<!--            android:exported="false" />-->
+<!--        <activity-->
+<!--            android:name=".singleProductPage.SingleProductActivity"-->
+<!--            android:exported="false"-->
+<!--            android:theme="@style/Theme.HomeTheme" />-->
+<!--        <activity-->
+<!--            android:name=".userAccount.UserAccountActivity"-->
+<!--            android:exported="true"-->
+<!--            android:theme="@style/Theme.HomeTheme" />-->
+<!--        <activity-->
+<!--            android:name=".splash.SplashScreenActivity"-->
+<!--            android:exported="true"-->
+<!--            android:theme="@style/Theme.HomeTheme">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+<!--        </activity>-->
+<!--        <activity-->
+<!--            android:name=".home.MainActivity"-->
+<!--            android:exported="true"-->
+<!--            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar" />-->
+
+<!--        <provider-->
+<!--            android:name="androidx.core.content.FileProvider"-->
+<!--            android:authorities="com.example.android.fileprovider"-->
+<!--            android:exported="false"-->
+<!--            android:grantUriPermissions="true">-->
+<!--            <meta-data-->
+<!--                android:name="android.support.FILE_PROVIDER_PATHS"-->
+<!--                android:resource="@xml/file_paths" />-->
+<!--        </provider>-->
+<!--    </application>-->
 <!--    <item-->
 <!--        android:id="@+id/wishListMenu"-->
 <!--        android:icon="@drawable/ic_heart"-->
@@ -25,10 +168,10 @@
 <!--        android:icon="@drawable/ic_user"-->
 <!--        android:title="@string/profile" />-->
 
-    <item
-        android:id="@+id/aboutUsMenu"
-        android:icon="@drawable/ic_user"
-        android:title="@string/aboutUs" />
+<!--    <item-->
+<!--        android:id="@+id/aboutUsMenu"-->
+<!--        android:icon="@drawable/ic_user"-->
+<!--        android:title="@string/aboutUs" />-->
 
 
-</menu>
+<!--</menu>-->

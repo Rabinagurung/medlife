@@ -1,8 +1,7 @@
-package com.example.medlife.Profile.Wishlist;
+package com.example.medlife.Profile.InsideProfile;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
@@ -38,7 +37,7 @@ public class WishlistActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_wish_list);
+        setContentView(R.layout.activity_wishlist);
 
         getSupportActionBar().setTitle("WishList");
         getSupportActionBar().setHomeButtonEnabled(true);
@@ -53,7 +52,7 @@ public class WishlistActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if (allProductResponse != null && allProductResponse.getProducts().size() > 0) {
                     Intent intent = new Intent(getApplicationContext(), CartFragment.class);
-                 //   intent.putExtra(CartFragment.WISHLIST_TO_CART_PRODUCTS,allProductResponse);
+                    //   intent.putExtra(CartFragment.WISHLIST_TO_CART_PRODUCTS,allProductResponse);
                     getApplicationContext().startActivity(intent);
                 }
             }
@@ -80,7 +79,6 @@ public class WishlistActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
-
 
     private void getWishlistItems() {
         String key = SharedPrefUtils.getString(this, "apk");
@@ -142,7 +140,5 @@ public class WishlistActivity extends AppCompatActivity {
         getWishlistItems();
     }
 
+
 }
-
-
-

@@ -1,4 +1,4 @@
-package com.example.medlife.Profile.Logout;
+package com.example.medlife.Profile.InsideProfile;
 
 import androidx.appcompat.app.AppCompatActivity;
 

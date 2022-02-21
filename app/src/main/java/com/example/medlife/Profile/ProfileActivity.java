@@ -8,20 +8,21 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
-import com.example.medlife.Profile.Logout.LogoutActivity;
-import com.example.medlife.Profile.Orders.OrdersActivity;
-import com.example.medlife.Profile.Security.SecurityActivity;
-import com.example.medlife.Profile.UserProfile.UserProfileActivity;
-import com.example.medlife.Profile.Wishlist.WishlistActivity;
+import com.example.medlife.Profile.InsideProfile.OrdersActivity;
+import com.example.medlife.Profile.InsideProfile.SecurityActivity;
+import com.example.medlife.Profile.InsideProfile.UserProfileActivity;
+import com.example.medlife.Profile.InsideProfile.WishlistActivity;
 import com.example.medlife.R;
+import com.example.medlife.admin.AdminActivity;
 import com.example.medlife.checkout.address.AddressActivity;
 import com.example.medlife.userAccount.UserAccountActivity;
 import com.example.medlife.utils.SharedPrefUtils;
 
 public class ProfileActivity extends AppCompatActivity {
     LinearLayout profileLL, wishListLL, ordersLL, locationLL, securityLL, logoutLL;
-
+    TextView adminTV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,11 +34,11 @@ public class ProfileActivity extends AppCompatActivity {
         locationLL = findViewById(R.id.locationLL);
         securityLL = findViewById(R.id.securityLL);
         logoutLL = findViewById(R.id.logoutLL);
+        adminTV = findViewById(R.id.adminTV);
         getSupportActionBar().setTitle(" Profile");
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setClickListeners();
-
     }
 
     @Override
@@ -98,10 +99,20 @@ public class ProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 SharedPrefUtils.setBoolean(ProfileActivity.this, getString(R.string.isLogged),false);
-                Intent intent = new Intent(ProfileActivity.this, UserAccountActivity.class);
-                startActivity(intent);
-                finish();
+                Intent userAccount = new Intent(ProfileActivity.this, UserAccountActivity.class);
+                startActivity(userAccount);
+                ProfileActivity.this.finish();
             }
         });
+
+        adminTV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ProfileActivity.this, AdminActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
     }
 }

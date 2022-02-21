@@ -1,4 +1,4 @@
-package com.example.medlife.Profile.UserProfile;
+package com.example.medlife.Profile.InsideProfile;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,7 +14,6 @@ import com.example.medlife.R;
 public class UserProfileActivity extends AppCompatActivity {
     ImageView editInfoLL;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,7 +25,6 @@ public class UserProfileActivity extends AppCompatActivity {
         editInfoLL = findViewById(R.id.editInfoLL);
         setClickListener();
     }
-
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
@@ -49,4 +47,5 @@ public class UserProfileActivity extends AppCompatActivity {
 
 
     }
+
 }

@@ -1,4 +1,4 @@
-package com.example.medlife.Profile.Location;
+package com.example.medlife.Profile.InsideProfile;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,13 +8,13 @@ import android.view.MenuItem;
 
 import com.example.medlife.R;
 
-public class LocationActivity extends AppCompatActivity {
+public class OrdersActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_location);
-        getSupportActionBar().setTitle("Delivery Locations");
+        setContentView(R.layout.activity_orders);
+        getSupportActionBar().setTitle("My Orders");
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }

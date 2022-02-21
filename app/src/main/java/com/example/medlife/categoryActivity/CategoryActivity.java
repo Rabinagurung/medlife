@@ -30,6 +30,7 @@ import retrofit2.Response;
 
 public class CategoryActivity extends AppCompatActivity {
     public static String CATEGORY_DATA_KEY = "cdk";
+    public static String CAT_KEY = "ctk";
     Category category;
     RecyclerView allProductsRV;
     ImageView emptyIV;
@@ -39,9 +40,12 @@ public class CategoryActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category);
+        if (getIntent().getSerializableExtra(CATEGORY_DATA_KEY) == null)
+            finish();
         allProductsRV = findViewById(R.id.allProductRV);
         loadingProgress = findViewById(R.id.loadingProgress);
         emptyIV = findViewById(R.id.emptyIV);
+        category = (Category) getIntent().getSerializableExtra(CATEGORY_DATA_KEY);
 
         getSupportActionBar().setTitle("Categories");
         getSupportActionBar().setHomeButtonEnabled(true);
@@ -51,25 +55,27 @@ public class CategoryActivity extends AppCompatActivity {
 
     private void getCategoryOnline() {
         toggleLoading(true);
-        Call<CategoryResponse> getAllCategories = ApiClient.getClient().getCategories();
-        getAllCategories.enqueue(new Callback<CategoryResponse>() {
+        Call<AllProductResponse> getAllCategories = ApiClient.getClient().getProductsByCategory(category.getId());
+        getAllCategories.enqueue(new Callback<AllProductResponse>() {
             @Override
-            public void onResponse(Call<CategoryResponse> call, Response<CategoryResponse> response) {
-                if (response.isSuccessful()){
+            public void onResponse(Call<AllProductResponse> call, Response<AllProductResponse> response) {
+                if (response.isSuccessful()) {
                     toggleLoading(false);
                     if (!response.body().getError()) {
-                        showCategoriesOnline(response.body().getCategories());
+                        if (response.body().getProducts().size() == 0)
+                            showEmptyLayout();
+                        else
+                            showCategoriesProducts(response.body().getProducts());
                     }
                 }
             }
 
             @Override
-            public void onFailure(Call<CategoryResponse> call, Throwable t) {
-
+            public void onFailure(Call<AllProductResponse> call, Throwable t) {
+                toggleLoading(false);
+                Toast.makeText(CategoryActivity.this, "An Unknown Error Occoured", Toast.LENGTH_SHORT).show();
             }
         });
-
-
     }
 
     private void showEmptyLayout() {
@@ -87,15 +93,12 @@ public class CategoryActivity extends AppCompatActivity {
         }
     }
 
-    private void showCategoriesOnline(List<Category> categories) {
+    private void showCategoriesProducts(List<Product> products) {
         allProductsRV.setHasFixedSize(true);
-        GridLayoutManager layoutManager = new GridLayoutManager(this, 3);
+        GridLayoutManager layoutManager = new GridLayoutManager(this, 2);
         allProductsRV.setLayoutManager(layoutManager);
-        CategoryAdapter shopAdapter = new CategoryAdapter(categories, this, true);
+        ShopAdapter shopAdapter = new ShopAdapter(products, this, false, false);
         allProductsRV.setAdapter(shopAdapter);
-
-
-
 
     }
 

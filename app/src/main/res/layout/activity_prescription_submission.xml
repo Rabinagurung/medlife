@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".uploadPrescription.PrescriptionSubmissionActivity">
+    tools:context=".uploadPrescription.PrescriptionSubmitActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -37,6 +37,7 @@
         android:gravity="center"/>
 
     <Button
+        android:id="@+id/takeHomeBt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"

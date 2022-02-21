@@ -16,6 +16,7 @@ import com.example.medlife.api.ApiClient;
 import com.example.medlife.api.response.AllProductResponse;
 import com.example.medlife.api.response.Product;
 import com.example.medlife.api.response.RegisterResponse;
+import com.example.medlife.api.response.SingleProductResponse;
 import com.example.medlife.api.response.Slider;
 import com.example.medlife.home.fragments.home.adapters.SliderAdapter;
 import com.example.medlife.utils.SharedPrefUtils;
@@ -31,7 +32,8 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class SingleProductActivity extends AppCompatActivity {
-    public static String key = "pKey";
+    public static String DATA_KEY = "ds";
+    public static String SINGLE_DATA_KEY = "sds";
     Product product;
     SliderView imageSlider;
 //    ProgressBar addingCartPR;
@@ -61,12 +63,35 @@ public class SingleProductActivity extends AppCompatActivity {
         desc = findViewById(R.id.decTV);
         plusIV = findViewById(R.id.plusIV);
         minusIV = findViewById(R.id.minusIV);
-        setOnclickListners();
-        if (getIntent().getSerializableExtra(key) != null) {
-            product = (Product) getIntent().getSerializableExtra(key);
-            setProduct(product);
-        }
 
+        if (getIntent().getSerializableExtra(DATA_KEY) != null) {
+            product = (Product) getIntent().getSerializableExtra(DATA_KEY);
+            setProduct(product);
+        } else if (getIntent().getSerializableExtra(SINGLE_DATA_KEY) != null)
+            getProductOnline(getIntent().getIntExtra(SINGLE_DATA_KEY, 1));
+
+        setOnclickListners();
+    }
+
+    private void getProductOnline(int intExtra) {
+        Call<SingleProductResponse> productResponseCall = ApiClient.getClient().getProductById(intExtra);
+        productResponseCall.enqueue(new Callback<SingleProductResponse>() {
+            @Override
+            public void onResponse(Call<SingleProductResponse> call, Response<SingleProductResponse> response) {
+                if (response.isSuccessful()) {
+                    if (!response.body().getError()) {
+                        product = response.body().getProduct();
+                        setProduct(product);
+                    }
+
+                }
+            }
+
+            @Override
+            public void onFailure(Call<SingleProductResponse> call, Throwable t) {
+
+            }
+        });
     }
 
     private void setProduct(Product product) {
@@ -136,7 +161,7 @@ public class SingleProductActivity extends AppCompatActivity {
 //                addingToggle(true);
 
                 String key = SharedPrefUtils.getString(this, getString(R.string.api_key));
-                System.out.println("1111111111111 api key is : "+key );
+//                System.out.println("1111111111111 api key is : "+key );
                 Call<AllProductResponse> cart = ApiClient.getClient().addToCart(key, product.getId(), quantity);
                 cart.enqueue(new Callback<AllProductResponse>() {
                     @Override
@@ -167,7 +192,7 @@ public class SingleProductActivity extends AppCompatActivity {
 //                addingToggle(true);
 
                 String key = SharedPrefUtils.getString(this, getString(R.string.api_key));
-                System.out.println("1111111111111 api key is : " + key);
+//                System.out.println("1111111111111 api key is : " + key);
                 Call<AllProductResponse> wishlist = ApiClient.getClient().addToWishlist(key, product.getId(), quantity);
                 wishlist.enqueue(new Callback<AllProductResponse>() {
                     @Override

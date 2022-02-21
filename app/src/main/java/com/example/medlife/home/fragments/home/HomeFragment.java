@@ -19,6 +19,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.medlife.PopularProducts.PopularProductsActivity;
+import com.example.medlife.Profile.ProfileActivity;
 import com.example.medlife.R;
 import com.example.medlife.api.ApiClient;
 import com.example.medlife.api.response.AllProductResponse;
@@ -31,9 +32,11 @@ import com.example.medlife.categoryActivity.CategoryActivity;
 import com.example.medlife.home.fragments.home.adapters.CategoryAdapter;
 import com.example.medlife.home.fragments.home.adapters.ShopAdapter;
 import com.example.medlife.home.fragments.home.adapters.SliderAdapter;
+import com.example.medlife.singleProductPage.SingleProductActivity;
+import com.example.medlife.uploadPrescription.AddPrescriptionActivity;
 import com.example.medlife.uploadPrescription.UploadPrescriptionActivity;
-import com.example.medlife.Profile.ProfileActivity;
 import com.example.medlife.utils.DataHolder;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
 import com.smarteist.autoimageslider.SliderAnimations;
 import com.smarteist.autoimageslider.SliderView;
@@ -52,9 +55,10 @@ public class HomeFragment extends Fragment {
     RecyclerView allProductRV, categoryRV;
     ProgressBar loadingProgress;
     SliderView imageSlider;
-    LinearLayout callPLL, supportCallLL, uploadPrescriptionLL;
-    CircleImageView userProfileLL;
+    LinearLayout callPLL, supportCallLL, uploadPrescriptionLL, searchLL;
+    CircleImageView user_ProfileLL;
     TextView viewAllCategory, viewAllProducts;
+    BottomNavigationView bottomNavigationView;
 
 
     @Override
@@ -63,6 +67,13 @@ public class HomeFragment extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_home, container, false);
     }
+
+    public void setBottomNavigationView(BottomNavigationView bottomNavigationView) {
+        this.bottomNavigationView = bottomNavigationView;
+    }
+
+
+
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -76,7 +87,8 @@ public class HomeFragment extends Fragment {
         callPLL = view.findViewById(R.id.callPharmacistLL);
         supportCallLL = view.findViewById(R.id.callSupportLL);
         uploadPrescriptionLL = view.findViewById(R.id.uploadPrescriptionLL);
-        userProfileLL = view.findViewById(R.id.userProfileLL);
+        user_ProfileLL = view.findViewById(R.id.user_ProfileLL);
+
         callPLL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -98,7 +110,7 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        userProfileLL.setOnClickListener(new View.OnClickListener() {
+        user_ProfileLL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getContext(), ProfileActivity.class);
@@ -109,8 +121,7 @@ public class HomeFragment extends Fragment {
         viewAllCategory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getContext(), CategoryActivity.class);
-                startActivity(intent);
+                bottomNavigationView.setSelectedItemId(R.id.catMenu);
             }
 
         });
@@ -123,6 +134,12 @@ public class HomeFragment extends Fragment {
 
             }
         });
+
+//        searchLL.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//            }
+//        });
 
         serverCall();
         getCategoriesOnline();
@@ -143,7 +160,6 @@ public class HomeFragment extends Fragment {
             public void onClick(View view) {
                 Intent intent = new Intent(getContext(), CategoryActivity.class);
                 startActivity(intent);
-
             }
         });
     }
@@ -172,7 +188,19 @@ public class HomeFragment extends Fragment {
         sliderAdapter.setClickLister(new SliderAdapter.OnSliderClickLister() {
             @Override
             public void onSliderClick(int position, Slider slider) {
-                Toast.makeText(getContext(), "from home This is item in position " + position, Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getContext(), "from home This is item in position " + position, Toast.LENGTH_SHORT).show();
+                if (slider.getType() == 1) {
+                    Intent intent = new Intent(getContext(), SingleProductActivity.class);
+                    intent.putExtra(SingleProductActivity.SINGLE_DATA_KEY, slider.getRelatedId());
+                    getContext().startActivity(intent);
+                } else if (slider.getType() ==2) {
+                    Intent cat = new Intent(getContext(), CategoryActivity.class);
+                    Category category = new Category();
+                    category.setId(slider.getRelatedId());
+                    category.setName(slider.getDesc());
+                    cat.putExtra(CategoryActivity.CATEGORY_DATA_KEY, category);
+                    getContext().startActivity(cat);
+                }
             }
         });
         imageSlider.setSliderAdapter(sliderAdapter);

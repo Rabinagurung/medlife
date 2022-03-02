@@ -21,37 +21,25 @@ private Integer quantity;
 @Expose
 private Product product;
 
-public Integer getId() {
-return id;
-}
+public Integer getId() { return id; }
 
-public void setId(Integer id) {
-this.id = id;
-}
+public void setId(Integer id) { this.id = id; }
 
-public Integer getProductId() {
-return productId;
-}
+public Integer getProductId() { return productId; }
 
 public void setProductId(Integer productId) {
 this.productId = productId;
 }
 
-public Integer getUnitPrice() {
-return unitPrice;
-}
+public Integer getUnitPrice() { return unitPrice; }
 
 public void setUnitPrice(Integer unitPrice) {
 this.unitPrice = unitPrice;
 }
 
-public Integer getQuantity() {
-return quantity;
-}
+public Integer getQuantity() { return quantity; }
 
-public void setQuantity(Integer quantity) {
-this.quantity = quantity;
-}
+public void setQuantity(Integer quantity) { this.quantity = quantity; }
 
 public Product getProduct() {
 return product;

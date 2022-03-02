@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -29,11 +30,13 @@ import com.example.medlife.api.response.Product;
 import com.example.medlife.api.response.Slider;
 import com.example.medlife.api.response.SliderResponse;
 import com.example.medlife.categoryActivity.CategoryActivity;
+import com.example.medlife.home.AboutActivity;
+import com.example.medlife.home.AboutMedLifeActivity;
+import com.example.medlife.home.Notification.NotificationActivity;
 import com.example.medlife.home.fragments.home.adapters.CategoryAdapter;
 import com.example.medlife.home.fragments.home.adapters.ShopAdapter;
 import com.example.medlife.home.fragments.home.adapters.SliderAdapter;
 import com.example.medlife.singleProductPage.SingleProductActivity;
-import com.example.medlife.uploadPrescription.AddPrescriptionActivity;
 import com.example.medlife.uploadPrescription.UploadPrescriptionActivity;
 import com.example.medlife.utils.DataHolder;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -56,9 +59,10 @@ public class HomeFragment extends Fragment {
     ProgressBar loadingProgress;
     SliderView imageSlider;
     LinearLayout callPLL, supportCallLL, uploadPrescriptionLL, searchLL;
-    CircleImageView user_ProfileLL;
+//    CircleImageView user_ProfileLL;
     TextView viewAllCategory, viewAllProducts;
     BottomNavigationView bottomNavigationView;
+    ImageView aboutIV, notifyIV;
 
 
     @Override
@@ -87,7 +91,22 @@ public class HomeFragment extends Fragment {
         callPLL = view.findViewById(R.id.callPharmacistLL);
         supportCallLL = view.findViewById(R.id.callSupportLL);
         uploadPrescriptionLL = view.findViewById(R.id.uploadPrescriptionLL);
-        user_ProfileLL = view.findViewById(R.id.user_ProfileLL);
+//        user_ProfileLL = view.findViewById(R.id.user_ProfileLL);
+        notifyIV = view.findViewById(R.id.notifyIV);
+        aboutIV = view.findViewById(R.id.aboutIV);
+
+
+        // For notification
+
+        notifyIV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), NotificationActivity.class);
+                startActivity(intent);
+
+            }
+        });
+
 
         callPLL.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -102,6 +121,17 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        aboutIV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), AboutActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+
+
         uploadPrescriptionLL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -110,13 +140,13 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        user_ProfileLL.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getContext(), ProfileActivity.class);
-                startActivity(intent);
-            }
-        });
+//        user_ProfileLL.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(getContext(), ProfileActivity.class);
+//                startActivity(intent);
+//            }
+//        });
 
         viewAllCategory.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -144,7 +174,6 @@ public class HomeFragment extends Fragment {
         serverCall();
         getCategoriesOnline();
         getSliders();
-        getAllCategory();
     }
 
     private void call(String number) {
@@ -154,15 +183,6 @@ public class HomeFragment extends Fragment {
         startActivity(intent);
     }
 
-    private void getAllCategory() {
-        viewAllCategory.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getContext(), CategoryActivity.class);
-                startActivity(intent);
-            }
-        });
-    }
 
     private void getSliders() {
         Call<SliderResponse> sliderResponseCall = ApiClient.getClient().getSliders();

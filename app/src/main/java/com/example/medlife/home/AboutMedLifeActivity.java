@@ -14,7 +14,7 @@ public class AboutMedLifeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about_med_life);
-        getSupportActionBar().setTitle("About Us");
+        getSupportActionBar().setTitle("About MedLife");
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }

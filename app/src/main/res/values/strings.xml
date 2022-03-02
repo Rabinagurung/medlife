@@ -116,5 +116,38 @@
 
     <string name="request_contact">For questions, please contact our Helpdesk at 9814146808, 9819176870, email us at medlife@gmail.com or contact our Customer Service Managers.</string>
 
+    //About Meddlife
+
+    <string name="about_medlife">Are you exhausted of waiting in the lengthy rows of people just to get the right medicines and health services you want??? Well then, we’ve got solutions to your exhaustion.</string>
+
+    <string name="digital_health">For a wide range of medications, wellness products, vitamins, medical devices, baby care products.</string>
+
+    <string name="initiative"> Healthcare is rapidly evolving in Nepal and technology is at the forefront of it. Our aim is to leverage this technology and implement solutions that optimise the overall sector and bring affordable, quality healthcare to the masses - with just one tap.</string>
+
+    <string name="patients">MedLife allows users to consolidate all their health related requirements safely in a digital space, and conveniently access the right health products/services with just one tap.</string>
+
+    <string name="trust_us"> To ensure safe, trustworthy and affordable medicines and the quality of customer support worthy of the loyalty of our valued customers.  </string>
+
+    <string name="benefits"> By saving your time and money.</string>
+
+    <string name="delivery"> For your convenience.</string>
+
+    //Shipping and Return Policy
+
+    <string name="shipping_return_policy"> The purchased medicines/products can be returned within 15 Days (medicines) or 3 Days (other products), under the following conditions: </string>
+
+    <string name="shipping_return_policy1">1.The medicines/products are in good condition. </string>
+
+    <string name="shipping_return_policy2">2. The full amount will be refunded after deducting any discounts received, if applicable. </string>
+
+    <string name="shipping_return_policy3">3. Medicine/ products will not be accepted under the following conditions:</string>
+
+    <string name="shipping_return_policy4">a. Tablets/ Capsules – Label is unclear, the strip is torn, and the number of tablets/capsules does not match as per the receipt.</string>
+
+    <string name="shipping_return_policy5">b. Bottle/Syrup/Ointment – Seal is broken and the packet is torn.</string>
+
+    <string name="shipping_return_policy6">c. Cold Chain Product(Injectables) – Once sold is not returnable. </string>
+
+    <string name="shipping_return_policy7">We assure you hassle-free refunds.</string>
 
 </resources>

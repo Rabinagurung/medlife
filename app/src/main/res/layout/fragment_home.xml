@@ -25,48 +25,73 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="16dp"
-                    android:gravity="center">
+                    android:layout_height="30dp"
+                    android:layout_margin="5dp">
 
                     <LinearLayout
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:orientation="horizontal"
-                        >
+                        android:layout_weight="1">
 
-                    <ImageView
-                        android:id="@+id/logo"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:src="@drawable/logo" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:text="MedLife"
-                        android:textColor="@color/white"
-                        android:textSize="20dp"
-                        android:textStyle="bold" />
+                        <ImageView
+                            android:id="@+id/aboutIV"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_round_dehaze_24" />
 
                     </LinearLayout>
 
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        android:id="@+id/user_ProfileLL"
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
-                        android:layout_marginStart="150dp"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/user_profile"
-                        app:civ_border_color="@color/priceGray"
-                        app:civ_border_width="1dp"/>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_gravity="center">
+
+                        <ImageView
+                            android:id="@+id/logo"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/logo" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:text="MedLife"
+                            android:textColor="@color/white"
+                            android:textSize="20dp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5">
+
+                        <ImageView
+                            android:id="@+id/notifyIV"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"
+                            android:layout_weight="0.5"
+                            android:src= "@drawable/ic_baseline_notifications_24"
+                            app:tint="@color/black" />
+
+                    </LinearLayout>
+
+
+
+<!--                    <de.hdodenhof.circleimageview.CircleImageView-->
+<!--                        android:id="@+id/user_ProfileLL"-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="35dp"-->
+<!--                        android:layout_weight="0.5"-->
+<!--                        android:scaleType="centerCrop"-->
+<!--                        android:src="@drawable/user_profile"-->
+<!--                        app:civ_border_color="@color/priceGray"-->
+<!--                        app:civ_border_width="1dp"/>-->
 
                 </LinearLayout>
-
-
-
 
                 <LinearLayout
                     android:id="@+id/searchLL"
@@ -238,6 +263,14 @@
                 android:layout_marginTop="10dp"
                 android:orientation="horizontal" />
 
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:src="@drawable/experts"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/normal_spacing"
+                    />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -288,12 +321,17 @@
 
             </RelativeLayout>
 
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:src="@drawable/covid_banner"/>
+
 
             <LinearLayout
                 android:id="@+id/callSupportLL"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-
+                android:layout_marginTop="@dimen/normal_spacing"
                 android:background="@drawable/upload_rectangle"
                 >
 

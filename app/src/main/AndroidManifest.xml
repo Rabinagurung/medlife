@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.medlife" >
+    package="com.example.medlife">
 
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -18,7 +18,13 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MedLife" >
+        android:theme="@style/Theme.MedLife">
+        <activity
+            android:name=".home.Notification.NotificationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".home.AboutActivity"
+            android:exported="false" />
         <activity
             android:name=".checkout.address.AddNewLocationActivity"
             android:exported="false" />
@@ -84,9 +90,6 @@
             android:exported="false"
             android:theme="@style/Theme.AppCompat.Light.Dialog.MinWidth" />
         <activity
-            android:name=".uploadPrescription.AddPrescriptionActivity"
-            android:exported="false" />
-        <activity
             android:name=".uploadPrescription.UploadPrescriptionActivity"
             android:exported="false" />
         <activity
@@ -114,7 +117,7 @@
         <activity
             android:name=".splash.SplashScreenActivity"
             android:exported="true"
-            android:theme="@style/Theme.HomeTheme" >
+            android:theme="@style/Theme.HomeTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -124,13 +127,13 @@
         <activity
             android:name=".home.MainActivity"
             android:exported="true"
-            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar" />
+            android:theme="@style/Theme.HomeTheme" />
 
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="com.example.android.fileprovider"
             android:exported="false"
-            android:grantUriPermissions="true" >
+            android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths" />

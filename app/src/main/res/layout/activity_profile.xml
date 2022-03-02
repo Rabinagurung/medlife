@@ -4,260 +4,266 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/off_white"
+    android:background="@color/white"
     tools:context=".Profile.ProfileActivity">
 
-    <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp">
+<!--    <androidx.core.widget.NestedScrollView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_marginLeft="10dp"-->
+<!--        android:layout_marginRight="10dp">-->
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="@dimen/normal_spacing">
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="vertical"-->
+<!--            android:layout_marginTop="@dimen/normal_spacing">-->
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="vertical">-->
 
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/user_profile"
-                    android:layout_gravity="center"
-                    app:civ_border_color="@color/priceGray"
-                    app:civ_border_width="1dp"/>
+<!--                <de.hdodenhof.circleimageview.CircleImageView-->
+<!--                    android:layout_width="150dp"-->
+<!--                    android:layout_height="150dp"-->
+<!--                    android:scaleType="centerCrop"-->
+<!--                    android:src="@drawable/user_profile"-->
+<!--                    android:layout_gravity="center"-->
+<!--                    app:civ_border_color="@color/navy_blue"-->
+<!--                    app:civ_border_width="1dp"/>-->
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:orientation="vertical">
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_margin="10dp"-->
+<!--                    android:orientation="vertical">-->
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Rabina Gurung"
-                        android:textColor="@color/black"
-                        android:textSize="18dp" />
+<!--                    <TextView-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="Rabina Gurung"-->
+<!--                        android:textColor="@color/navy_blue"-->
+<!--                        android:textSize="18dp" />-->
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="rabina@gmail.com"
-                        android:textColor="@color/black"
-                        android:textSize="15dp"/>
-
-
-
-                </LinearLayout>
-
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="20dp">
-
-                <LinearLayout
-                    android:id="@+id/profileLL"
-                    android:layout_width="0dp"
-                    android:layout_height="90dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/rectange_box"
-                    android:backgroundTint="@color/white"
-                    android:orientation="vertical"
-                    android:gravity="center">
-
-                    <ImageView
-                        android:src="@drawable/profile_user"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Profile"
-                        android:textSize="15dp"
-                        android:textColor="@color/black"/>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/wishListLL"
-                    android:layout_width="0dp"
-                    android:layout_height="90dp"
-                    android:layout_weight="1"
-                    android:layout_marginLeft="15dp"
-                    android:orientation="vertical"
-                    android:background="@drawable/rectange_box"
-                    android:backgroundTint="@color/white"
-                    android:gravity="center">
-
-                    <ImageView
-                        android:layout_width="45dp"
-                        android:layout_height="45dp"
-                        android:src="@drawable/ic_wishlist"
-                        />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="WishList"
-                        android:textSize="15dp"
-                        android:textColor="@color/black"/>
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="10dp">
-
-                <LinearLayout
-                    android:id="@+id/ordersLL"
-                    android:layout_width="0dp"
-                    android:layout_height="90dp"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:background="@drawable/profile_last_rectangle"
-                    android:backgroundTint="@color/white"
-                    android:gravity="center">
-
-                    <ImageView
-                        android:layout_width="45dp"
-                        android:layout_height="45dp"
-                        android:src="@drawable/ic_wishlist"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Orders"
-                        android:textSize="15dp"
-                        android:textColor="@color/black"/>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/locationLL"
-                    android:layout_width="0dp"
-                    android:layout_height="90dp"
-                    android:layout_weight="1"
-                    android:layout_marginLeft="15dp"
-                    android:orientation="vertical"
-                    android:background="@drawable/rectange_box"
-                    android:backgroundTint="@color/white"
-                    android:gravity="center">
-
-                    <ImageView
-                        android:layout_width="45dp"
-                        android:layout_height="45dp"
-                        android:src="@drawable/ic_baseline_location_on_24"
-                        />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Location"
-                        android:textSize="15dp"
-                        android:textColor="@color/black"/>
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="10dp">
-
-                <LinearLayout
-                    android:id="@+id/securityLL"
-                    android:layout_width="0dp"
-                    android:layout_height="90dp"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:background="@drawable/profile_last_rectangle"
-                    android:backgroundTint="@color/white"
-                    android:gravity="center">
-
-                    <ImageView
-                        android:layout_width="45dp"
-                        android:layout_height="45dp"
-                        android:src="@drawable/ic_baseline_location_on_24"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Security"
-                        android:textSize="15dp"
-                        android:textColor="@color/black"/>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/logoutLL"
-                    android:layout_width="0dp"
-                    android:layout_height="90dp"
-                    android:layout_weight="1"
-                    android:layout_marginLeft="15dp"
-                    android:orientation="vertical"
-                    android:background="@drawable/rectange_box"
-                    android:backgroundTint="@color/white"
-                    android:gravity="center">
-
-                    <ImageView
-                        android:layout_width="45dp"
-                        android:layout_height="45dp"
-                        android:src="@drawable/logout"
-                        />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Log Out"
-                        android:textSize="15dp"
-                        android:textColor="@color/black"/>
-
-                </LinearLayout>
-
-            </LinearLayout>
+<!--                    <TextView-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="rabina@gmail.com"-->
+<!--                        android:textColor="@color/navy_blue"-->
+<!--                        android:textSize="15dp"/>-->
 
 
 
-            <TextView
-                android:id="@+id/adminTV"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/normal_spacing"
-                android:background="@drawable/rectange_box"
-                android:backgroundTint="@color/blue"
-                android:drawableRight="@drawable/ic_baseline_admin_panel_settings_24"
-                android:drawableTint="@color/navy_blue"
-                android:padding="14dp"
-                android:text="Admin"
-                android:textColor="@color/black"
-                android:textSize="16dp"
-                android:visibility="visible"/>
+<!--                </LinearLayout>-->
 
 
+<!--            </LinearLayout>-->
 
 
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="horizontal"-->
+<!--                android:layout_marginTop="20dp">-->
 
-        </LinearLayout>
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/profileLL"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="90dp"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:background="@drawable/rectange_box"-->
+<!--                    android:backgroundTint="@color/light_blue"-->
+<!--                    android:orientation="vertical"-->
+<!--                    android:gravity="center">-->
+
+<!--                    <ImageView-->
+<!--                        android:src="@drawable/profile_user"-->
+<!--                        app:tint="@color/navy_blue"-->
+<!--                        android:layout_width="40dp"-->
+<!--                        android:layout_height="40dp"/>-->
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="Profile"-->
+<!--                        android:textSize="15dp"-->
+<!--                        android:layout_marginTop="5dp"-->
+<!--                        android:textColor="@color/navy_blue"/>-->
+
+<!--                </LinearLayout>-->
+
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/wishListLL"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="90dp"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:layout_marginLeft="10dp"-->
+<!--                    android:orientation="vertical"-->
+<!--                    android:background="@drawable/rectange_box"-->
+<!--                    android:backgroundTint="@color/light_blue"-->
+<!--                    android:gravity="center">-->
+
+<!--                    <ImageView-->
+<!--                        android:layout_width="35dp"-->
+<!--                        android:layout_height="35dp"-->
+<!--                        android:src="@drawable/wishlist"-->
+<!--                        app:tint="@color/navy_blue"-->
+<!--                        />-->
+
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="WishList"-->
+<!--                        android:textSize="15dp"-->
+<!--                        android:layout_marginTop="5dp"-->
+<!--                        android:textColor="@color/navy_blue"/>-->
+
+<!--                </LinearLayout>-->
+
+<!--            </LinearLayout>-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="horizontal"-->
+<!--                android:layout_marginTop="10dp">-->
+
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/ordersLL"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="90dp"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:orientation="vertical"-->
+<!--                    android:background="@drawable/profile_last_rectangle"-->
+<!--                    android:backgroundTint="@color/light_blue"-->
+<!--                    android:gravity="center">-->
+
+<!--                    <ImageView-->
+<!--                        android:layout_width="35dp"-->
+<!--                        android:layout_height="35dp"-->
+<!--                        app:tint="@color/navy_blue"-->
+<!--                        android:src="@drawable/orders"/>-->
+
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="Orders"-->
+<!--                        android:textSize="15dp"-->
+<!--                        android:layout_marginTop="5dp"-->
+<!--                        android:textColor="@color/navy_blue"/>-->
+
+<!--                </LinearLayout>-->
+
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/locationLL"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="90dp"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:layout_marginLeft="10dp"-->
+<!--                    android:orientation="vertical"-->
+<!--                    android:background="@drawable/rectange_box"-->
+<!--                    android:backgroundTint="@color/light_blue"-->
+<!--                    android:gravity="center">-->
+
+<!--                    <ImageView-->
+<!--                        android:layout_width="35dp"-->
+<!--                        android:layout_height="35dp"-->
+<!--                        app:tint="@color/navy_blue"-->
+<!--                        android:src="@drawable/location"-->
+<!--                        />-->
+
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="Location"-->
+<!--                        android:textSize="15dp"-->
+<!--                        android:layout_marginTop="5dp"-->
+<!--                        android:textColor="@color/navy_blue"/>-->
+
+<!--                </LinearLayout>-->
+
+<!--            </LinearLayout>-->
 
 
-    </androidx.core.widget.NestedScrollView>
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="horizontal"-->
+<!--                android:layout_marginTop="10dp">-->
+
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/securityLL"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="90dp"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:orientation="vertical"-->
+<!--                    android:background="@drawable/profile_last_rectangle"-->
+<!--                    android:backgroundTint="@color/light_blue"-->
+<!--                    android:gravity="center">-->
+
+<!--                    <ImageView-->
+<!--                        android:layout_width="40dp"-->
+<!--                        android:layout_height="40dp"-->
+<!--                        app:tint="@color/navy_blue"-->
+<!--                        android:src="@drawable/security"/>-->
+
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="Security"-->
+<!--                        android:textSize="15dp"-->
+<!--                        android:layout_marginTop="5dp"-->
+<!--                        android:textColor="@color/navy_blue"/>-->
+
+<!--                </LinearLayout>-->
+
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/logoutLL"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="90dp"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:layout_marginLeft="10dp"-->
+<!--                    android:orientation="vertical"-->
+<!--                    android:background="@drawable/rectange_box"-->
+<!--                    android:backgroundTint="@color/light_blue"-->
+<!--                    android:gravity="center">-->
+
+<!--                    <ImageView-->
+<!--                        android:layout_width="30dp"-->
+<!--                        android:layout_height="30dp"-->
+<!--                        android:src="@drawable/logout"-->
+<!--                        app:tint="@color/navy_blue" />-->
+
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="Log Out"-->
+<!--                        android:textSize="15dp"-->
+<!--                        android:layout_marginTop="5dp"-->
+<!--                        android:textColor="@color/navy_blue"/>-->
+
+<!--                </LinearLayout>-->
+
+<!--            </LinearLayout>-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/adminTV"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="15dp"-->
+<!--                android:background="@drawable/rectange_box"-->
+<!--                android:backgroundTint="@color/light_blue"-->
+<!--                android:drawableRight="@drawable/ic_baseline_admin_panel_settings_24"-->
+<!--                android:drawableTint="@color/navy_blue"-->
+<!--                android:padding="14dp"-->
+<!--                android:text="Admin"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="16dp"-->
+<!--                android:visibility="visible"/>-->
+
+
+<!--        </LinearLayout>-->
+
+
+<!--    </androidx.core.widget.NestedScrollView>-->
 </LinearLayout>

@@ -21,22 +21,33 @@ public class AddressAdapter extends RecyclerView.Adapter<AddressAdapter.AddressV
     Context context;
     LayoutInflater inflater;
     OnAddressItemClickListener onAddressItemClickListener;
+    Boolean isAddress = false;
+    Boolean removeEnabled = true;
 
     public AddressAdapter(List<Address> adressList, Context context) {
         this.addressList = adressList;
         this.context = context;
         inflater = LayoutInflater.from(context);
+        this.isAddress = isAddress;
     }
 
     @NonNull
     @Override
     public AddressViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new AddressViewHolder(inflater.inflate(R.layout.item_address, parent, false));
+        //new
+        if (isAddress)
+            return new AddressViewHolder(inflater.inflate(R.layout.item_address, parent, false));
+        //new
+        else
+            return new AddressViewHolder(inflater.inflate(R.layout.item_address, parent, false));
     }
 
     public void setOnAddressItemClickListener(OnAddressItemClickListener onAddressItemClickListener) {
         this.onAddressItemClickListener = onAddressItemClickListener;
     }
+
+    public void setRemoveEnabled(Boolean removeEnabled) {this.removeEnabled= removeEnabled;};
+
 
 
     @Override
@@ -51,6 +62,32 @@ public class AddressAdapter extends RecyclerView.Adapter<AddressAdapter.AddressV
                 onAddressItemClickListener.onAddressClick(holder.getAdapterPosition(), addressList.get(holder.getAdapterPosition()));
             }
         });
+
+        if (isAddress) {
+            if (removeEnabled)
+                holder.removeAddressIV.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        onAddressItemClickListener.onRemoveAddress(holder.getAdapterPosition());
+
+                    }
+                });
+            else {
+                holder.removeAddressIV.setVisibility(View.GONE);
+                holder.addressLL.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+                setMargins(holder.addressLL, 0,0,16,0);
+            }
+        }
+
+
+    }
+
+    public static void setMargins (View v, int l, int t, int r, int b) {
+        if (v.getLayoutParams() instanceof ViewGroup.MarginLayoutParams) {
+            ViewGroup.MarginLayoutParams p = (ViewGroup.MarginLayoutParams) v.getLayoutParams();
+            p.setMargins(l, t, r, b);
+            v.requestLayout();
+        }
     }
 
     @Override
@@ -59,7 +96,7 @@ public class AddressAdapter extends RecyclerView.Adapter<AddressAdapter.AddressV
     }
 
     public class AddressViewHolder extends RecyclerView.ViewHolder {
-        TextView cityStreetTV, provinceTV, decTV;
+        TextView cityStreetTV, provinceTV, decTV, removeAddressIV;
         LinearLayout addressLL;
 
         public AddressViewHolder(@NonNull View itemView) {
@@ -68,11 +105,16 @@ public class AddressAdapter extends RecyclerView.Adapter<AddressAdapter.AddressV
             provinceTV = itemView.findViewById(R.id.provinceTV);
             decTV = itemView.findViewById(R.id.decTV);
             addressLL = itemView.findViewById(R.id.addressLL);
+            if(isAddress) {
+                removeAddressIV = itemView.findViewById(R.id.removeAddressIV);
+            }
+
         }
     }
 
     public interface OnAddressItemClickListener {
         public void onAddressClick(int position, Address adress);
+        public void onRemoveAddress(int position);
 
     }
 }

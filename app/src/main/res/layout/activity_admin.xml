@@ -200,6 +200,7 @@
             android:useDefaultMargins="true">
 
             <LinearLayout
+                android:id="@+id/addProduct"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
@@ -220,6 +221,8 @@
                     android:text="Add Product"
                     android:textColor="@color/black" />
 
+
+
             </LinearLayout>
 
             <LinearLayout
@@ -236,6 +239,13 @@
                     android:layout_marginBottom="@dimen/small_spacing"
                     android:src="@drawable/ic_bag"
                     app:tint="@color/primaryColor" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/small_spacing"
+                    android:text="Products"
+                    android:textColor="@color/black" />
 
             </LinearLayout>
 
@@ -294,12 +304,7 @@
                 android:gravity="center"
                 android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/small_spacing"
-                    android:text="Products"
-                    android:textColor="@color/black" />
+
 
                 <ImageView
                     android:layout_width="42dp"

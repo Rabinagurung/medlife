@@ -11,6 +11,7 @@ import android.widget.LinearLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.example.medlife.R;
 import com.example.medlife.api.ApiClient;
@@ -29,6 +30,7 @@ import retrofit2.Response;
 public class AddressActivity extends AppCompatActivity {
     RecyclerView addressRV;
     LinearLayout addLocationLL;
+    SwipeRefreshLayout swipe_refresh;
     public static String ADDRESS_SELECTED_KEY = "DFa";
 
     @Override
@@ -83,6 +85,11 @@ public class AddressActivity extends AppCompatActivity {
                 resultIntent.putExtra(ADDRESS_SELECTED_KEY, adress);
                 setResult(Activity.RESULT_OK, resultIntent);
                 finish();
+            }
+
+            @Override
+            public void onRemoveAddress(int position) {
+
             }
         });
         addressRV.setAdapter(addressAdapter);

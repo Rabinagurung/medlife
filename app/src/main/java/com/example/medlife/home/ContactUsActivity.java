@@ -1,10 +1,12 @@
 package com.example.medlife.home;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
@@ -17,6 +19,9 @@ TextView contact1LL, contact2LL, EmailMsgLL;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contact_us);
+        getSupportActionBar().setTitle("Contact Us");
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         contact1LL = findViewById(R.id.contact1LL);
         contact2LL = findViewById(R.id.contact2LL);
@@ -55,5 +60,16 @@ TextView contact1LL, contact2LL, EmailMsgLL;
         Intent intent = new Intent(Intent.ACTION_SEND);
         intent.setData(Uri.parse("email:" + name));
         startActivity(intent);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }

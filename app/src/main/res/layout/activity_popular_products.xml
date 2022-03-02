@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/off_white"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-
     tools:context=".PopularProducts.PopularProductsActivity">
 
     <androidx.recyclerview.widget.RecyclerView

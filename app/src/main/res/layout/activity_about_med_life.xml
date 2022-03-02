@@ -5,192 +5,219 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/light_blue"
     tools:context=".home.AboutMedLifeActivity">
 
-    <LinearLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="10dp"
-        android:gravity="center">
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="About MedLife "
-            android:textColor="@color/navy_blue"
-            android:textSize="18dp"
-            android:textStyle="bold"
-            android:layout_gravity="center"
-            />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Are you exhausted of waiting in the lengthy rows of people just to get the right medicines and health services you want??? Well then, we’ve got solutions to your exhaustion.  "
-            android:textColor="@color/black"
-            android:textSize="13dp"
-            android:textStyle="bold"
-            android:layout_gravity="center"
-            android:layout_marginTop="5dp"/>
-
-    </LinearLayout>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="A One Stop digital healthcare "
-        android:textColor="@color/navy_blue"
-        android:textSize="18dp"
-        android:textStyle="bold"
-        android:layout_gravity="center"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="10dp"
-        android:textAlignment="center"
-        />
-
-        <TextView
-            android:layout_width="328dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginLeft="90dp"
-            android:text="solution"
-            android:textColor="@color/navy_blue"
-            android:textSize="18dp"
-            android:textStyle="bold" />
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="For a wide range of medications, wellness products, vitamins, medical devices, baby care products. "
-            android:textColor="@color/black"
-            android:textSize="13dp"
-            android:textStyle="bold"
-            android:layout_gravity="center"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="5dp"/>
+            android:orientation="vertical"
+            android:gravity="center">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Our Initiative"
-            android:textColor="@color/navy_blue"
-            android:textSize="18dp"
-            android:textStyle="bold"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_about"/>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Healthcare is rapidly evolving in Nepal and technology is at the forefront of it. Our aim is to leverage this technology and implement solutions that optimise the overall sector and bring affordable, quality healthcare to the masses - with just one tap.  "
-            android:textColor="@color/black"
-            android:textSize="13dp"
-            android:textStyle="bold"
-            android:layout_gravity="center"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="5dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="About MedLife "
+                android:textColor="@color/navy_blue"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:layout_gravity="start"
+                android:layout_marginLeft="10dp"
+                />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="That's why MedLife: Health on Tap"
-            android:textColor="@color/black"
-            android:textSize="13dp"
-            android:textStyle="bold"
-            android:layout_gravity="center"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="5dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/about_medlife"
+                android:textColor="@color/black"
+                android:textSize="13dp"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:justificationMode="inter_word"
+                android:padding="5dp" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="For patients"
-            android:textColor="@color/navy_blue"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_digital"
+                android:layout_marginTop="25dp"/>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="MedLife allows users to consolidate all their health related requirements safely in a digital space, and conveniently access the right health products/services with just one tap. "
-            android:textColor="@color/black"
-            android:textSize="13dp"
-            android:textStyle="bold"
-            android:layout_gravity="center"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="5dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="A One Stop digital healthcare solution "
+                android:textColor="@color/navy_blue"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="start"
+                android:layout_marginLeft="10dp" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Trust Us"
-            android:textColor="@color/navy_blue"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/digital_health"
+                    android:textColor="@color/black"
+                    android:textSize="13dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="5dp"
+                    android:justificationMode="inter_word"
+                    android:padding="5dp"/>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="To ensure safe, trustworthy and affordable medicines and the quality of customer support worthy of the loyalty of our valued customers. "
-            android:textColor="@color/black"
-            android:textSize="13dp"
-            android:textStyle="bold"
-            android:layout_gravity="center"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="5dp"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_initiative"
+                android:layout_marginTop="20dp"/>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Benefits For You"
-            android:textColor="@color/navy_blue"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Our Initiative "
+                android:textColor="@color/navy_blue"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="start"
+                android:layout_marginLeft="10dp" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="By saving your time and money."
-            android:textColor="@color/black"
-            android:textSize="13dp"
-            android:textStyle="bold"
-            android:layout_gravity="center"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="5dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/initiative"
+                android:textColor="@color/black"
+                android:textSize="13dp"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:justificationMode="inter_word"
+                android:padding="5dp"/>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Free Home Delivery"
-            android:textColor="@color/navy_blue"
-            android:textSize="18dp"
-            android:textStyle="bold"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_patients"
+                android:layout_marginTop="20dp"/>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="For your convenience."
-            android:textColor="@color/black"
-            android:textSize="13dp"
-            android:textStyle="bold"
-            android:layout_gravity="center"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="5dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="For patients"
+                android:textColor="@color/navy_blue"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="start"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/patients"
+                android:textColor="@color/black"
+                android:textSize="13dp"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:justificationMode="inter_word"
+                android:padding="5dp"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_trust"
+                android:layout_marginTop="25dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Trust Us "
+                android:textColor="@color/navy_blue"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="start"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/trust_us"
+                android:textColor="@color/black"
+                android:textSize="13dp"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:justificationMode="inter_word"
+                android:padding="5dp"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_benefits"
+                android:layout_marginTop="25dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Benefits For You"
+                android:textColor="@color/navy_blue"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:layout_gravity="start"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/benefits"
+                android:textColor="@color/black"
+                android:textSize="13dp"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:justificationMode="inter_word"
+                android:padding="5dp"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_delivery"
+                android:layout_marginTop="25dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Free Home Delivery"
+                android:textColor="@color/navy_blue"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:layout_gravity="start"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/delivery"
+                android:textColor="@color/black"
+                android:textSize="13dp"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:justificationMode="inter_word"
+                android:padding="5dp"/>
+
+        </LinearLayout>
 
 
-
-
-
+    </androidx.core.widget.NestedScrollView>
 
 </LinearLayout>
 

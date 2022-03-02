@@ -11,6 +11,7 @@ import com.example.medlife.R;
 import com.example.medlife.home.fragments.AboutUsFragment;
 import com.example.medlife.home.fragments.CartFragment;
 import com.example.medlife.home.fragments.CategoryFragment;
+import com.example.medlife.home.fragments.ProfileFragment;
 import com.example.medlife.home.fragments.WishListFragment;
 import com.example.medlife.home.fragments.home.HomeFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     CartFragment cartFragment;
     CategoryFragment categoryFragment;
     AboutUsFragment aboutUsFragment;
+    ProfileFragment profileFragment;
     Fragment currentFragment;
 
     @Override
@@ -69,6 +71,15 @@ public class MainActivity extends AppCompatActivity {
                     changeFragment(aboutUsFragment);
                     return true;
                 }
+
+
+                if (item.getTitle().equals("Profile")) {
+                    if (profileFragment == null)
+                        profileFragment = new ProfileFragment();
+                    changeFragment(profileFragment);
+                    return true;
+                }
+
                 return false;
             }
         });

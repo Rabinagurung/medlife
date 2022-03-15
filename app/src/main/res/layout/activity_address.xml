@@ -8,8 +8,6 @@
     tools:context=".checkout.address.AddressActivity">
 
 
-
-
     <androidx.recyclerview.widget.RecyclerView
         android:layout_margin="@dimen/normal_spacing"
         android:layout_width="match_parent"

@@ -323,7 +323,7 @@
                 android:text="Admin"
                 android:textColor="@color/black"
                 android:textSize="16dp"
-                android:visibility="visible"/>
+                android:visibility="gone"/>
 
 
         </LinearLayout>

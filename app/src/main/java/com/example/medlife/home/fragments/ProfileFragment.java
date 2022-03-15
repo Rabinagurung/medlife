@@ -121,7 +121,8 @@ public class ProfileFragment extends Fragment {
                 SharedPrefUtils.clear(getContext());
                 Intent userAccount = new Intent(getContext(), UserAccountActivity.class);
                 startActivity(userAccount);
-                getActivity();
+                getActivity().finish();
+
 
             }
         });
@@ -139,7 +140,7 @@ public class ProfileFragment extends Fragment {
     }
 
     private void checkAdmin() {
-        boolean is_staff = SharedPrefUtils.getBool(getActivity(), "sfk", false);
+        boolean is_staff = SharedPrefUtils.getBool(getActivity(), getString(R.string.staff_key), false);
         if (is_staff)
             adminTV.setVisibility(View.VISIBLE);
     }

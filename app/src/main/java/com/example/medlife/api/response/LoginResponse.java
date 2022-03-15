@@ -5,60 +5,71 @@ import com.google.gson.annotations.SerializedName;
 
 public class LoginResponse {
 
-@SerializedName("error")
-@Expose
-private Boolean error;
-@SerializedName("name")
-@Expose
-private String name;
-@SerializedName("email")
-@Expose
-private String email;
-@SerializedName("apiKey")
-@Expose
-private String apiKey;
-@SerializedName("createdAt")
-@Expose
-private String createdAt;
+    @SerializedName("error")
+    @Expose
+    private Boolean error;
+    @SerializedName("name")
+    @Expose
+    private String name;
+    @SerializedName("email")
+    @Expose
+    private String email;
+    @SerializedName("apiKey")
+    @Expose
+    private String apiKey;
+    @SerializedName("is_staff")
+    @Expose
+    private Boolean is_staff;
+    @SerializedName("createdAt")
+    @Expose
+    private String createdAt;
 
-public Boolean getError() {
-return error;
-}
+    public Boolean getError() {
+        return error;
+    }
 
-public void setError(Boolean error) {
-this.error = error;
-}
+    public void setError(Boolean error) {
+        this.error = error;
+    }
 
-public String getName() {
-return name;
-}
+    public String getName() {
+        return name;
+    }
 
-public void setName(String name) {
-this.name = name;
-}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-public String getEmail() {
-return email;
-}
+    public String getEmail() {
+        return email;
+    }
 
-public void setEmail(String email) {
-this.email = email;
-}
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-public String getApiKey() {
-return apiKey;
-}
+    public String getApiKey() {
+        return apiKey;
+    }
 
-public void setApiKey(String apiKey) {
-this.apiKey = apiKey;
-}
+    public void setApiKey(String apiKey) {
+        this.apiKey = apiKey;
+    }
 
-public String getCreatedAt() {
-return createdAt;
-}
+    public Boolean getIs_staff() {
+        return is_staff;
+    }
 
-public void setCreatedAt(String createdAt) {
-this.createdAt = createdAt;
-}
+    public void setIs_Staff(Boolean is_staff) {
+        this.is_staff = is_staff;
+    }
+
+    public String getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
+    }
 
 }

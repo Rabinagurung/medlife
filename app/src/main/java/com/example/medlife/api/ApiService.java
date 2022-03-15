@@ -103,6 +103,21 @@ public interface ApiService {
             @Part("name") RequestBody name
     );
 
+    @Multipart
+    @POST("/api/v1/upload-product")
+    Call<RegisterResponse> uploadProduct(
+            @Header("Apikey") String apikey,
+            @Part MultipartBody.Part[] files,
+            @Part("name") RequestBody name,
+            @Part("price") RequestBody price,
+            @Part("description") RequestBody description,
+            @Part("quantity") RequestBody quantity,
+            @Part("discount_price") RequestBody discount_price,
+            @Part("categories") RequestBody categories,
+            @Part("production_date") RequestBody production_date,
+            @Part("expire_date") RequestBody expire_date
+    );
+
     @GET("/ecommerce/api/v1/dash")
     Call<DashResponse> getDash(@Header("Apikey") String apikey);
 

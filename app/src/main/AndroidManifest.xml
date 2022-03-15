@@ -20,6 +20,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MedLife">
         <activity
+            android:name=".admin.addProduct.SelectCategoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".admin.addProduct.AddProductActivity"
+            android:exported="false" />
+        <activity
             android:name=".home.Notification.NotificationActivity"
             android:exported="false" />
         <activity

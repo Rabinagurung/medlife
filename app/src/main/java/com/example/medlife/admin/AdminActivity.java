@@ -24,6 +24,7 @@ import android.widget.Toast;
 
 import com.example.medlife.R;
 import com.example.medlife.admin.addCategory.ListCategoryActivity;
+import com.example.medlife.admin.addProduct.AddProductActivity;
 import com.example.medlife.admin.products.ListProductsActivity;
 import com.example.medlife.api.ApiClient;
 import com.example.medlife.api.response.Dash;
@@ -50,9 +51,9 @@ public class AdminActivity extends AppCompatActivity {
     private static final int PICK_PICTURE = 1;
     private static final String TEMP_DiRECT = "/MedLife/Picture/.temp/";
     TextView pendingOrdersTV,  totalOrdersTV,  shippedOrdersTV, totalCategoriesTV, totalCustomersTV, totalProductsTV;
-    LinearLayout addCategory,addProduct, imageLayout, categoryList, productsLL, image_Layout;
+    LinearLayout addCategory, imageLayout, categoryList, productsLL, image_Layout;
     String currentPhotoPath;
-    ImageView selectedIV, selected_IV;
+    ImageView selectedIV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -102,7 +103,7 @@ public class AdminActivity extends AppCompatActivity {
         shippedOrdersTV = findViewById(R.id.shippedOrdersTV);
         totalProductsTV = findViewById(R.id.totalProductsTV);
         addCategory = findViewById(R.id.addCategory);
-        addProduct= findViewById(R.id.addProduct);
+//        addProduct= findViewById(R.id.addProduct);
         categoryList = findViewById(R.id.categoryList);
         productsLL = findViewById(R.id.productsLL);
         setClickListeners();
@@ -117,12 +118,12 @@ public class AdminActivity extends AppCompatActivity {
             }
         });
 
-        addProduct. setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openAddProductCategoryView();
-            }
-        });
+//        addProduct. setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                openAddProductCategoryView();
+//            }
+//        });
 
         categoryList.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -152,81 +153,81 @@ public class AdminActivity extends AppCompatActivity {
         }
     }
 
-    private void openAddProductCategoryView() {
-        LayoutInflater factory = LayoutInflater.from(this);
-        View DialogView= factory.inflate(R.layout.custom_dialog_add_product, null);
-        Dialog main_dialog =  new Dialog(this, R.style.Base_Theme_AppCompat_Dialog);
-        main_dialog.setContentView(DialogView);
-        main_dialog.show();
-
-        EditText name = (EditText) main_dialog.findViewById(R.id.proNameET);
-        EditText price = (EditText) main_dialog.findViewById(R.id.proPriceET);
-        EditText discountPrice = (EditText) main_dialog.findViewById(R.id.proDisPriceET);
-        EditText description = (EditText) main_dialog.findViewById(R.id.proDescET);
-        EditText quantity = (EditText) main_dialog.findViewById(R.id.proQuantityET);
-        EditText productionDate = (EditText) main_dialog.findViewById(R.id.proProductionDtET);
-        EditText expireDate = (EditText) main_dialog.findViewById(R.id.proExpireDtET);
-//        EditText productCategory = (EditText) main_dialog.findViewById(R.id.proCategoryET);
-        Button uploadProduct = (Button) main_dialog.findViewById(R.id.uploadProduct);
-
-        uploadProduct.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(!name.getText().toString().isEmpty() || !price.getText().toString().
-                        isEmpty() || !discountPrice.getText().toString().
-                        isEmpty() || !description.getText().toString().
-                        isEmpty() || !quantity.getText().toString().
-                        isEmpty() || !productionDate.getText().toString().
-                        isEmpty() || !expireDate.getText().toString().
-                        isEmpty() && currentPhotoPath !=null) {
-
-//                    uploadProduct(new File(currentPhotoPath), name.getText().toString());
-
-                } else {
-                    Toast.makeText(AdminActivity.this, "Please >>>>>>>>", Toast.LENGTH_SHORT).show();
-                }
-
-            }
-        });
-
-        LinearLayout camera_LL = (LinearLayout) main_dialog.findViewById(R.id.camera_LL);
-        LinearLayout gallery_LL = (LinearLayout) main_dialog.findViewById(R.id.gallery_LL);
-        selected_IV = (ImageView) main_dialog.findViewById(R.id.selected_IV);
-        image_Layout = (LinearLayout) main_dialog.findViewById(R.id.image_Layout);
-
-        camera_LL.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                File file = null;
-                try {
-                    file = createImageFile();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-
-                if (PermissionUtils.isCameraPermissionGranted(AdminActivity.this, "", 1)) {
-                    Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                    if (file != null) {
-                        Uri photoURI = FileProvider.getUriForFile(AdminActivity.this,
-                                "com.example.android.fileprovider",
-                                file);
-                        intent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
-                        startActivityForResult(intent, TAKE_PICTURE);
-                    }
-                }
-            }
-        });
-        gallery_LL.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (PermissionUtils.isStoragePermissionGranted(AdminActivity.this, "", PICK_PICTURE)) {
-                    Intent chooseFile = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                    startActivityForResult(chooseFile, PICK_PICTURE);
-                }
-            }
-        });
-        main_dialog.show();
-    }
+//    private void openAddProductCategoryView() {
+//        LayoutInflater factory = LayoutInflater.from(this);
+//        View DialogView= factory.inflate(R.layout.custom_dialog_add_product, null);
+//        Dialog main_dialog =  new Dialog(this, R.style.Base_Theme_AppCompat_Dialog);
+//        main_dialog.setContentView(DialogView);
+//        main_dialog.show();
+//
+//        EditText name = (EditText) main_dialog.findViewById(R.id.proNameET);
+//        EditText price = (EditText) main_dialog.findViewById(R.id.proPriceET);
+//        EditText discountPrice = (EditText) main_dialog.findViewById(R.id.proDisPriceET);
+//        EditText description = (EditText) main_dialog.findViewById(R.id.proDescET);
+//        EditText quantity = (EditText) main_dialog.findViewById(R.id.proQuantityET);
+//        EditText productionDate = (EditText) main_dialog.findViewById(R.id.proProductionDtET);
+//        EditText expireDate = (EditText) main_dialog.findViewById(R.id.proExpireDtET);
+////        EditText productCategory = (EditText) main_dialog.findViewById(R.id.proCategoryET);
+//        Button uploadProduct = (Button) main_dialog.findViewById(R.id.uploadProduct);
+//
+//        uploadProduct.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                if(!name.getText().toString().isEmpty() || !price.getText().toString().
+//                        isEmpty() || !discountPrice.getText().toString().
+//                        isEmpty() || !description.getText().toString().
+//                        isEmpty() || !quantity.getText().toString().
+//                        isEmpty() || !productionDate.getText().toString().
+//                        isEmpty() || !expireDate.getText().toString().
+//                        isEmpty() && currentPhotoPath !=null) {
+//
+////                    uploadProduct(new File(currentPhotoPath), name.getText().toString());
+//
+//                } else {
+//                    Toast.makeText(AdminActivity.this, "Please >>>>>>>>", Toast.LENGTH_SHORT).show();
+//                }
+//
+//            }
+//        });
+//
+//        LinearLayout camera_LL = (LinearLayout) main_dialog.findViewById(R.id.camera_LL);
+//        LinearLayout gallery_LL = (LinearLayout) main_dialog.findViewById(R.id.gallery_LL);
+//        selected_IV = (ImageView) main_dialog.findViewById(R.id.selected_IV);
+//        image_Layout = (LinearLayout) main_dialog.findViewById(R.id.image_Layout);
+//
+//        camera_LL.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                File file = null;
+//                try {
+//                    file = createImageFile();
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
+//
+//                if (PermissionUtils.isCameraPermissionGranted(AdminActivity.this, "", 1)) {
+//                    Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+//                    if (file != null) {
+//                        Uri photoURI = FileProvider.getUriForFile(AdminActivity.this,
+//                                "com.example.android.fileprovider",
+//                                file);
+//                        intent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
+//                        startActivityForResult(intent, TAKE_PICTURE);
+//                    }
+//                }
+//            }
+//        });
+//        gallery_LL.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                if (PermissionUtils.isStoragePermissionGranted(AdminActivity.this, "", PICK_PICTURE)) {
+//                    Intent chooseFile = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+//                    startActivityForResult(chooseFile, PICK_PICTURE);
+//                }
+//            }
+//        });
+//        main_dialog.show();
+//    }
 
 
 
@@ -363,6 +364,11 @@ public class AdminActivity extends AppCompatActivity {
         // Save a file: path for use with ACTION_VIEW intents
         currentPhotoPath = image.getAbsolutePath();
         return image;
+    }
+
+    public void addProduct(View view) {
+        Intent intent = new Intent(this, AddProductActivity.class);
+        startActivity(intent);
     }
 
 }

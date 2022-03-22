@@ -20,6 +20,9 @@ public class LoginResponse {
     @SerializedName("is_staff")
     @Expose
     private Boolean is_staff;
+    @SerializedName("profile_pic")
+    @Expose
+    private String profile_pic;
     @SerializedName("createdAt")
     @Expose
     private String createdAt;
@@ -70,6 +73,14 @@ public class LoginResponse {
 
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
+    }
+
+    public String getProfile_pic() {
+        return profile_pic;
+    }
+
+    public void setProfile_pic(String profile_pic) {
+        this.profile_pic = profile_pic;
     }
 
 }

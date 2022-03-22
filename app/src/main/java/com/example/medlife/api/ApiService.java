@@ -42,6 +42,10 @@ public interface ApiService {
     @POST("/ecommerce/api/v1/wishlist")
     Call<AllProductResponse> addToWishlist(@Header("Apikey") String apikey, @Field("p_id") int p, @Field("quantity") int q);
 
+    @FormUrlEncoded
+    @POST("/ecommerce/api/v1/update-profile")
+    Call<AllProductResponse> updateprofile(@Header("Apikey") String apikey, @Field("name") String name, @Field("email") String email);
+
 //    @FormUrlEncoded
 //    @POST("/ecommerce/api/v1/wishlist")
 //    Call<AllProductResponse> addToWishlist(@Header("Apikey") String apikey, @Field("p_id") int p);
@@ -101,6 +105,14 @@ public interface ApiService {
             @Header("Apikey") String apikey,
             @Part MultipartBody.Part file,
             @Part("name") RequestBody name
+    );
+
+
+    @Multipart
+    @POST("/ecommerce/api/v1/upload-profile")
+    Call<RegisterResponse> uploadProfile(
+            @Header("Apikey") String apikey,
+            @Part MultipartBody.Part file
     );
 
     @Multipart

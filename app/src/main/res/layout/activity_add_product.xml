@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -16,38 +17,66 @@
 
             <LinearLayout
                 android:id="@+id/imageLayout"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
                 android:layout_marginBottom="@dimen/normal_spacing"
                 android:orientation="horizontal">
 
-                <ImageView
+                <LinearLayout
                     android:onClick="openCam"
                     android:id="@+id/cameraIV"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:background="@drawable/rectange_box"
-                    android:padding="@dimen/small_spacing"
-                    android:src="@drawable/camera" />
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:background="@drawable/upload_rectangle"
+                    android:backgroundTint="@color/light_blue"
+                    android:gravity="center">
 
-                <ImageView
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        app:tint="@color/navy_blue"
+                        android:src="@drawable/camera" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Open Camera"
+                        android:textSize="12dp"
+                        android:layout_marginLeft="5dp"
+                        android:textColor="@color/navy_blue" />
+
+                </LinearLayout>
+
+                <LinearLayout
                     android:onClick="openGallery"
                     android:id="@+id/galleryIV"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:layout_marginLeft="@dimen/normal_spacing"
-                    android:background="@drawable/rectangle_login"
-                    android:padding="@dimen/small_spacing"
-                    android:src="@drawable/gallery" />
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="5dp"
+                    android:orientation="horizontal"
+                    android:background="@drawable/upload_rectangle"
+                    android:backgroundTint="@color/light_blue"
+                    android:gravity="center">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="@dimen/normal_spacing"
-                    android:text="Add Image"
-                    android:textColor="@color/black" />
+                    <ImageView
+                        app:tint="@color/navy_blue"
+                        android:layout_width="40dp"
+                        android:layout_height="35dp"
+                        android:src="@drawable/gallery" />
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Open Gallery"
+                        android:layout_marginLeft="5dp"
+                        android:textSize="12dp"
+                        android:textColor="@color/navy_blue" />
+
+                </LinearLayout>
 
             </LinearLayout>
 
@@ -58,9 +87,8 @@
                 android:orientation="horizontal"
                 android:layout_marginBottom="@dimen/normal_spacing"
                 android:background="@drawable/box_shape"
-                android:backgroundTint="@color/grey"
                 android:padding="@dimen/normal_spacing"
-                />
+                android:visibility="visible" />
 
 
             <ImageView
@@ -78,9 +106,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/normal_spacing"
                 android:height="50dp"
-                android:background="@drawable/box_shape"
                 android:backgroundTint="@color/grey"
-                android:hint="Product Name"
+                android:hint="Product Name*"
                 android:padding="@dimen/normal_spacing"
                 tools:ignore="SpeakableTextPresentCheck" />
 
@@ -91,9 +118,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/normal_spacing"
                 android:height="50dp"
-                android:background="@drawable/box_shape"
                 android:backgroundTint="@color/grey"
-                android:hint="Price"
+                android:hint="Price*"
                 android:padding="@dimen/normal_spacing"
                 tools:ignore="SpeakableTextPresentCheck" />
 
@@ -102,7 +128,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/normal_spacing"
-                android:background="@drawable/box_shape"
                 android:backgroundTint="@color/grey"
                 android:hint="Description"
                 android:padding="@dimen/normal_spacing"
@@ -120,9 +145,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/normal_spacing"
                 android:height="50dp"
-                android:background="@drawable/box_shape"
                 android:backgroundTint="@color/grey"
-                android:hint="Quantity"
+                android:hint="Quantity*"
                 android:padding="@dimen/normal_spacing"
                 tools:ignore="SpeakableTextPresentCheck" />
 
@@ -133,13 +157,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/normal_spacing"
                 android:height="50dp"
-                android:background="@drawable/box_shape"
                 android:backgroundTint="@color/grey"
-                android:hint="Discount Price"
+                android:hint="Discount Price*"
                 android:padding="@dimen/normal_spacing"
                 tools:ignore="SpeakableTextPresentCheck" />
 
-            <TextView
+            <EditText
                 android:onClick="pDateClick"
                 android:id="@+id/productionDateET"
                 android:layout_width="match_parent"
@@ -147,9 +170,8 @@
                 android:layout_marginBottom="@dimen/normal_spacing"
                 android:height="50dp"
                 android:textSize="18sp"
-                android:background="@drawable/box_shape"
                 android:backgroundTint="@color/grey"
-                android:hint="Production Date"
+                android:hint="Production Date*"
                 android:padding="@dimen/normal_spacing"
                 tools:ignore="UsingOnClickInXml" />
 
@@ -161,9 +183,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/normal_spacing"
                 android:height="50dp"
-                android:background="@drawable/box_shape"
                 android:backgroundTint="@color/grey"
-                android:hint="Expiry Date"
+                android:hint="Expiry Date*"
                 android:padding="@dimen/normal_spacing"
                 tools:ignore="SpeakableTextPresentCheck" />
 
@@ -172,6 +193,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Categories"
+                android:textColor="@color/black"
                 android:layout_marginBottom="@dimen/small_spacing"
                 android:textSize="18sp"
                 android:textStyle="bold"
@@ -184,19 +206,19 @@
                 android:layout_height="50dp"
                 android:orientation="horizontal"
                 android:layout_marginBottom="@dimen/normal_spacing"
-
                 android:padding="@dimen/small_spacing"
                 />
 
 
             <Button
                 android:layout_marginBottom="@dimen/large_spacing"
+                android:backgroundTint="@color/light_blue"
                 android:id="@+id/uploadBtn"
                 android:onClick="uploadProduct"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:text="UPLOAD"
-                android:textColor="@color/white" />
+                android:textColor="@color/navy_blue" />
 
         </LinearLayout>
 

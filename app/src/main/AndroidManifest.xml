@@ -20,6 +20,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MedLife">
         <activity
+            android:name=".home.fragments.home.DoctorActivity"
+            android:exported="false" />
+        <activity
+            android:name=".admin.DashBoardActivity.DashBoardActivity"
+            android:exported="false" />
+        <activity
             android:name=".admin.addProduct.SelectCategoryActivity"
             android:exported="false" />
         <activity

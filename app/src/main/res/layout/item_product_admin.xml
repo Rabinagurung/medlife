@@ -8,9 +8,6 @@
     android:orientation="horizontal"
     android:padding="10dp">
 
-
-
-
     <ImageView
         android:id="@+id/productIV"
         android:layout_width="100dp"
@@ -32,7 +29,6 @@
             android:text="Dulla Shoes"
             android:textColor="@color/black"
             android:textSize="18sp" />
-
 
         <LinearLayout
             android:layout_width="wrap_content"

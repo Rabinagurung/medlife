@@ -23,6 +23,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.medlife.R;
+import com.example.medlife.admin.DashBoardActivity.DashBoardActivity;
 import com.example.medlife.admin.addCategory.ListCategoryActivity;
 import com.example.medlife.admin.addProduct.AddProductActivity;
 import com.example.medlife.admin.products.ListProductsActivity;
@@ -50,8 +51,7 @@ public class AdminActivity extends AppCompatActivity {
     private static final int TAKE_PICTURE = 2;
     private static final int PICK_PICTURE = 1;
     private static final String TEMP_DiRECT = "/MedLife/Picture/.temp/";
-    TextView pendingOrdersTV,  totalOrdersTV,  shippedOrdersTV, totalCategoriesTV, totalCustomersTV, totalProductsTV;
-    LinearLayout addCategory, imageLayout, categoryList, productsLL, image_Layout;
+    LinearLayout addCategory, imageLayout, categoryList, productsLL, dashBoardLL, uploadProduct;
     String currentPhotoPath;
     ImageView selectedIV;
 
@@ -63,49 +63,11 @@ public class AdminActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setTitle("Admin Area");
-        getDash();
-        findIds();
-    }
-
-    private void getDash(){
-        String key = SharedPrefUtils.getString(this, getString(R.string.api_key));
-        Call<DashResponse> addressResponseCall = ApiClient.getClient().getDash(key);
-        addressResponseCall.enqueue(new Callback<DashResponse>() {
-            @Override
-            public void onResponse(Call<DashResponse> call, Response<DashResponse> response) {
-                if (response.isSuccessful()){
-                    setDash(response.body().getDash());
-
-                }
-            }
-
-            @Override
-            public void onFailure(Call<DashResponse> call, Throwable t) {
-
-            }
-        });
-
-    }
-
-    private void setDash(Dash dash) {
-        pendingOrdersTV.setText(dash.getPendingOrders().toString());
-        totalCategoriesTV.setText(dash.getCategories().toString());
-        totalCustomersTV.setText(dash.getCustomers().toString());
-        totalOrdersTV.setText(dash.getProcessingOrders().toString());
-        shippedOrdersTV.setText(dash.getShippedOrders().toString());
-        totalProductsTV.setText(dash.getProducts().toString());
-    }
-    private void findIds(){
-        pendingOrdersTV = findViewById(R.id.pendingOrdersTV);
-        totalCategoriesTV = findViewById(R.id.totalCategoriesTV);
-        totalCustomersTV = findViewById(R.id.totalCustomersTV);
-        totalOrdersTV = findViewById(R.id.totalOrdersTV);
-        shippedOrdersTV = findViewById(R.id.shippedOrdersTV);
-        totalProductsTV = findViewById(R.id.totalProductsTV);
         addCategory = findViewById(R.id.addCategory);
-//        addProduct= findViewById(R.id.addProduct);
         categoryList = findViewById(R.id.categoryList);
         productsLL = findViewById(R.id.productsLL);
+        dashBoardLL = findViewById(R.id.dashBoardLL);
+        uploadProduct = findViewById(R.id.uploadProduct);
         setClickListeners();
     }
 
@@ -117,13 +79,6 @@ public class AdminActivity extends AppCompatActivity {
 
             }
         });
-
-//        addProduct. setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                openAddProductCategoryView();
-//            }
-//        });
 
         categoryList.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -137,6 +92,22 @@ public class AdminActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(AdminActivity.this, ListProductsActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        dashBoardLL.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AdminActivity.this, DashBoardActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        uploadProduct.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AdminActivity.this, AddProductActivity.class);
                 startActivity(intent);
             }
         });

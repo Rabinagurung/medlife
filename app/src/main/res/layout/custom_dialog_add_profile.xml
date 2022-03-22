@@ -125,98 +125,12 @@
 
         </LinearLayout>
 
-        <EditText
-            android:id="@+id/proNameET"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/normal_spacing"
-            android:height="50dp"
-            android:hint="Product Name *"
-            android:textSize="14dp"
-            android:padding="@dimen/normal_spacing"
-            tools:ignore="SpeakableTextPresentCheck"
-            android:drawableTint="@color/black"/>
-
-        <EditText
-            android:id="@+id/proPriceET"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/normal_spacing"
-            android:height="50dp"
-            android:hint="Product Price *"
-            android:textSize="14dp"
-            android:padding="@dimen/normal_spacing"
-            tools:ignore="SpeakableTextPresentCheck"
-            android:drawableTint="@color/black"/>
-
-        <EditText
-            android:id="@+id/proDisPriceET"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/normal_spacing"
-            android:height="50dp"
-            android:hint="Product Discount Price *"
-            android:textSize="14dp"
-            android:padding="@dimen/normal_spacing"
-            tools:ignore="SpeakableTextPresentCheck"
-            android:drawableTint="@color/black"/>
-
-        <EditText
-            android:id="@+id/proDescET"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/normal_spacing"
-            android:height="50dp"
-            android:hint="Product Description *"
-            android:textSize="14dp"
-            android:padding="@dimen/normal_spacing"
-            tools:ignore="SpeakableTextPresentCheck"
-            android:drawableTint="@color/black"/>
-
-        <EditText
-            android:id="@+id/proQuantityET"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/normal_spacing"
-            android:height="50dp"
-            android:hint="Product Quantity *"
-            android:textSize="14dp"
-            android:padding="@dimen/normal_spacing"
-            tools:ignore="SpeakableTextPresentCheck"
-            android:drawableTint="@color/black"/>
-
-        <EditText
-            android:id="@+id/proProductionDtET"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/normal_spacing"
-            android:height="50dp"
-            android:hint="Production Date *"
-            android:textSize="14dp"
-            android:padding="@dimen/normal_spacing"
-            tools:ignore="SpeakableTextPresentCheck"
-            android:drawableTint="@color/black"/>
-
-        <EditText
-            android:id="@+id/proExpireDtET"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/normal_spacing"
-            android:height="50dp"
-            android:hint="Expire Date *"
-            android:textSize="14dp"
-            android:padding="@dimen/normal_spacing"
-            tools:ignore="SpeakableTextPresentCheck"
-            android:drawableTint="@color/black"/>
-
-
-
         <Button
-            android:id="@+id/uploadProduct"
+            android:id="@+id/updatePicture"
             android:layout_width="match_parent"
             android:backgroundTint="@color/light_blue"
             android:layout_height="60dp"
-            android:text="UPLOAD PRODUCT"
+            android:text="UPLOAD"
             android:textColor="@color/navy_blue" />
 
 

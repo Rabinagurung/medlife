@@ -17,7 +17,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 
+import com.example.medlife.Profile.InsideProfile.EditProfileActivity;
 import com.example.medlife.Profile.InsideProfile.SecurityActivity;
+import com.example.medlife.Profile.InsideProfile.UserProfileActivity;
 import com.example.medlife.Profile.InsideProfile.WishlistActivity;
 import com.example.medlife.Profile.ProfileActivity;
 import com.example.medlife.R;
@@ -33,18 +35,22 @@ import com.example.medlife.home.fragments.home.adapters.ShopAdapter;
 import com.example.medlife.uploadPrescription.UploadPrescriptionActivity;
 import com.example.medlife.userAccount.UserAccountActivity;
 import com.example.medlife.utils.SharedPrefUtils;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
+import de.hdodenhof.circleimageview.CircleImageView;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 
 public class ProfileFragment extends Fragment {
-    LinearLayout wishListLL, ordersLL, prescriptionLL, locationLL, securityLL, logoutLL;
-    TextView adminTV;
+    LinearLayout wishListLL, ordersLL, prescriptionLL, locationLL,  editProfileLL, logoutLL;
+    TextView adminTV, userNameTV, userEmailTV;
     RelativeLayout profileRV;
+    CircleImageView picCI;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -61,9 +67,16 @@ public class ProfileFragment extends Fragment {
         ordersLL = view.findViewById(R.id.ordersLL);
         prescriptionLL = view.findViewById(R.id.prescriptionLL);
         locationLL = view.findViewById(R.id.locationLL);
-        securityLL = view.findViewById(R.id.securityLL);
+        editProfileLL=view.findViewById(R.id.editProfileLL);
         logoutLL = view.findViewById(R.id.logoutLL);
         adminTV = view.findViewById(R.id.adminTV);
+        picCI = view.findViewById(R.id.picCI);
+        userNameTV = view.findViewById(R.id.userNameTV);
+        userEmailTV = view.findViewById(R.id.userEmailTV);
+
+        Picasso.get().load((SharedPrefUtils.getString(getContext(), getString(R.string.profile_key)))).into(picCI);
+        userNameTV.setText(SharedPrefUtils.getString(getContext(), getString(R.string.name_key)));
+        userEmailTV.setText(SharedPrefUtils.getString(getContext(), getString(R.string.email_id)));
         checkAdmin();
 
         profileRV.setOnClickListener(new View.OnClickListener() {
@@ -107,10 +120,10 @@ public class ProfileFragment extends Fragment {
             }
         });
 
-        securityLL.setOnClickListener(new View.OnClickListener() {
+        editProfileLL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getContext(), SecurityActivity.class);
+                Intent intent = new Intent(getContext(), UserProfileActivity.class);
                 startActivity(intent);
             }
         });

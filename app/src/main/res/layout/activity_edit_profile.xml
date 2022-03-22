@@ -14,6 +14,8 @@
         android:orientation="vertical"
         android:background="@color/white"
         android:layout_margin="10dp">
+
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -33,6 +35,7 @@
                 android:textSize="15dp"/>
 
             <EditText
+                android:id="@+id/fullNameET"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Rabina Gurung"
@@ -43,74 +46,74 @@
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_margin="10dp">
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="vertical"-->
+<!--            android:layout_margin="10dp">-->
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Age *"
-                android:textSize="15dp"/>
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Age *"-->
+<!--                android:textSize="15dp"/>-->
 
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="21"
-                android:background="@drawable/text_shape"
-                android:padding="10dp"
-                android:textSize="16sp"
-                android:layout_marginTop="10dp"/>
+<!--            <EditText-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:hint="21"-->
+<!--                android:background="@drawable/text_shape"-->
+<!--                android:padding="10dp"-->
+<!--                android:textSize="16sp"-->
+<!--                android:layout_marginTop="10dp"/>-->
 
-        </LinearLayout>
+<!--        </LinearLayout>-->
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_margin="@dimen/normal_spacing">
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="vertical"-->
+<!--            android:layout_margin="@dimen/normal_spacing">-->
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Gender"
-                android:textSize="15dp"/>
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Gender"-->
+<!--                android:textSize="15dp"/>-->
 
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Female"
-                android:background="@drawable/text_shape"
-                android:padding="10dp"
-                android:textSize="16sp"
-                android:layout_marginTop="10dp"/>
+<!--            <EditText-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:hint="Female"-->
+<!--                android:background="@drawable/text_shape"-->
+<!--                android:padding="10dp"-->
+<!--                android:textSize="16sp"-->
+<!--                android:layout_marginTop="10dp"/>-->
 
-        </LinearLayout>
+<!--        </LinearLayout>-->
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_margin="@dimen/normal_spacing">
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="vertical"-->
+<!--            android:layout_margin="@dimen/normal_spacing">-->
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Blood Type*"
-                android:textSize="15dp"/>
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Blood Type*"-->
+<!--                android:textSize="15dp"/>-->
 
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="A+"
-                android:background="@drawable/text_shape"
-                android:padding="10dp"
-                android:textSize="16sp"
-                android:layout_marginTop="10dp"/>
+<!--            <EditText-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:hint="A+"-->
+<!--                android:background="@drawable/text_shape"-->
+<!--                android:padding="10dp"-->
+<!--                android:textSize="16sp"-->
+<!--                android:layout_marginTop="10dp"/>-->
 
-        </LinearLayout>
+<!--        </LinearLayout>-->
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -125,6 +128,7 @@
                 android:textSize="15dp"/>
 
             <EditText
+                android:id="@+id/userEmailET"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="rabina@gmail.com"
@@ -146,7 +150,7 @@
             android:gravity="center">
 
             <LinearLayout
-                android:id="@+id/wishListLL"
+                android:id="@+id/revert"
                 android:layout_width="0dp"
                 android:layout_height="30dp"
                 android:layout_weight="1"
@@ -165,7 +169,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/addToCartLL"
+                android:id="@+id/saveLL"
                 android:layout_width="0dp"
                 android:layout_height="30dp"
                 android:layout_weight="1"

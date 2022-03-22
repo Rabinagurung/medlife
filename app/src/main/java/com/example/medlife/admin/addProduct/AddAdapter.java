@@ -51,7 +51,7 @@ public class AddAdapter extends RecyclerView.Adapter<AddAdapter.ViewHolder> {
                 public void onClick(View view) { onItemCLick.onCLick(holder.getAdapterPosition()); }
             });
         } else {
-            holder.textView.setText(cats.get(position).getName());
+//            holder.textView.setText(cats.get(position).getName());
             holder.textView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) { onItemCLick.onCLick(holder.getAdapterPosition()); }

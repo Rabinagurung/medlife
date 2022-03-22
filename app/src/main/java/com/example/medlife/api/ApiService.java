@@ -10,6 +10,7 @@ import com.example.medlife.api.response.OrderHistoryResponse;
 import com.example.medlife.api.response.RegisterResponse;
 import com.example.medlife.api.response.SingleProductResponse;
 import com.example.medlife.api.response.SliderResponse;
+import com.example.medlife.api.response.UpdateProfileResponse;
 
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
@@ -136,7 +137,13 @@ public interface ApiService {
     @DELETE("/ecommerce/api/v1/category")
     Call<RegisterResponse> deleteCategory(@Header("Apikey") String apikey, @Query("c_id") int id);
 
+    @FormUrlEncoded
+    @POST("/ecommerce/api/v1/update-profile")
+    Call<UpdateProfileResponse> updateProfile(@Header("Apikey") String apikey, @Field("name") String name, @Field("email") String email);
+
 }
+
+
 
 //public interface ApiService {
 //

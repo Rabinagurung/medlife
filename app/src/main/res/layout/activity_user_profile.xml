@@ -60,7 +60,7 @@
                 app:civ_border_width="1dp" />
 
             <ImageView
-                android:id="@+id/pictureIV"
+                android:id="@+id/changeProfile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_round_arrow_back_ios_new_24"/>

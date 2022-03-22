@@ -3,6 +3,7 @@ package com.example.medlife.Profile.InsideProfile;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.MenuItem;
@@ -15,9 +16,13 @@ import android.widget.Toast;
 import com.example.medlife.R;
 import com.example.medlife.api.ApiClient;
 import com.example.medlife.api.response.AllProductResponse;
+import com.example.medlife.api.response.UpdateProfileResponse;
+import com.example.medlife.home.MainActivity;
 import com.example.medlife.utils.SharedPrefUtils;
 
 import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class EditProfileActivity extends AppCompatActivity {
     TextView fullNameET, userEmailET;
@@ -43,33 +48,33 @@ public class EditProfileActivity extends AppCompatActivity {
         saveLL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                if (validate()) {
-//                    String key = SharedPrefUtils.getString(EditProfileActivity.this, getString(R.string.api_key));
-//                    Call<UpdateProfileResponse> updateProfileResponseCall = ApiClient.getClient().updateProfile(key, nameTI.getText().toString(), emailTI.getText().toString());
-//                    updateProfileResponseCall.enqueue(new Callback<UpdateProfileResponse>() {
-//                        @Override
-//                        public void onResponse(Call<UpdateProfileResponse> call, Response<UpdateProfileResponse> response) {
-//                            if (response.isSuccessful()) {
-//                                if (!response.body().getError()) {
-//                                    SharedPrefUtils.setString(UpdateProfile.this, getString(R.string.name_key), fullNameET.getText().toString());
-//                                    SharedPrefUtils.setString(UpdateProfile.this, getString(R.string.email_id), userEmailET.getText().toString());
-//                                    Toast.makeText(EditProfileActivity.this, "Profile Updated Successfully", Toast.LENGTH_LONG).show();
-//                                    Intent intent = new Intent(EditProfileActivity.this, MainActivity.class);
-//                                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-//                                    startActivity(intent);
-//                                    finish();
-//
-//                                }
-//                            }
-//                        }
-//
-//                        @Override
-//                        public void onFailure(Call<UpdateProfileResponse> call, Throwable t) {
-//
-//                        }
-//                    });
-//
-//                }
+                if (validate()) {
+                    String key = SharedPrefUtils.getString(EditProfileActivity.this, getString(R.string.api_key));
+                    Call<UpdateProfileResponse> updateProfileResponseCall = ApiClient.getClient().updateProfile(key, fullNameET.getText().toString(), userEmailET.getText().toString());
+                    updateProfileResponseCall.enqueue(new Callback<UpdateProfileResponse>() {
+                        @Override
+                        public void onResponse(Call<UpdateProfileResponse> call, Response<UpdateProfileResponse> response) {
+                            if (response.isSuccessful()) {
+                                if (!response.body().getError()) {
+                                    SharedPrefUtils.setString(EditProfileActivity.this, getString(R.string.name_key), fullNameET.getText().toString());
+                                    SharedPrefUtils.setString(EditProfileActivity.this, getString(R.string.email_id), userEmailET.getText().toString());
+                                    Toast.makeText(EditProfileActivity.this, "Profile Updated Successfully", Toast.LENGTH_LONG).show();
+                                    Intent intent = new Intent(EditProfileActivity.this, MainActivity.class);
+                                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                                    startActivity(intent);
+                                    finish();
+
+                                }
+                            }
+                        }
+
+                        @Override
+                        public void onFailure(Call<UpdateProfileResponse> call, Throwable t) {
+
+                        }
+                    });
+
+                }
             }
 
         });

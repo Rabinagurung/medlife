@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AutoCompleteTextView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
@@ -22,6 +23,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.medlife.PopularProducts.PopularProductsActivity;
 import com.example.medlife.Profile.ProfileActivity;
 import com.example.medlife.R;
+import com.example.medlife.SearchActivity;
 import com.example.medlife.api.ApiClient;
 import com.example.medlife.api.response.AllProductResponse;
 import com.example.medlife.api.response.Category;
@@ -34,6 +36,7 @@ import com.example.medlife.home.AboutActivity;
 import com.example.medlife.home.AboutMedLifeActivity;
 import com.example.medlife.home.Notification.NotificationActivity;
 import com.example.medlife.home.fragments.home.adapters.CategoryAdapter;
+import com.example.medlife.home.fragments.home.adapters.SearchProductsAdapter;
 import com.example.medlife.home.fragments.home.adapters.ShopAdapter;
 import com.example.medlife.home.fragments.home.adapters.SliderAdapter;
 import com.example.medlife.singleProductPage.SingleProductActivity;
@@ -63,6 +66,7 @@ public class HomeFragment extends Fragment {
     TextView viewAllCategory, viewAllProducts;
     BottomNavigationView bottomNavigationView;
     ImageView aboutIV, notifyIV;
+    TextView acTV;
 
 
     @Override
@@ -94,6 +98,15 @@ public class HomeFragment extends Fragment {
 //        user_ProfileLL = view.findViewById(R.id.user_ProfileLL);
         notifyIV = view.findViewById(R.id.notifyIV);
         aboutIV = view.findViewById(R.id.aboutIV);
+        acTV = view.findViewById(R.id.acTV);
+
+        acTV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getContext(), SearchActivity.class));
+            }
+        });
+
 
 
         // For notification
@@ -175,6 +188,7 @@ public class HomeFragment extends Fragment {
         getCategoriesOnline();
         getSliders();
     }
+
 
     private void call(String number) {
 
@@ -309,4 +323,5 @@ public class HomeFragment extends Fragment {
         else
             loadingProgress.setVisibility(View.GONE);
     }
+
 }

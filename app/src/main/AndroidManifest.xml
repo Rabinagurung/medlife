@@ -32,6 +32,9 @@
             android:name=".admin.addProduct.AddProductActivity"
             android:exported="false" />
         <activity
+            android:name=".SearchActivity"
+            android:exported="false" />
+        <activity
             android:name=".home.Notification.NotificationActivity"
             android:exported="false" />
         <activity

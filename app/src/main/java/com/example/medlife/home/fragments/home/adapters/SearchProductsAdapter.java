@@ -46,7 +46,7 @@ public class SearchProductsAdapter extends RecyclerView.Adapter<SearchProductsAd
     @Override
     public void onBindViewHolder(@NonNull SearchProductsAdapter.SearchViewHolder holder, int position) {
         holder.productNameSearch.setText(productListFull.get(position).getName());
-        holder.productPriceSearch.setText("Rs. " + productListFull.get(position).getPrice() +"");
+        holder.productPriceSearch.setText("Rs. " + productListFull.get(position).getDiscountPrice() +"");
         Picasso.get().load(productListFull.get(position).getImages().get(0)).into(holder.productImageSearch);
 
         holder.searchLayout.setOnClickListener(new View.OnClickListener() {

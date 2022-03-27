@@ -5,13 +5,6 @@
     android:layout_height="match_parent"
     android:backgroundTint="@color/off_white">
 
-    <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp">
-
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -20,7 +13,6 @@
         android:background="@drawable/upload_rectangle"
         android:backgroundTint="@color/white">
 
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -28,18 +20,18 @@
             android:orientation="vertical">
 
             <LinearLayout
-                android:id="@+id/image_Layout"
+                android:id="@+id/imageLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
                 <ImageView
+                    android:id="@+id/selectedIV"
+                    android:scaleType="centerCrop"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
                     android:layout_gravity="center"
-                    android:src="@drawable/upload"
-                    android:tint="@color/grey"
-                    />
+                    android:visibility="gone"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -52,15 +44,10 @@
 
             </LinearLayout>
 
-            <ImageView
-                android:id="@+id/selected_IV"
-                android:scaleType="centerCrop"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:layout_gravity="center"
-                android:visibility="gone"/>
+
 
         </LinearLayout>
+
 
         <LinearLayout
             android:id="@+id/image"
@@ -71,7 +58,7 @@
             android:orientation="horizontal">
 
             <LinearLayout
-                android:id="@+id/camera_LL"
+                android:id="@+id/cameraIV"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
                 android:layout_weight="1"
@@ -97,7 +84,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/gallery_LL"
+                android:id="@+id/galleryIV"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
                 android:layout_weight="1"
@@ -105,13 +92,16 @@
                 android:orientation="horizontal"
                 android:background="@drawable/upload_rectangle"
                 android:backgroundTint="@color/light_blue"
-                android:gravity="center">
+                android:gravity="center"
+                >
 
                 <ImageView
                     android:tint="@color/navy_blue"
                     android:layout_width="40dp"
                     android:layout_height="35dp"
                     android:src="@drawable/gallery" />
+
+
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -125,24 +115,48 @@
 
         </LinearLayout>
 
+
+
+
+
+
+
+
+
+
+
+        <!--            <TextView-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_gravity="center_vertical"-->
+        <!--                android:layout_marginLeft="@dimen/normal_spacing"-->
+        <!--                android:text="Select Image"-->
+        <!--                android:textColor="@color/black" />-->
+
+
+
+
+        <!--        <ImageView-->
+        <!--            android:id="@+id/selectedIV"-->
+        <!--            android:scaleType="centerCrop"-->
+        <!--            android:layout_width="150dp"-->
+        <!--            android:layout_height="150dp"-->
+        <!--            android:layout_gravity="center"-->
+        <!--            android:layout_marginBottom="@dimen/normal_spacing"-->
+        <!--            android:visibility="gone" />-->
+
         <Button
-            android:id="@+id/updatePicture"
+            android:id="@+id/upload"
             android:layout_width="match_parent"
             android:backgroundTint="@color/light_blue"
             android:layout_height="60dp"
             android:text="UPLOAD"
             android:textColor="@color/navy_blue" />
 
-
-
     </LinearLayout>
-
-    </androidx.core.widget.NestedScrollView>
 
 
 </LinearLayout>
-
-
 
 <!--<?xml version="1.0" encoding="utf-8"?>-->
 <!--<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"-->

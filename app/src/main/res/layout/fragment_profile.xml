@@ -60,6 +60,23 @@
                     app:civ_border_width="1dp"
                     app:civ_circle_background_color="@color/off_white" />
 
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/changeProfile"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginStart="120dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginBottom="5dp"
+                    android:clickable="true"
+                    app:backgroundTint="@color/white"
+                    app:fabCustomSize="35dp"
+                    app:fabSize="mini"
+                    app:layout_constraintBottom_toBottomOf="@+id/picCI"
+                    app:layout_constraintEnd_toEndOf="@+id/picCI"
+                    app:maxImageSize="20dp"
+                    app:srcCompat="@drawable/camera1"
+                    app:tint="#838383" />
+
                 <RelativeLayout
                     android:id="@+id/profileRV"
                     android:layout_width="match_parent"

@@ -185,16 +185,6 @@
                 app:civ_border_color="@color/grey_divider"
                 app:civ_border_width="1dp" />
 
-            <ImageView
-                android:layout_marginStart="@dimen/normal_spacing"
-                android:background="@drawable/box_shape"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:padding="@dimen/medium_spacing"
-                android:src="@drawable/esewa"
-                app:civ_border_color="@color/grey_divider"
-                app:civ_border_width="1dp" />
-
 
         </LinearLayout>
 

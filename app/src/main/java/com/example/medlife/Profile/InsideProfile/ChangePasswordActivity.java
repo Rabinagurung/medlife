@@ -4,7 +4,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.telecom.Call;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -17,6 +16,10 @@ import com.example.medlife.api.ApiClient;
 import com.example.medlife.api.response.RegisterResponse;
 import com.example.medlife.utils.DataHolder;
 import com.example.medlife.utils.SharedPrefUtils;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class ChangePasswordActivity extends AppCompatActivity {
     EditText currentPwET, newPwET, confirmPwET;
@@ -44,35 +47,49 @@ public class ChangePasswordActivity extends AppCompatActivity {
     }
 
     private void updatePassword() {
-        //how to create Shared pref
-//        if (validateAll()) {
-//            String key = SharedPrefUtils.getString(this, getString(R.string.api_key));
-//            Call<RegisterResponse> changePassword = ApiClient.getClient().forgetPassword(key, newPwET.getText().toString());
-//            changePassword
-//
-//        }
+        if (validateAll()) {
+            String key = SharedPrefUtils.getString(this, getString(R.string.api_key));
+            retrofit2.Call<RegisterResponse> changePassword = ApiClient.getClient().forgetPassword(key, newPwET.getText().toString());
+            changePassword.enqueue(new Callback<RegisterResponse>() {
+                @Override
+                public void onResponse(retrofit2.Call<RegisterResponse> call, Response<RegisterResponse> response) {
+                    if (response.isSuccessful()) {
+                        if (!response.body().getError()) {
+                            Toast.makeText(ChangePasswordActivity.this, "Password Successfully changed", Toast.LENGTH_SHORT).show();
+                            SharedPrefUtils.setString(ChangePasswordActivity.this,  DataHolder.PASSWORD_KEY, newPwET.getText().toString());
+                            finish();
+                        }
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<RegisterResponse> call, Throwable t) {
+
+                }
+            });
+        }
     }
 
-//    private boolean validateAll() {
-//        if (validatePassword() && newPwET()) {
-//            return true;
-//        }
-//        return false;
-//    }
+    private boolean validateAll() {
+        if (validatePassword() && newPwET()) {
+            return true;
+        }
+        return false;
+    }
 
-//    private boolean validatePassword() {
-//        String dbPassword = SharedPrefUtils.getString(this, DataHolder.PASSWORD_KEY);
+    private boolean validatePassword() {
+        String dbPassword = SharedPrefUtils.getString(this, DataHolder.PASSWORD_KEY);
 
-//        passwordText = currentPwET.getText().toString().trim();
-//        if (passwordText.isEmpty()) {
-//            Toast.makeText(this, "Field cannot be left empty", Toast.LENGTH_SHORT).show();
-//
-//        } else if(!passwordText.equals(dbPassword)) {
-//            Toast.makeText(this, "Old password doesn't match", Toast.LENGTH_SHORT).show();
-//            return false;
-//        }
-//        return true;
-//    }
+        passwordText = currentPwET.getText().toString().trim();
+        if (passwordText.isEmpty()) {
+            Toast.makeText(this, "Field cannot be left empty", Toast.LENGTH_SHORT).show();
+
+        } else if(!passwordText.equals(dbPassword)) {
+            Toast.makeText(this, "Old password doesn't match", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        return true;
+    }
 
     private boolean newPwET() {
         passwordText = currentPwET.getText().toString().trim();

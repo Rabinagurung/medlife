@@ -19,6 +19,7 @@ import com.example.medlife.api.ApiClient;
 import com.example.medlife.api.response.LoginResponse;
 import com.example.medlife.home.MainActivity;
 import com.example.medlife.utils.Constants;
+import com.example.medlife.utils.DataHolder;
 import com.example.medlife.utils.SharedPrefUtils;
 
 import retrofit2.Call;
@@ -72,6 +73,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
                                 SharedPrefUtils.setString(getActivity(), getString(R.string.name_key), loginResponse.getName());
                                 SharedPrefUtils.setString(getActivity(), getString(R.string.email_id), loginResponse.getEmail());
                                 SharedPrefUtils.setString(getActivity(), getString(R.string.created_key), loginResponse.getCreatedAt());
+                                SharedPrefUtils.setString(getActivity(), DataHolder.PASSWORD_KEY, password);
                                 SharedPrefUtils.setString(getActivity(), getString(R.string.api_key), loginResponse.getApiKey());
                                 SharedPrefUtils.setBoolean(getActivity(), getString(R.string.staff_key), loginResponse.getIs_staff());
                                 SharedPrefUtils.setString(getActivity(), getString(R.string.profile_key), loginResponse.getProfile_pic());

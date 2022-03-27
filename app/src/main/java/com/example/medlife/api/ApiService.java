@@ -120,6 +120,7 @@ public interface ApiService {
             @Part MultipartBody.Part file
     );
 
+
     @Multipart
     @POST("/api/v1/upload-product")
     Call<RegisterResponse> uploadProduct(

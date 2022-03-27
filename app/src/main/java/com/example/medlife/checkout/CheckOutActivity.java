@@ -6,12 +6,14 @@ import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.media.audiofx.DynamicsProcessing;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -27,9 +29,15 @@ import com.example.medlife.api.response.RegisterResponse;
 import com.example.medlife.checkout.address.AddressActivity;
 import com.example.medlife.checkout.orderComplete.OrderCompleteActivity;
 import com.example.medlife.home.fragments.home.adapters.ShopAdapter;
+
 import com.example.medlife.utils.Constants;
 import com.example.medlife.utils.SharedPrefUtils;
+import com.khalti.checkout.helper.Config;
+import com.khalti.checkout.helper.KhaltiCheckOut;
+import com.khalti.checkout.helper.OnCheckOutListener;
+import com.khalti.checkout.helper.PaymentPreference;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -42,7 +50,7 @@ public class CheckOutActivity extends AppCompatActivity {
     public static String CHECK_OUT_PRODUCTS = "sd";
     RecyclerView allProductRV;
     AllProductResponse allProductResponse;
-    ImageView backIv
+    ImageView backIv;
     ImageView cashOnDeliveryIV, khaltiIV;
     RecyclerView allProductsRV;
     LinearLayout addressLL, checkOutLL;
@@ -142,17 +150,43 @@ public class CheckOutActivity extends AppCompatActivity {
     }
 
     private void khaltiCheckOut() {
+
         Map<String, Object> map = new HashMap<>();
         map.put("merchant_extra", "This is extra data");
 
-        Config.Builder builder = new Bitmap.Config(Constant.pub,"" +products.get(0).getId(), products.get(0).getName(), (long) (subTotalPrice + shippingCharge) *100, new OnCheckOutListener()) {
+        Config.Builder builder = new Config.Builder("test_public_key_cf36950f07d644ccbadbe04030eae034", ""+products.get(0).getId(), products.get(0).getName(), (long) (subTotalPrice + shippingCharge)*100, new OnCheckOutListener() {
+            @Override
+            public void onError(@NonNull String action, @NonNull Map<String, String> errorMap) {
+                Log.i(action, errorMap.toString());
+                Toast.makeText(CheckOutActivity.this, errorMap.toString(), Toast.LENGTH_SHORT).show();
+            }
 
-        }
+            @Override
+            public void onSuccess(@NonNull Map<String, Object> data) {
+                Log.i("success", data.toString());
+                p_type = 2;
+                p_ref = data.toString();
+                checkOut();
 
-
+            }
+        })
+                .paymentPreferences(new ArrayList<PaymentPreference>() {{
+                    add(PaymentPreference.KHALTI);
+                    add(PaymentPreference.EBANKING);
+                    add(PaymentPreference.MOBILE_BANKING);
+                    add(PaymentPreference.CONNECT_IPS);
+                    add(PaymentPreference.SCT);
+                }})
+                .additionalData(map)
+                .productUrl("http://example.com/product")
+                .mobile("9819110254");
+        Config config = builder.build();
+        KhaltiCheckOut khaltiCheckOut = new KhaltiCheckOut(this, config);
+        khaltiCheckOut.show();
 
 
     }
+
 
     private void loadCartList() {
 
@@ -204,7 +238,7 @@ public class CheckOutActivity extends AppCompatActivity {
 
     }
 
-    private void checkOut(double finalPrice) {
+    private void checkOut() {
         String key = SharedPrefUtils.getString(this, getString(R.string.api_key));
         Call<RegisterResponse> orderCall = ApiClient.getClient().order(key, p_type, address.getId(), p_ref);
         orderCall.enqueue(new Callback<RegisterResponse>() {

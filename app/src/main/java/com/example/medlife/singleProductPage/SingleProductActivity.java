@@ -161,7 +161,7 @@ public class SingleProductActivity extends AppCompatActivity {
 //                addingToggle(true);
 
                 String key = SharedPrefUtils.getString(this, getString(R.string.api_key));
-//                System.out.println("1111111111111 api key is : "+key );
+                System.out.println("1111111111111 api key is : "+key );
                 Call<AllProductResponse> cart = ApiClient.getClient().addToCart(key, product.getId(), quantity);
                 cart.enqueue(new Callback<AllProductResponse>() {
                     @Override

@@ -79,8 +79,7 @@ public class CartFragment extends Fragment {
     }
 
     private void getCartItems() {
-        System.out.println("111111111111111111111 cart call");
-        String key = SharedPrefUtils.getString(getActivity(), getString(R.string.api_key));
+        String key = SharedPrefUtils.getString(getContext(), getString(R.string.api_key));
         Call<AllProductResponse> cartItemsCall = ApiClient.getClient().getMyCart(key);
         cartItemsCall.enqueue(new Callback<AllProductResponse>() {
             @Override

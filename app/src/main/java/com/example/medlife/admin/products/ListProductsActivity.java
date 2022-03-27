@@ -67,6 +67,4 @@ public class ListProductsActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
-
-
 }

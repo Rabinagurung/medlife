@@ -129,6 +129,17 @@
             android:textSize="16sp"
             android:hint="Doctor Name"/>
 
+        <EditText
+            android:id="@+id/phoneNumberET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/text_shape"
+            android:drawablePadding="10dp"
+            android:padding="10dp"
+            android:textSize="16sp"
+            android:hint="Phone Number"/>
+
 
         <EditText
             android:id="@+id/noteET"

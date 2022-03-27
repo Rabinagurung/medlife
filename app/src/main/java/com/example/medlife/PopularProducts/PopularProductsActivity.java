@@ -94,7 +94,4 @@ public class PopularProductsActivity extends AppCompatActivity {
         else
             loadingProgress.setVisibility(View.GONE);
     }
-
-
-
 }

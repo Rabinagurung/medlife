@@ -28,7 +28,9 @@ import com.example.medlife.utils.SharedPrefUtils;
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
@@ -48,6 +50,9 @@ public class UploadPrescriptionActivity extends AppCompatActivity {
     String currentPhotoPath1;
     ImageView selectedIv;
     TextView doctorNameET, noteET;
+
+//    List<String> photoPath = new ArrayList<>();
+//    List<Uri> photoUris = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

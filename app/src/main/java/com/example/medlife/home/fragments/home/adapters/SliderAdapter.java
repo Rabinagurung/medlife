@@ -50,19 +50,16 @@ public class SliderAdapter extends SliderViewAdapter<SliderAdapter.SliderViewHol
                 onSliderClickLister.onSliderClick(position, sliders.get(position));
             }
         });
-
     }
 
     @Override
-    public int getCount() {
-        return sliders.size();
+    public int getCount() { return sliders.size();
     }
 
     public class SliderViewHolder extends SliderViewAdapter.ViewHolder {
         View itemView;
         ImageView imageViewBackground;
         ImageView imageGifContainer;
-
 
         public SliderViewHolder(View itemView) {
             super(itemView);

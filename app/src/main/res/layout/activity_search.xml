@@ -69,6 +69,4 @@
         android:padding="5dp"
         android:visibility="gone"/>
 
-
-
 </LinearLayout>

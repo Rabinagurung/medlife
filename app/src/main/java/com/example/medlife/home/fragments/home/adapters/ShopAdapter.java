@@ -36,7 +36,6 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ShopViewHolder
         layoutInflater = LayoutInflater.from(context);
         this.isCart = isCart;
         this.isWishlist = isWishlist;
-
     }
 
     public void setCartItemClick(CartItemClick cartItemClick) {
@@ -52,6 +51,7 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ShopViewHolder
     public void setRemoveEnabled(Boolean removeEnabled) {
         this.removeEnabled = removeEnabled;
     }
+
 
     @NonNull
     @Override

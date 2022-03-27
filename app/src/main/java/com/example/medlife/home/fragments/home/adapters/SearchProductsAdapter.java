@@ -28,14 +28,13 @@ public class SearchProductsAdapter extends RecyclerView.Adapter<SearchProductsAd
     LayoutInflater layoutInflater;
     Context context;
 
+
     public SearchProductsAdapter(List<Product> productListFull, Context context) {
         this.productListFull = productListFull;
         searchData = new ArrayList<>(productListFull);
         layoutInflater = LayoutInflater.from(context);
         this.context = context;
-
     }
-
 
     @NonNull
     @Override
@@ -48,6 +47,7 @@ public class SearchProductsAdapter extends RecyclerView.Adapter<SearchProductsAd
         holder.productNameSearch.setText(productListFull.get(position).getName());
         holder.productPriceSearch.setText("Rs. " + productListFull.get(position).getDiscountPrice() +"");
         Picasso.get().load(productListFull.get(position).getImages().get(0)).into(holder.productImageSearch);
+        //Picasso is class of java which loads image files in the form of url
 
         holder.searchLayout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -95,7 +95,6 @@ public class SearchProductsAdapter extends RecyclerView.Adapter<SearchProductsAd
             productListFull.addAll((List) filterResults.values);
             notifyDataSetChanged();
         }
-
     };
 
 

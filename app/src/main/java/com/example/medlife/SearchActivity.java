@@ -66,10 +66,10 @@ public class SearchActivity extends AppCompatActivity {
 
     }
 
-    private void setSearchView(List<Product> foodList) {
+    private void setSearchView(List<Product> productList) {
         product_RV.setHasFixedSize(true);
         product_RV.setLayoutManager(new GridLayoutManager(SearchActivity.this, 1));
-        searchProductsAdapter = new SearchProductsAdapter(foodList, this);
+        searchProductsAdapter = new SearchProductsAdapter(productList, this);
         product_RV.setAdapter(searchProductsAdapter);
     }
 

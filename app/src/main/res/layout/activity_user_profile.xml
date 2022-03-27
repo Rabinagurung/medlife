@@ -61,9 +61,11 @@
 
             <ImageView
                 android:id="@+id/changeProfile"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_round_arrow_back_ios_new_24"/>
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="-10dp"
+                android:layout_marginTop="35dp"
+                android:src="@drawable/camera"/>
 
 
         </LinearLayout>

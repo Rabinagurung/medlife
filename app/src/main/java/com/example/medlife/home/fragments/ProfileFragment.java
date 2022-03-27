@@ -67,7 +67,7 @@ import retrofit2.Response;
 
 
 public class ProfileFragment extends Fragment {
-    LinearLayout wishListLL, ordersLL, prescriptionLL, locationLL,  editProfileLL, logoutLL;
+    LinearLayout wishListLL, ordersLL, securityLL, locationLL,  editProfileLL, logoutLL;
     TextView adminTV, userNameTV, userEmailTV;
     RelativeLayout profileRV;
     CircleImageView picCI;
@@ -92,7 +92,7 @@ public class ProfileFragment extends Fragment {
         profileRV = view.findViewById(R.id.profileRV);
         wishListLL = view.findViewById(R.id.wishListLL);
         ordersLL = view.findViewById(R.id.ordersLL);
-        prescriptionLL = view.findViewById(R.id.prescriptionLL);
+        securityLL = view.findViewById(R.id.securityLL);
         locationLL = view.findViewById(R.id.locationLL);
         editProfileLL=view.findViewById(R.id.editProfileLL);
         logoutLL = view.findViewById(R.id.logoutLL);
@@ -141,10 +141,10 @@ public class ProfileFragment extends Fragment {
             }
         });
 
-        prescriptionLL.setOnClickListener(new View.OnClickListener() {
+        securityLL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getContext(), UploadPrescriptionActivity.class);
+                Intent intent = new Intent(getContext(), SecurityActivity.class);
                 startActivity(intent);
             }
         });
@@ -164,8 +164,6 @@ public class ProfileFragment extends Fragment {
                 Intent userAccount = new Intent(getContext(), UserAccountActivity.class);
                 startActivity(userAccount);
                 getActivity().finish();
-
-
             }
         });
 
@@ -176,11 +174,6 @@ public class ProfileFragment extends Fragment {
                 startActivity(intent);
             }
         });
-
-
-
-
-
     }
 
     private void checkAdmin() {
@@ -188,7 +181,4 @@ public class ProfileFragment extends Fragment {
         if (is_staff)
             adminTV.setVisibility(View.VISIBLE);
     }
-
-
-
 }

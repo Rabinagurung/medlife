@@ -108,7 +108,6 @@ public class AddressAdapter extends RecyclerView.Adapter<AddressAdapter.AddressV
             if(isAddress) {
                 removeAddressIV = itemView.findViewById(R.id.removeAddressIV);
             }
-
         }
     }
 

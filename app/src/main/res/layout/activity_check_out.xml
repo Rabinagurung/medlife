@@ -164,7 +164,7 @@
 
 
             <ImageView
-
+                android:id="@+id/cashOnDeliveryIV"
                 android:background="@drawable/box_shape_selected"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
@@ -175,6 +175,7 @@
 
 
             <ImageView
+                android:id="@+id/khaltiIV"
                 android:layout_marginStart="@dimen/normal_spacing"
                 android:background="@drawable/box_shape"
                 android:layout_width="70dp"

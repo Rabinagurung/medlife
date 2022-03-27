@@ -51,6 +51,10 @@ public interface ApiService {
 //    @POST("/ecommerce/api/v1/wishlist")
 //    Call<AllProductResponse> addToWishlist(@Header("Apikey") String apikey, @Field("p_id") int p);
 
+    @FormUrlEncoded
+    @POST("/ecommerce/api/v1/forget-password")
+    Call<RegisterResponse> forgetPassword(@Header("Apikey") String apikey, @Field("password") String password);
+
 
     @FormUrlEncoded
     @POST("/ecommerce/api/v1/order")

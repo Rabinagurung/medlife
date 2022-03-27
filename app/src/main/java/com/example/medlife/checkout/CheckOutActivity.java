@@ -2,7 +2,9 @@ package com.example.medlife.checkout;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.media.audiofx.DynamicsProcessing;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -25,9 +27,12 @@ import com.example.medlife.api.response.RegisterResponse;
 import com.example.medlife.checkout.address.AddressActivity;
 import com.example.medlife.checkout.orderComplete.OrderCompleteActivity;
 import com.example.medlife.home.fragments.home.adapters.ShopAdapter;
+import com.example.medlife.utils.Constants;
 import com.example.medlife.utils.SharedPrefUtils;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -37,7 +42,8 @@ public class CheckOutActivity extends AppCompatActivity {
     public static String CHECK_OUT_PRODUCTS = "sd";
     RecyclerView allProductRV;
     AllProductResponse allProductResponse;
-    ImageView backIv;
+    ImageView backIv
+    ImageView cashOnDeliveryIV, khaltiIV;
     RecyclerView allProductsRV;
     LinearLayout addressLL, checkOutLL;
     Address address;
@@ -67,6 +73,8 @@ public class CheckOutActivity extends AppCompatActivity {
         shippingTV = findViewById(R.id.shippingTV);
         totalPriceTv = findViewById(R.id.totalPriceTv);
         discountTV = findViewById(R.id.discountTV);
+        cashOnDeliveryIV= findViewById(R.id.cashOnDeliveryIV);
+        khaltiIV = findViewById(R.id.khaltiIV);
         setClickListners();
         allProductResponse = (AllProductResponse) getIntent().getSerializableExtra(CHECK_OUT_PRODUCTS);
         products = allProductResponse.getProducts();
@@ -101,12 +109,48 @@ public class CheckOutActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (address != null) {
-                    checkOut(subTotalPrice);
+                    if (p_type == 1) {
+                        checkOut();
+                    } else {
+                        khaltiCheckOut();
+                    }
                 } else {
+
                     Toast.makeText(CheckOutActivity.this, "Please Select A Address", Toast.LENGTH_SHORT).show();
                 }
             }
         });
+
+        khaltiIV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                p_type=2;
+                khaltiIV.setBackground(getResources().getDrawable(R.drawable.box_shape_selected));
+                cashOnDeliveryIV.setBackground(getResources().getDrawable(R.drawable.box_shape));
+            }
+        });
+
+        cashOnDeliveryIV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                p_type = 1;
+                cashOnDeliveryIV.setBackground(getResources().getDrawable(R.drawable.box_shape_selected));
+                khaltiIV.setBackground(getResources().getDrawable(R.drawable.box_shape));
+            }
+        });
+
+    }
+
+    private void khaltiCheckOut() {
+        Map<String, Object> map = new HashMap<>();
+        map.put("merchant_extra", "This is extra data");
+
+        Config.Builder builder = new Bitmap.Config(Constant.pub,"" +products.get(0).getId(), products.get(0).getName(), (long) (subTotalPrice + shippingCharge) *100, new OnCheckOutListener()) {
+
+        }
+
+
+
 
     }
 

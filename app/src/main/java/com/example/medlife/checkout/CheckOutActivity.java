@@ -118,9 +118,9 @@ public class CheckOutActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (address != null) {
                     if (p_type == 1) {
-                        checkOut();
+//                        checkOut();
                     } else {
-                        khaltiCheckOut();
+//                        khaltiCheckOut();
                     }
                 } else {
 
@@ -129,25 +129,7 @@ public class CheckOutActivity extends AppCompatActivity {
             }
         });
 
-        khaltiIV.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                p_type=2;
-                khaltiIV.setBackground(getResources().getDrawable(R.drawable.box_shape_selected));
-                cashOnDeliveryIV.setBackground(getResources().getDrawable(R.drawable.box_shape));
-            }
-        });
 
-        cashOnDeliveryIV.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                p_type = 1;
-                cashOnDeliveryIV.setBackground(getResources().getDrawable(R.drawable.box_shape_selected));
-                khaltiIV.setBackground(getResources().getDrawable(R.drawable.box_shape));
-            }
-        });
-
-    }
 
     private void khaltiCheckOut() {
 

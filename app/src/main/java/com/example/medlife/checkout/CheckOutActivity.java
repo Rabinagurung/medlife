@@ -207,10 +207,10 @@ public class CheckOutActivity extends AppCompatActivity {
         double discount = 0;
         for (int i = 0; i < products.size(); i++) {
             if (products.get(i).getDiscountPrice() != 0 || products.get(i).getDiscountPrice() != null) {
-                subTotalPrice = subTotalPrice + products.get(i).getDiscountPrice();
+                subTotalPrice = subTotalPrice + products.get(i).getDiscountPrice()* products.get(i).getCartQuantity();
                 discount = discount + products.get(i).getPrice() - products.get(i).getDiscountPrice();
             } else
-                subTotalPrice = subTotalPrice + products.get(i).getPrice();
+                subTotalPrice = subTotalPrice + products.get(i).getPrice()* products.get(i).getCartQuantity();
         }
         subTotalTV.setText("Rs. " + (subTotalPrice));
         totalTV.setText("Rs. " + (subTotalPrice + shippingCharge));

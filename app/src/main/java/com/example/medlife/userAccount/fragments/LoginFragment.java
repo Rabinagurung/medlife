@@ -65,7 +65,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
                         if(response.isSuccessful()){
                             if(loginResponse.getError()){
                                 System.out.println("222222221222222222222 my error  is: "+ loginResponse.getError());
-
+                                Toast.makeText(getContext(), loginResponse.getMessage(), Toast.LENGTH_SHORT).show();
                             }else {
 
                                 Toast.makeText(getActivity(), "Welcome", Toast.LENGTH_LONG).show();
@@ -77,7 +77,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
                                 SharedPrefUtils.setString(getActivity(), getString(R.string.api_key), loginResponse.getApiKey());
                                 SharedPrefUtils.setBoolean(getActivity(), getString(R.string.staff_key), loginResponse.getIs_staff());
                                 SharedPrefUtils.setString(getActivity(), getString(R.string.profile_key), loginResponse.getProfile_pic());
-                                // Toast.makeText(getContext(),SharedPrefUtils.getString(getContext(),getString(R.string.api_key)),Toast.LENGTH_LONG).show();
+//                                Toast.makeText(getContext(),SharedPrefUtils.getString(getContext(),getString(R.string.api_key)),Toast.LENGTH_LONG).show();
                                 getActivity().startActivity(new Intent(getContext(), MainActivity.class));
                                 getActivity().finish();
 

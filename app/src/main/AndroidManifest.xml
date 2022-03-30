@@ -22,9 +22,6 @@
         android:theme="@style/Theme.MedLife"
         tools:replace="android:theme">
         <activity
-            android:name=".home.TestActivity2"
-            android:exported="false" />
-        <activity
             android:name=".Profile.InsideProfile.FakeActivity"
             android:exported="false" />
         <activity

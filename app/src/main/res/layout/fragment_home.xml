@@ -63,20 +63,20 @@
 
                     </LinearLayout>
 
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0.5">
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_weight="0.5">-->
 
-                        <ImageView
-                            android:id="@+id/notifyIV"
-                            android:layout_width="0dp"
-                            android:layout_height="30dp"
-                            android:layout_weight="0.5"
-                            android:src= "@drawable/ic_baseline_notifications_24"
-                            app:tint="@color/black" />
+<!--                        <ImageView-->
+<!--                            android:id="@+id/notifyIV"-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_height="30dp"-->
+<!--                            android:layout_weight="0.5"-->
+<!--                            android:src= "@drawable/ic_baseline_notifications_24"-->
+<!--                            app:tint="@color/black" />-->
 
-                    </LinearLayout>
+<!--                    </LinearLayout>-->
 
 
 

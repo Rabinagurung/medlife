@@ -118,9 +118,9 @@ public class CheckOutActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (address != null) {
                     if (p_type == 1) {
-//                        checkOut();
+                        checkOut();
                     } else {
-//                        khaltiCheckOut();
+                        khaltiCheckOut();
                     }
                 } else {
 
@@ -128,6 +128,7 @@ public class CheckOutActivity extends AppCompatActivity {
                 }
             }
         });
+    }
 
 
 

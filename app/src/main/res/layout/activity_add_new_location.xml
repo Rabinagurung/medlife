@@ -101,11 +101,11 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Description *"
+                android:text="Phone Number *"
                 android:textSize="15dp"/>
 
             <EditText
-                android:id="@+id/descriptionET"
+                android:id="@+id/phoneET"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/text_shape"
@@ -124,11 +124,11 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Phone Number *"
+                android:text="Description *"
                 android:textSize="15dp"/>
 
             <EditText
-                android:id="@+id/phoneET"
+                android:id="@+id/descriptionET"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/text_shape"
@@ -137,6 +137,8 @@
                 android:layout_marginTop="10dp"/>
 
         </LinearLayout>
+
+
 
         <LinearLayout
             android:layout_width="match_parent"

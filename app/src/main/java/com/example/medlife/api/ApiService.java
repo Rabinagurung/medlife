@@ -95,7 +95,7 @@ public interface ApiService {
 
     @FormUrlEncoded
     @POST("/ecommerce/api/v1/address")
-    Call<AddressResponse> addAddress(@Header("Apikey") String apikey, @Field("city") String city, @Field("street") String street, @Field("province") String province, @Field("description") String description);
+    Call<AddressResponse> addAddress(@Header("Apikey") String apikey, @Field("city") String city, @Field("street") String street, @Field("province") String province, @Field("phone") String phone, @Field("description") String description);
 
 
     @GET("/ecommerce/api/v1/address")

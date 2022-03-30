@@ -7,61 +7,71 @@ import java.io.Serializable;
 
 public class Address implements Serializable {
 
-@SerializedName("id")
-@Expose
-private Integer id;
-@SerializedName("city")
-@Expose
-private String city;
-@SerializedName("street")
-@Expose
-private String street;
-@SerializedName("description")
-@Expose
-private String description;
-@SerializedName("province")
-@Expose
-private String province;
+    @SerializedName("id")
+    @Expose
+    private Integer id;
+    @SerializedName("city")
+    @Expose
+    private String city;
+    @SerializedName("street")
+    @Expose
+    private String street;
+    @SerializedName("description")
+    @Expose
+    private String description;
+    @SerializedName("province")
+    @Expose
+    private String province;
+    @SerializedName("phone")
+    @Expose
+    private String phone;
 
-public Integer getId() {
-return id;
-}
+    public Integer getId() {
+        return id;
+    }
 
-public void setId(Integer id) {
-this.id = id;
-}
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-public String getCity() {
-return city;
-}
+    public String getCity() {
+        return city;
+    }
 
-public void setCity(String city) {
-this.city = city;
-}
+    public void setCity(String city) {
+        this.city = city;
+    }
 
-public String getStreet() {
-return street;
-}
+    public String getStreet() {
+        return street;
+    }
 
-public void setStreet(String street) {
-this.street = street;
-}
+    public void setStreet(String street) {
+        this.street = street;
+    }
 
-public String getDescription() {
-return description;
-}
+    public String getDescription() {
+        return description;
+    }
 
-public void setDescription(String description) {
-this.description = description;
-}
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
-public String getProvince() {
-return province;
-}
+    public String getProvince() {
+        return province;
+    }
 
-public void setProvince(String province) {
-this.province = province;
-}
+    public void setProvince(String province) {
+        this.province = province;
+    }
 
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
 
 }

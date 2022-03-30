@@ -21,7 +21,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class AddNewLocationActivity extends AppCompatActivity {
-    EditText cityET, streetET, provinceET, descriptionET;
+    EditText cityET, streetET, provinceET, phoneET, descriptionET;
     LinearLayout addAddressLL, cancelLocationLL;
     static String ADDED_KEY = "ad";
     static String ADDED_DATA_KEY = "adk";
@@ -33,6 +33,7 @@ public class AddNewLocationActivity extends AppCompatActivity {
         cityET = findViewById(R.id.cityET);
         streetET = findViewById(R.id.streetET);
         provinceET = findViewById(R.id.provinceET);
+        phoneET= findViewById(R.id.phoneET);
         descriptionET = findViewById(R.id.descriptionET);
         addAddressLL = findViewById(R.id.addAddressLL);
         cancelLocationLL = findViewById(R.id.cancelLocationLL);
@@ -42,7 +43,7 @@ public class AddNewLocationActivity extends AppCompatActivity {
                 if (validate()) {
                     String key = SharedPrefUtils.getString(AddNewLocationActivity.this, getString(R.string.api_key));
                     Call<AddressResponse> addressResponseCall = ApiClient.getClient().addAddress(key, cityET.getText().toString(), streetET.getText().toString(),
-                            provinceET.getText().toString(), descriptionET.getText().toString());
+                            provinceET.getText().toString(), phoneET.getText().toString(), descriptionET.getText().toString());
 
                     addressResponseCall.enqueue(new Callback<AddressResponse>() {
                         @Override
@@ -57,6 +58,7 @@ public class AddNewLocationActivity extends AppCompatActivity {
                                     address.setStreet(streetET.getText().toString());
                                     address.setProvince(provinceET.getText().toString());
                                     address.setDescription(descriptionET.getText().toString());
+                                    address.setDescription(phoneET.getText().toString());
                                     address.setId(address.getId());
                                     Intent resultIntent = new Intent();
                                     resultIntent.putExtra(ADDED_KEY, true);
@@ -89,6 +91,7 @@ public class AddNewLocationActivity extends AppCompatActivity {
         if (cityET.getText().toString().isEmpty()
                 || streetET.getText().toString().isEmpty()
                 || provinceET.getText().toString().isEmpty()
+                || phoneET.getText().toString().isEmpty()
                 || descriptionET.getText().toString().isEmpty()) {
             Toast.makeText(AddNewLocationActivity.this, "None of the above fields can be empty", Toast.LENGTH_SHORT).show();
             validate = false;

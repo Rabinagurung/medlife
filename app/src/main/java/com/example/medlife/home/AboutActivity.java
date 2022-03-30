@@ -3,6 +3,7 @@ package com.example.medlife.home;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -79,8 +80,8 @@ public class AboutActivity extends AppCompatActivity {
         facebook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(AboutActivity.this, AboutMedLifeActivity.class);
-                startActivity(intent);
+                Intent viewIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/riya.gurung22"));
+                startActivity(viewIntent);
 
             }
         });

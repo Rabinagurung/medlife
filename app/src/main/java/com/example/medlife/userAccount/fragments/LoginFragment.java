@@ -21,6 +21,7 @@ import com.example.medlife.home.MainActivity;
 import com.example.medlife.utils.Constants;
 import com.example.medlife.utils.DataHolder;
 import com.example.medlife.utils.SharedPrefUtils;
+import com.google.android.material.textfield.TextInputEditText;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -28,7 +29,7 @@ import retrofit2.Response;
 
 public class LoginFragment extends Fragment implements View.OnClickListener {
 
-    EditText emailEt, passwordET;
+    TextInputEditText emailEt, passwordET;
     LinearLayout loginBtn;
 
     @Override
@@ -64,10 +65,9 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
                         LoginResponse loginResponse = response.body();
                         if(response.isSuccessful()){
                             if(loginResponse.getError()){
-                                System.out.println("222222221222222222222 my error  is: "+ loginResponse.getError());
+                                Toast.makeText(getActivity(), loginResponse.getMessage(), Toast.LENGTH_SHORT).show();
                                 Toast.makeText(getContext(), loginResponse.getMessage(), Toast.LENGTH_SHORT).show();
                             }else {
-
                                 Toast.makeText(getActivity(), "Welcome", Toast.LENGTH_LONG).show();
                                 SharedPrefUtils.setBoolean(getActivity(), getString(R.string.isLogged), true);
                                 SharedPrefUtils.setString(getActivity(), getString(R.string.name_key), loginResponse.getName());

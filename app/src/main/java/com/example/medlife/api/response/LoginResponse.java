@@ -11,6 +11,9 @@ public class LoginResponse {
     @SerializedName("name")
     @Expose
     private String name;
+    @SerializedName("message")
+    @Expose
+    private String message;
     @SerializedName("email")
     @Expose
     private String email;
@@ -20,9 +23,6 @@ public class LoginResponse {
     @SerializedName("is_staff")
     @Expose
     private Boolean is_staff;
-    @SerializedName("message")
-    @Expose
-    private String message;
     @SerializedName("profile_pic")
     @Expose
     private String profile_pic;

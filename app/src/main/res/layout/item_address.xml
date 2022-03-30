@@ -54,7 +54,7 @@
                 <ImageView
                     android:id="@+id/removeAddressIV"
                     android:layout_width="24dp"
-                    android:layout_height="24dp"
+                    android:layout_height="wrap_content"
                     android:background="@drawable/rectange_box"
                     android:rotation="45"
                     android:src="@drawable/ic_round_add_24"

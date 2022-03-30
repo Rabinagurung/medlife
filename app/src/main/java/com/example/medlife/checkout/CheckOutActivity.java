@@ -32,10 +32,10 @@ import com.example.medlife.home.fragments.home.adapters.ShopAdapter;
 
 import com.example.medlife.utils.Constants;
 import com.example.medlife.utils.SharedPrefUtils;
-import com.khalti.checkout.helper.Config;
-import com.khalti.checkout.helper.KhaltiCheckOut;
-import com.khalti.checkout.helper.OnCheckOutListener;
-import com.khalti.checkout.helper.PaymentPreference;
+//import com.khalti.checkout.helper.Config;
+//import com.khalti.checkout.helper.KhaltiCheckOut;
+//import com.khalti.checkout.helper.OnCheckOutListener;
+//import com.khalti.checkout.helper.PaymentPreference;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -120,7 +120,7 @@ public class CheckOutActivity extends AppCompatActivity {
                     if (p_type == 1) {
                         checkOut();
                     } else {
-                        khaltiCheckOut();
+//                        khaltiCheckOut();
                     }
                 } else {
 
@@ -132,43 +132,43 @@ public class CheckOutActivity extends AppCompatActivity {
 
 
 
-    private void khaltiCheckOut() {
-
-        Map<String, Object> map = new HashMap<>();
-        map.put("merchant_extra", "This is extra data");
-
-        Config.Builder builder = new Config.Builder("test_public_key_cf36950f07d644ccbadbe04030eae034", ""+products.get(0).getId(), products.get(0).getName(), (long) (subTotalPrice + shippingCharge)*100, new OnCheckOutListener() {
-            @Override
-            public void onError(@NonNull String action, @NonNull Map<String, String> errorMap) {
-                Log.i(action, errorMap.toString());
-                Toast.makeText(CheckOutActivity.this, errorMap.toString(), Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onSuccess(@NonNull Map<String, Object> data) {
-                Log.i("success", data.toString());
-                p_type = 2;
-                p_ref = data.toString();
-                checkOut();
-
-            }
-        })
-                .paymentPreferences(new ArrayList<PaymentPreference>() {{
-                    add(PaymentPreference.KHALTI);
-                    add(PaymentPreference.EBANKING);
-                    add(PaymentPreference.MOBILE_BANKING);
-                    add(PaymentPreference.CONNECT_IPS);
-                    add(PaymentPreference.SCT);
-                }})
-                .additionalData(map)
-                .productUrl("http://example.com/product")
-                .mobile("9819110254");
-        Config config = builder.build();
-        KhaltiCheckOut khaltiCheckOut = new KhaltiCheckOut(this, config);
-        khaltiCheckOut.show();
-
-
-    }
+//    private void khaltiCheckOut() {
+//
+//        Map<String, Object> map = new HashMap<>();
+//        map.put("merchant_extra", "This is extra data");
+//
+//        Config.Builder builder = new Config.Builder("test_public_key_cf36950f07d644ccbadbe04030eae034", ""+products.get(0).getId(), products.get(0).getName(), (long) (subTotalPrice + shippingCharge)*100, new OnCheckOutListener() {
+//            @Override
+//            public void onError(@NonNull String action, @NonNull Map<String, String> errorMap) {
+//                Log.i(action, errorMap.toString());
+//                Toast.makeText(CheckOutActivity.this, errorMap.toString(), Toast.LENGTH_SHORT).show();
+//            }
+//
+//            @Override
+//            public void onSuccess(@NonNull Map<String, Object> data) {
+//                Log.i("success", data.toString());
+//                p_type = 2;
+//                p_ref = data.toString();
+//                checkOut();
+//
+//            }
+//        })
+//                .paymentPreferences(new ArrayList<PaymentPreference>() {{
+//                    add(PaymentPreference.KHALTI);
+//                    add(PaymentPreference.EBANKING);
+//                    add(PaymentPreference.MOBILE_BANKING);
+//                    add(PaymentPreference.CONNECT_IPS);
+//                    add(PaymentPreference.SCT);
+//                }})
+//                .additionalData(map)
+//                .productUrl("http://example.com/product")
+//                .mobile("9819110254");
+//        Config config = builder.build();
+//        KhaltiCheckOut khaltiCheckOut = new KhaltiCheckOut(this, config);
+//        khaltiCheckOut.show();
+//
+//
+//    }
 
 
     private void loadCartList() {

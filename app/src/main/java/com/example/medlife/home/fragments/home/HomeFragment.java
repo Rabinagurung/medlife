@@ -96,7 +96,6 @@ public class HomeFragment extends Fragment {
         supportCallLL = view.findViewById(R.id.callSupportLL);
         uploadPrescriptionLL = view.findViewById(R.id.uploadPrescriptionLL);
 //        user_ProfileLL = view.findViewById(R.id.user_ProfileLL);
-        notifyIV = view.findViewById(R.id.notifyIV);
         aboutIV = view.findViewById(R.id.aboutIV);
         acTV = view.findViewById(R.id.acTV);
 
@@ -111,14 +110,14 @@ public class HomeFragment extends Fragment {
 
         // For notification
 
-        notifyIV.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getContext(), NotificationActivity.class);
-                startActivity(intent);
-
-            }
-        });
+//        notifyIV.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(getContext(), NotificationActivity.class);
+//                startActivity(intent);
+//
+//            }
+//        });
 
 
         callPLL.setOnClickListener(new View.OnClickListener() {

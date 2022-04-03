@@ -18,11 +18,6 @@
         android:title="@string/cart" />
 
     <item
-        android:id="@+id/aboutUsMenu"
-        android:icon="@drawable/ic_user"
-        android:title="@string/aboutUs" />
-
-    <item
         android:id="@+id/profileMenu"
         android:icon="@drawable/ic_user"
         android:title="@string/profile" />

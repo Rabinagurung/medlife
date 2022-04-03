@@ -82,25 +82,22 @@ public class AboutActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent viewIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/riya.gurung22"));
                 startActivity(viewIntent);
-
             }
         });
 
         instagram.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(AboutActivity.this, AboutMedLifeActivity.class);
-                startActivity(intent);
-
+                Intent viewIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.instagram.com/rabinagurung66/"));
+                startActivity(viewIntent);
             }
         });
 
         twitter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(AboutActivity.this, AboutMedLifeActivity.class);
-                startActivity(intent);
-
+                Intent viewIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://twitter.com/riyagurung123"));
+                startActivity(viewIntent);
             }
         });
     }

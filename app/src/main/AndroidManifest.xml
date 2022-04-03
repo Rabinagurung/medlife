@@ -22,6 +22,12 @@
         android:theme="@style/Theme.MedLife"
         tools:replace="android:theme">
         <activity
+            android:name=".orderHistory.orderDetails.OrderDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".orderHistory.OrderHistoryActivity"
+            android:exported="false" />
+        <activity
             android:name=".Profile.InsideProfile.FakeActivity"
             android:exported="false" />
         <activity

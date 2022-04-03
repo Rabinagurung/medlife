@@ -96,6 +96,7 @@ public class HomeFragment extends Fragment {
         supportCallLL = view.findViewById(R.id.callSupportLL);
         uploadPrescriptionLL = view.findViewById(R.id.uploadPrescriptionLL);
 //        user_ProfileLL = view.findViewById(R.id.user_ProfileLL);
+//        notifyIV = view.findViewById(R.id.notifyIV);
         aboutIV = view.findViewById(R.id.aboutIV);
         acTV = view.findViewById(R.id.acTV);
 
@@ -221,20 +222,21 @@ public class HomeFragment extends Fragment {
         sliderAdapter.setClickLister(new SliderAdapter.OnSliderClickLister() {
             @Override
             public void onSliderClick(int position, Slider slider) {
-//                Toast.makeText(getContext(), "from home This is item in position " + position, Toast.LENGTH_SHORT).show();
-                if (slider.getType() == 1) {
-                    Intent intent = new Intent(getContext(), SingleProductActivity.class);
-                    intent.putExtra(SingleProductActivity.SINGLE_DATA_KEY, slider.getRelatedId());
-                    getContext().startActivity(intent);
-                } else if (slider.getType() ==2) {
-                    Intent cat = new Intent(getContext(), CategoryActivity.class);
-                    Category category = new Category();
-                    category.setId(slider.getRelatedId());
-                    category.setName(slider.getDesc());
-                    cat.putExtra(CategoryActivity.CATEGORY_DATA_KEY, category);
-                    getContext().startActivity(cat);
-                }
-            }
+////                Toast.makeText(getContext(), "from home This is item in position " + position, Toast.LENGTH_SHORT).show();
+//                if (slider.getType() == 1) {
+//                    Intent intent = new Intent(getContext(), SingleProductActivity.class);
+//                    intent.putExtra(SingleProductActivity.SINGLE_DATA_KEY, slider.getRelatedId());
+//                    getContext().startActivity(intent);*=
+
+//                } else if (slider.getType() ==2) {
+//                    Intent cat = new Intent(getContext(), CategoryActivity.class);
+//                    Category category = new Category();
+//                    category.setId(slider.getRelatedId());
+//                    category.setName(slider.getDesc());
+//                    cat.putExtra(CategoryActivity.CATEGORY_DATA_KEY, category);
+//                    getContext().startActivity(cat);
+//                }
+           }
         });
         imageSlider.setSliderAdapter(sliderAdapter);
         imageSlider.setIndicatorAnimation(IndicatorAnimationType.WORM); //set indicator animation by using IndicatorAnimationType. :WORM or THIN_WORM or COLOR or DROP or FILL or NONE or SCALE or SCALE_DOWN or SLIDE and SWAP!!

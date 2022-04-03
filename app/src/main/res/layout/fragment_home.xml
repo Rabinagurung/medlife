@@ -36,7 +36,9 @@
                             android:id="@+id/aboutIV"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:src="@drawable/ic_round_dehaze_24" />
+                            android:src="@drawable/ic_round_dehaze_24"
+                            android:layout_marginTop="5dp"
+                            app:tint="@color/white" />
 
                     </LinearLayout>
 
@@ -44,6 +46,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:layout_marginTop="5dp"
                         android:layout_marginEnd="25dp"
                         android:gravity="center">
 
@@ -117,7 +120,7 @@
                         android:completionThreshold="1"
                         android:drawableLeft="@drawable/ic_search"
                         android:drawablePadding="10dp"
-                        android:hint="Search Foods"
+                        android:hint="Search Medicines and Products"
                         android:padding="10dp"
                         android:singleLine="true"
                         android:textColor="@android:color/black"
@@ -272,7 +275,7 @@
                     android:id="@+id/doctorDescIV"
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
-                    android:src="@drawable/experts"
+                    android:src="@drawable/doctors"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="@dimen/normal_spacing"
                     />
@@ -327,10 +330,10 @@
 
             </RelativeLayout>
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="180dp"
-                android:src="@drawable/covid_banner"/>
+<!--            <ImageView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="180dp"-->
+<!--                android:src="@drawable/covid_banner"/>-->
 
 
             <LinearLayout

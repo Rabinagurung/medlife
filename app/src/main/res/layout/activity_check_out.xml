@@ -23,7 +23,6 @@
                 android:id="@+id/backIv"
                 android:layout_width="32dp"
                 android:layout_height="32dp"
-                android:layout_marginStart="@dimen/small_spacing"
                 android:background="@drawable/rectange_box"
                 android:backgroundTint="@color/grey_divider"
                 android:padding="4dp"

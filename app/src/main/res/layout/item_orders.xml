@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/orderHistory"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/normal_spacing"
+        android:background="@drawable/rectange_box"
+        android:backgroundTint="@color/off_white"
+        android:orientation="horizontal"
+        android:padding="@dimen/normal_spacing"
+        android:layout_margin="@dimen/normal_spacing"
+        tools:ignore="MissingConstraints">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/cityStreetTV"
+                    android:paddingStart="@dimen/normal_spacing"
+                    android:paddingTop="@dimen/small_spacing"
+                    android:text="#118"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_weight="1"/>
+
+<!--                <ImageView-->
+<!--                    android:id="@+id/removeAddressIV"-->
+<!--                    android:layout_width="24dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:background="@drawable/rectange_box"-->
+<!--                    android:rotation="45"-->
+<!--                    android:src="@drawable/ic_round_add_24"-->
+<!--                    app:tint="@color/white" />-->
+
+                <ImageView
+                    android:id="@+id/backIv"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:background="@drawable/rectange_box"
+                    android:backgroundTint="@color/blue"
+                    android:padding="4dp"
+                    android:rotation="180"
+                    android:src="@drawable/ic_round_arrow_back_ios_new_24"
+                    app:tint="@color/priceGray" />
+
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/provinceTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/normal_spacing"
+                android:text="2022-04-02 10:16:23"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:paddingStart="@dimen/normal_spacing"
+                android:text="Cetaphil Moisturizer, UV Doux, Paracetamol"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="normal" />
+
+
+            <TextView
+                android:id="@+id/decTV"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/normal_spacing"
+                android:text="pending..."
+                android:textSize="18sp"
+                android:textStyle="normal" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

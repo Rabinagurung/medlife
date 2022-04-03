@@ -7,4 +7,20 @@
     tools:context=".splash.SplashScreenActivity"
     android:background="@color/white">
 
+    <ImageView
+        android:id="@+id/splashIV"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/splash_image"
+        android:layout_centerInParent="true"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="MEDLIFE"
+        android:layout_below="@+id/splashIV"
+        android:textColor="@color/blue"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:gravity="center"/>
+
 </RelativeLayout>

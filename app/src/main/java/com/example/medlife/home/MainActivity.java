@@ -64,15 +64,6 @@ public class MainActivity extends AppCompatActivity {
                 }
 
 
-
-                if (item.getTitle().equals(getString(R.string.aboutUs))) {
-                    if (aboutUsFragment == null)
-                        aboutUsFragment= new AboutUsFragment();
-                    changeFragment(aboutUsFragment);
-                    return true;
-                }
-
-
                 if (item.getTitle().equals("Profile")) {
                     if (profileFragment == null)
                         profileFragment = new ProfileFragment();

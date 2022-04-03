@@ -67,8 +67,8 @@ public class OrderHistoryActivity extends AppCompatActivity {
     private void showOrders(List<com.example.medlife.api.response.OrderHistory>order) {
         orderHistory.setHasFixedSize(true);
         orderHistory.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
-//        OrderAdapter orderAdapter = new OrderAdapter(order, this);
-//        orderHistory.setAdapter(orderAdapter);
+        OrdersAdapter orderAdapter = new OrdersAdapter(order, this);
+        orderHistory.setAdapter(orderAdapter);
 
     }
 }

@@ -20,7 +20,7 @@ import java.util.List;
 public class OrderDetailsActivity extends AppCompatActivity {
     public static String key = "oKey";
     OrderHistory orderHistory;
-    TextView orderId, status, orderDate, totalTV, paymentStatus, paymentStatus1, payStatus, houseNo, delivery_area, street;
+    TextView orderId, status, orderDate, totalTV, paymentStatus, paymentStatus1, payStatus, phoneNo, delivery_area, street;
     RecyclerView cartIV;
     double deliveryCharge = 50;
     ImageView backIv;
@@ -41,7 +41,7 @@ public class OrderDetailsActivity extends AppCompatActivity {
         totalTV = findViewById(R.id.totalTV);
         orderDate = findViewById(R.id.orderDate);
         backIv = findViewById(R.id.backIv);
-        houseNo = findViewById(R.id.houseNo);
+        phoneNo = findViewById(R.id.phoneNo);
         delivery_area = findViewById(R.id.delivery_area);
         street = findViewById(R.id.street);
         backIv.setOnClickListener(new View.OnClickListener() {
@@ -61,8 +61,8 @@ public class OrderDetailsActivity extends AppCompatActivity {
 
     private void setOrderHistory(OrderHistory orderHistory) {
         orderId.setText("#" + orderHistory.getId() + "");
-        houseNo.setText(orderHistory.getAddress().getHouse_no());
-        delivery_area.setText(orderHistory.getAddress().getDelivery_area());
+        phoneNo.setText(orderHistory.getAddress().getPhone());
+        delivery_area.setText(orderHistory.getAddress().getCity());
         street.setText(orderHistory.getAddress().getStreet());
         orderDate.setText(orderHistory.getOrderDateTime());
         if (orderHistory.getPaymentType() == 1){
@@ -87,9 +87,9 @@ public class OrderDetailsActivity extends AppCompatActivity {
         List<Bag> bagList = orderHistory.getBag();
         cartIV.setHasFixedSize(true);
         cartIV.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
-//        OrderDetailsAdapter orderAdapter = new OrderDetailsAdapter(bagList, this);
-//        cartIV.setAdapter(orderAdapter);
-//        setPrice(bagList);
+        OrderDetailsAdapter orderAdapter = new OrderDetailsAdapter(bagList, this);
+        cartIV.setAdapter(orderAdapter);
+        setPrice(bagList);
     }
 
     private void setPrice(List<Bag> data) {

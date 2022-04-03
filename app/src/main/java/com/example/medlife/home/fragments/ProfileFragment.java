@@ -31,6 +31,7 @@ import com.example.medlife.checkout.CheckOutActivity;
 import com.example.medlife.checkout.address.AddNewLocationActivity;
 import com.example.medlife.checkout.address.AddressActivity;
 import com.example.medlife.home.fragments.home.adapters.ShopAdapter;
+import com.example.medlife.orderHistory.OrderHistoryActivity;
 import com.example.medlife.uploadPrescription.UploadPrescriptionActivity;
 import com.example.medlife.userAccount.UserAccountActivity;
 import com.example.medlife.utils.SharedPrefUtils;
@@ -105,8 +106,8 @@ public class ProfileFragment extends Fragment {
         ordersLL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Intent intent = new Intent(getContext(), ProfileActivity.class);
-//                startActivity(intent);
+                Intent intent = new Intent(getContext(), OrderHistoryActivity.class);
+                startActivity(intent);
             }
         });
 

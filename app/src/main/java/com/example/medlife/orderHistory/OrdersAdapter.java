@@ -9,10 +9,12 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.medlife.R;
 import com.example.medlife.api.response.OrderHistory;
+import com.example.medlife.orderHistory.orderDetails.OrderDetailsActivity;
 
 import java.util.List;
 
@@ -36,21 +38,20 @@ public class OrdersAdapter extends RecyclerView.Adapter<OrdersAdapter.OrderViewH
 
     @Override
     public void onBindViewHolder(@NonNull OrdersAdapter.OrderViewHolder holder, int position) {
-        holder.orderNo.setText("#" + orderHistoryList.get(position).getId() +"");
+        holder.orderId.setText("#" + orderHistoryList.get(position).getId() +"");
         holder.orderDate.setText(orderHistoryList.get(position).getOrderDateTime());
-        holder.productsName.setText(orderHistoryList.get(position).getBag().get(0).getProduct().getProducts().get(0).getrName());
         if (orderHistoryList.get(position).getStatus() == 0){
-            holder.status.setText("Pending");
+            holder.orderStatus.setText("Pending");
         }else if (orderHistoryList.get(position).getStatus() == 1){
-            holder.status.setText("Processing");
+            holder.orderStatus.setText("Processing");
         }else
-            holder.status.setText("Completed");
+            holder.orderStatus.setText("Completed");
 
-        holder.orderLL.setOnClickListener(new View.OnClickListener() {
+        holder.orderHistory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, OrderDetails.class);
-                intent.putExtra(OrderDetails.key, orderHistoryList.get(holder.getAdapterPosition()));
+                Intent intent = new Intent(context, OrderDetailsActivity.class);
+                intent.putExtra(OrderDetailsActivity.key, orderHistoryList.get(holder.getAdapterPosition()));
                 context.startActivity(intent);
             }
 
@@ -59,21 +60,21 @@ public class OrdersAdapter extends RecyclerView.Adapter<OrdersAdapter.OrderViewH
 
     @Override
     public int getItemCount() {
-        return 0;
+        return orderHistoryList.size();
     }
 
     public class OrderViewHolder extends RecyclerView.ViewHolder {
-        TextView orderNo, restaurantName, orderDate, status, productNameTV, quantityTV, PriceTV;
-        LinearLayout orderLL;
+        TextView orderId, orderDate, orderStatus;
+        ConstraintLayout orderHistory;
 
 
         public OrderViewHolder(@NonNull View itemView) {
             super(itemView);
-            orderNo = itemView.findViewById(R.id.orderNo);
-            restaurantName = itemView.findViewById(R.id.restaurantName);
+            orderId = itemView.findViewById(R.id.orderId);
             orderDate = itemView.findViewById(R.id.orderDate);
-            status = itemView.findViewById(R.id.status);
-            orderLL = itemView.findViewById(R.id.orderLL);
+            orderStatus = itemView.findViewById(R.id.orderStatus);
+            orderHistory = itemView.findViewById(R.id.orderHistory);
+
         }
     }
 }

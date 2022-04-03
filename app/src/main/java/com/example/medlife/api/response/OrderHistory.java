@@ -3,9 +3,10 @@ package com.example.medlife.api.response;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class OrderHistory {
+public class OrderHistory implements Serializable {
 
 @SerializedName("id")
 @Expose
@@ -19,6 +20,15 @@ private Integer paymentType;
 @SerializedName("payment_refrence")
 @Expose
 private String paymentRefrence;
+    @SerializedName("status")
+    @Expose
+    private Integer status;
+    @SerializedName("address_id")
+    @Expose
+    private Integer addressId;
+    @SerializedName("address")
+    @Expose
+    private Address address;
 @SerializedName("bag")
 @Expose
 private List<Bag> bag = null;
@@ -55,6 +65,23 @@ public void setPaymentRefrence(String paymentRefrence) {
 this.paymentRefrence = paymentRefrence;
 }
 
+    public Integer getAddressId() {
+        return addressId;
+    }
+
+    public void setAddressId(Integer addressId) {
+        this.addressId = addressId;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
+
 public List<Bag> getBag() {
 return bag;
 }
@@ -62,5 +89,13 @@ return bag;
 public void setBag(List<Bag> bag) {
 this.bag = bag;
 }
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
 
 }

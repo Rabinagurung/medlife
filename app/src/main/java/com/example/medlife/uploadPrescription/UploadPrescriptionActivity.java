@@ -24,6 +24,7 @@ import com.example.medlife.api.ApiClient;
 import com.example.medlife.api.response.RegisterResponse;
 import com.example.medlife.utils.PermissionUtils;
 import com.example.medlife.utils.SharedPrefUtils;
+import com.google.android.material.textfield.TextInputEditText;
 
 import java.io.File;
 import java.io.IOException;
@@ -49,7 +50,7 @@ public class UploadPrescriptionActivity extends AppCompatActivity {
     LinearLayout openCameraIV, openGalleryIV, imageLayoutLL, sendPresLL;
     String currentPhotoPath1;
     ImageView selectedIv;
-    TextView doctorNameET, noteET;
+    TextInputEditText doctorNameET, noteET, phoneNumberET ;
 
 //    List<String> photoPath = new ArrayList<>();
 //    List<Uri> photoUris = new ArrayList<>();
@@ -68,9 +69,9 @@ public class UploadPrescriptionActivity extends AppCompatActivity {
         imageLayoutLL= findViewById(R.id.imageLayoutLL);
         sendPresLL= findViewById(R.id.sendPresLL);
         doctorNameET = findViewById(R.id.doctorNameET);
+        phoneNumberET = findViewById(R.id.phoneNumberET);
         noteET = findViewById(R.id.noteET);
         setClickListeners();
-
     }
 
     private void setClickListeners() {
@@ -80,7 +81,7 @@ public class UploadPrescriptionActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if(!doctorNameET.getText().toString().isEmpty() || !noteET.getText().toString().
                         isEmpty() && currentPhotoPath1 !=null) {
-                    addPrescription(new File(currentPhotoPath1), doctorNameET.getText().toString(), noteET.getText().toString());
+                    addPrescription(new File(currentPhotoPath1), doctorNameET.getText().toString(), phoneNumberET.getText().toString(), noteET.getText().toString());
                 } else {
                     Toast.makeText(UploadPrescriptionActivity.this, "Please upload prescription or doctor name or note", Toast.LENGTH_SHORT).show();
                 }
@@ -111,28 +112,6 @@ public class UploadPrescriptionActivity extends AppCompatActivity {
 
             }
         });
-
-//        openCameraIV.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                File file = null;
-//                try {
-//                    file = createImageFile();
-//                } catch (IOException e) {
-//                    e.printStackTrace();
-//                }
-//                if (PermissionUtils.isCameraPermissionGranted(UploadPrescriptionActivity.this, "", 1)) {
-//                    Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-//                    if (file != null) {
-//                        Uri photoURI = FileProvider.getUriForFile
-//                                (UploadPrescriptionActivity.this,
-//                                        "com.example.android.fileprovider", file);
-//                        intent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
-//                        startActivityForResult(intent, TAKE_PICTURE);
-//                    }
-//                }
-//            }
-//        });
         openGalleryIV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -174,16 +153,17 @@ public class UploadPrescriptionActivity extends AppCompatActivity {
         selectedIv.setVisibility(View.VISIBLE);
     }
 
-    private void addPrescription(File file, String doctorNameET, String noteET){
+    private void addPrescription(File file, String doctorNameET, String phoneNumberET,  String noteET){
         ProgressDialog progressDialog = ProgressDialog.show(this, "",
                 "Uploading. Please wait...", false);
         String key = SharedPrefUtils.getString(this, getString(R.string.api_key));
-        RequestBody catName = RequestBody.create(MediaType.parse("text/plain"), doctorNameET);
+        RequestBody docName = RequestBody.create(MediaType.parse("text/plain"), doctorNameET);
+        RequestBody phoneNumber = RequestBody.create(MediaType.parse("text/plain"), phoneNumberET);
         RequestBody note = RequestBody.create(MediaType.parse("text/plain"), noteET);
         MultipartBody.Part filePart = MultipartBody.Part.createFormData("file", file.getName(), RequestBody.create(MediaType.parse("image/*"), file));
 
         // this is uploadcategory API but have to create for addPrescription
-        Call<RegisterResponse> responseCall = ApiClient.getClient().uploadCategory(key, filePart, catName);
+        Call<RegisterResponse> responseCall = ApiClient.getClient().uploadPrescription(key, filePart, docName, phoneNumber, note);
         responseCall.enqueue(new Callback<RegisterResponse>() {
             @Override
             public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {

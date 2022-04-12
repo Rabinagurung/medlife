@@ -1,5 +1,7 @@
 package com.example.medlife.Profile.InsideProfile;
 
+import static java.security.AccessController.getContext;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,6 +11,7 @@ import android.util.Patterns;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,6 +22,7 @@ import com.example.medlife.api.response.AllProductResponse;
 import com.example.medlife.api.response.UpdateProfileResponse;
 import com.example.medlife.home.MainActivity;
 import com.example.medlife.utils.SharedPrefUtils;
+import com.google.android.material.textfield.TextInputLayout;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -26,6 +30,7 @@ import retrofit2.Response;
 
 public class EditProfileActivity extends AppCompatActivity {
     TextView fullNameET, userEmailET;
+    AutoCompleteTextView gender_AT;
     LinearLayout saveLL;
 
 
@@ -38,19 +43,24 @@ public class EditProfileActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         fullNameET = findViewById(R.id.fullNameET);
         userEmailET= findViewById(R.id.userEmailET);
+        gender_AT= findViewById(R.id.gender_AT);
+        String[] items ={"Male", "Female","Other"};
+        ArrayAdapter<String> itemAdapter = new ArrayAdapter<>(EditProfileActivity.this, R.layout.item_list, items);
+        gender_AT.setAdapter(itemAdapter);
         saveLL=findViewById(R.id.saveLL);
 //        fullNameET.setText(SharedPrefUtils.getString(EditProfileActivity.this, getString(R.string.name_key)));
 //        userEmailET.setText(SharedPrefUtils.getString(EditProfileActivity.this, getString(R.string.email_key)));
 
         fullNameET.setText(SharedPrefUtils.getString(EditProfileActivity.this, getString(R.string.name_key)));
         userEmailET.setText(SharedPrefUtils.getString(EditProfileActivity.this, getString(R.string.email_id)));
+        //gender_AT.setText(SharedPrefUtils.getString(EditProfileActivity.this,""));
 
         saveLL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (validate()) {
                     String key = SharedPrefUtils.getString(EditProfileActivity.this, getString(R.string.api_key));
-                    Call<UpdateProfileResponse> updateProfileResponseCall = ApiClient.getClient().updateProfile(key, fullNameET.getText().toString(), userEmailET.getText().toString());
+                    Call<UpdateProfileResponse> updateProfileResponseCall = ApiClient.getClient().updateProfile(key, fullNameET.getText().toString(), userEmailET.getText().toString(), gender_AT.getText().toString());
                     updateProfileResponseCall.enqueue(new Callback<UpdateProfileResponse>() {
                         @Override
                         public void onResponse(Call<UpdateProfileResponse> call, Response<UpdateProfileResponse> response) {
@@ -58,6 +68,7 @@ public class EditProfileActivity extends AppCompatActivity {
                                 if (!response.body().getError()) {
                                     SharedPrefUtils.setString(EditProfileActivity.this, getString(R.string.name_key), fullNameET.getText().toString());
                                     SharedPrefUtils.setString(EditProfileActivity.this, getString(R.string.email_id), userEmailET.getText().toString());
+                                    SharedPrefUtils.setString(EditProfileActivity.this, getString(R.string.gender_key), gender_AT.getText().toString());
                                     Toast.makeText(EditProfileActivity.this, "Profile Updated Successfully", Toast.LENGTH_LONG).show();
                                     Intent intent = new Intent(EditProfileActivity.this, MainActivity.class);
                                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);

@@ -8,11 +8,12 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <LinearLayout
-            android:layout_marginBottom="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/normal_spacing"
+            android:layout_marginBottom="20dp"
             android:orientation="vertical">
 
             <LinearLayout
@@ -24,71 +25,103 @@
                 android:orientation="horizontal">
 
                 <LinearLayout
-                    android:onClick="openCam"
                     android:id="@+id/cameraIV"
                     android:layout_width="0dp"
                     android:layout_height="50dp"
                     android:layout_weight="1"
-                    android:orientation="horizontal"
                     android:background="@drawable/upload_rectangle"
                     android:backgroundTint="@color/light_blue"
-                    android:gravity="center">
+                    android:gravity="center"
+                    android:onClick="openCam"
+                    android:orientation="horizontal">
 
                     <ImageView
                         android:layout_width="40dp"
                         android:layout_height="40dp"
-                        app:tint="@color/navy_blue"
-                        android:src="@drawable/camera" />
+                        android:src="@drawable/camera"
+                        app:tint="@color/navy_blue" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Open Camera"
-                        android:textSize="12dp"
                         android:layout_marginLeft="5dp"
-                        android:textColor="@color/navy_blue" />
+                        android:text="Open Camera"
+                        android:textColor="@color/navy_blue"
+                        android:textSize="12dp" />
 
                 </LinearLayout>
 
                 <LinearLayout
-                    android:onClick="openGallery"
                     android:id="@+id/galleryIV"
                     android:layout_width="0dp"
                     android:layout_height="50dp"
-                    android:layout_weight="1"
                     android:layout_marginLeft="5dp"
-                    android:orientation="horizontal"
+                    android:layout_weight="1"
                     android:background="@drawable/upload_rectangle"
                     android:backgroundTint="@color/light_blue"
-                    android:gravity="center">
+                    android:gravity="center"
+                    android:onClick="openGallery"
+                    android:orientation="horizontal">
 
                     <ImageView
-                        app:tint="@color/navy_blue"
                         android:layout_width="40dp"
                         android:layout_height="35dp"
-                        android:src="@drawable/gallery" />
+                        android:src="@drawable/gallery"
+                        app:tint="@color/navy_blue" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Open Gallery"
                         android:layout_marginLeft="5dp"
-                        android:textSize="12dp"
-                        android:textColor="@color/navy_blue" />
+                        android:text="Open Gallery"
+                        android:textColor="@color/navy_blue"
+                        android:textSize="12dp" />
 
                 </LinearLayout>
 
             </LinearLayout>
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/imageRv"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginBottom="@dimen/normal_spacing"
-                android:background="@drawable/box_shape"
-                android:padding="@dimen/normal_spacing"
-                android:visibility="visible" />
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:background="@drawable/dotted_border"-->
+<!--                android:orientation="vertical">-->
+
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/image_Layout"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="vertical">-->
+
+<!--                    <ImageView-->
+<!--                        android:layout_width="70dp"-->
+<!--                        android:layout_height="70dp"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:src="@drawable/upload"-->
+<!--                        android:tint="@color/grey" />-->
+
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:layout_marginLeft="10dp"-->
+<!--                        android:text="Upload category from your phone or open camera to upload new category"-->
+<!--                        android:textColor="@color/grey"-->
+<!--                        android:textSize="12dp" />-->
+
+<!--                </LinearLayout>-->
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/imageRv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/normal_spacing"
+                    android:background="@drawable/box_shape"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/normal_spacing"
+                    android:visibility="visible" />
+
+<!--            </LinearLayout>-->
 
 
             <ImageView
@@ -100,123 +133,299 @@
                 android:scaleType="centerCrop"
                 android:visibility="gone" />
 
-            <EditText
-                android:id="@+id/productNameET"
+
+
+<!--                        <EditText-->
+<!--                            android:id="@+id/productNameET"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_marginBottom="@dimen/normal_spacing"-->
+<!--                            android:height="50dp"-->
+<!--                            android:backgroundTint="@color/grey"-->
+<!--                            android:hint="Product Name*"-->
+<!--                            android:padding="@dimen/normal_spacing"-->
+<!--                            tools:ignore="SpeakableTextPresentCheck" />-->
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/normal_spacing"
-                android:height="50dp"
-                android:backgroundTint="@color/grey"
                 android:hint="Product Name*"
-                android:padding="@dimen/normal_spacing"
-                tools:ignore="SpeakableTextPresentCheck" />
+                android:padding="0dp"
+                app:endIconMode="clear_text"
+                android:layout_marginTop="15dp"
+                app:boxCornerRadiusBottomEnd="20dp"
+                app:boxCornerRadiusBottomStart="20dp"
+                app:boxCornerRadiusTopEnd="20dp"
+                app:boxCornerRadiusTopStart="20dp">
 
-            <EditText
-                android:inputType="number"
-                android:id="@+id/priceET"
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/productNameET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="10dp"
+                    tools:ignore="SpeakableTextPresentCheck"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+<!--            <EditText-->
+<!--                android:id="@+id/priceET"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginBottom="@dimen/normal_spacing"-->
+<!--                android:height="50dp"-->
+<!--                android:backgroundTint="@color/grey"-->
+<!--                android:hint="Price*"-->
+<!--                android:inputType="number"-->
+<!--                android:padding="@dimen/normal_spacing"-->
+<!--                tools:ignore="SpeakableTextPresentCheck" />-->
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/normal_spacing"
-                android:height="50dp"
-                android:backgroundTint="@color/grey"
                 android:hint="Price*"
-                android:padding="@dimen/normal_spacing"
-                tools:ignore="SpeakableTextPresentCheck" />
+                android:padding="0dp"
+                app:endIconMode="clear_text"
+                android:layout_marginTop="15dp"
+                app:boxCornerRadiusBottomEnd="20dp"
+                app:boxCornerRadiusBottomStart="20dp"
+                app:boxCornerRadiusTopEnd="20dp"
+                app:boxCornerRadiusTopStart="20dp">
 
-            <EditText
-                android:id="@+id/descriptionET"
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/priceET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="10dp"
+                    android:inputType="number"
+                    tools:ignore="SpeakableTextPresentCheck"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+<!--            <EditText-->
+<!--                android:id="@+id/descriptionET"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginBottom="@dimen/normal_spacing"-->
+<!--                android:backgroundTint="@color/grey"-->
+<!--                android:gravity="top|left"-->
+<!--                android:hint="Description"-->
+<!--                android:inputType="textEmailAddress|textMultiLine"-->
+<!--                android:lines="20"-->
+<!--                android:minLines="9"-->
+<!--                android:padding="@dimen/normal_spacing"-->
+<!--                android:scrollbars="vertical"-->
+<!--                android:scrollHorizontally="false" />-->
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/normal_spacing"
-                android:backgroundTint="@color/grey"
-                android:hint="Description"
-                android:padding="@dimen/normal_spacing"
-                android:gravity="top|left"
-                android:inputType="textEmailAddress|textMultiLine"
-                android:lines="20"
-                android:minLines="9"
-                android:scrollHorizontally="false"
-                android:scrollbars="vertical" />
+                android:hint="Description*"
+                android:padding="0dp"
+                app:endIconMode="clear_text"
+                android:layout_marginTop="15dp"
+                app:boxCornerRadiusBottomEnd="20dp"
+                app:boxCornerRadiusBottomStart="20dp"
+                app:boxCornerRadiusTopEnd="20dp"
+                app:boxCornerRadiusTopStart="20dp">
 
-            <EditText
-                android:inputType="number"
-                android:id="@+id/quantityET"
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/descriptionET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="10dp"
+                    android:inputType="textEmailAddress|textMultiLine"
+                    android:lines="20"
+                    android:minLines="9"
+                    android:padding="@dimen/normal_spacing"
+                    android:scrollbars="vertical"
+                    android:scrollHorizontally="false"
+                    android:gravity="top|left"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+<!--            <EditText-->
+<!--                android:id="@+id/quantityET"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginBottom="@dimen/normal_spacing"-->
+<!--                android:height="50dp"-->
+<!--                android:backgroundTint="@color/grey"-->
+<!--                android:hint="Quantity*"-->
+<!--                android:inputType="number"-->
+<!--                android:padding="@dimen/normal_spacing"-->
+<!--                tools:ignore="SpeakableTextPresentCheck" />-->
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/normal_spacing"
-                android:height="50dp"
-                android:backgroundTint="@color/grey"
                 android:hint="Quantity*"
-                android:padding="@dimen/normal_spacing"
-                tools:ignore="SpeakableTextPresentCheck" />
+                android:padding="0dp"
+                app:endIconMode="clear_text"
+                android:layout_marginTop="15dp"
+                app:boxCornerRadiusBottomEnd="20dp"
+                app:boxCornerRadiusBottomStart="20dp"
+                app:boxCornerRadiusTopEnd="20dp"
+                app:boxCornerRadiusTopStart="20dp">
 
-            <EditText
-                android:inputType="number"
-                android:id="@+id/discountPriceET"
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/quantityET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="10dp"
+                    android:inputType="number"
+                    tools:ignore="SpeakableTextPresentCheck"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+
+<!--            <EditText-->
+<!--                android:id="@+id/discountPriceET"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginBottom="@dimen/normal_spacing"-->
+<!--                android:height="50dp"-->
+<!--                android:backgroundTint="@color/grey"-->
+<!--                android:hint="Discount Price*"-->
+<!--                android:inputType="number"-->
+<!--                android:padding="@dimen/normal_spacing"-->
+<!--                tools:ignore="SpeakableTextPresentCheck" />-->
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/normal_spacing"
-                android:height="50dp"
-                android:backgroundTint="@color/grey"
                 android:hint="Discount Price*"
-                android:padding="@dimen/normal_spacing"
-                tools:ignore="SpeakableTextPresentCheck" />
+                android:padding="0dp"
+                app:endIconMode="clear_text"
+                android:layout_marginTop="15dp"
+                app:boxCornerRadiusBottomEnd="20dp"
+                app:boxCornerRadiusBottomStart="20dp"
+                app:boxCornerRadiusTopEnd="20dp"
+                app:boxCornerRadiusTopStart="20dp">
 
-            <EditText
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/discountPriceET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="10dp"
+                    android:inputType="number"
+                    tools:ignore="SpeakableTextPresentCheck"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+<!--            <EditText-->
+<!--                android:id="@+id/productionDateET"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginBottom="@dimen/normal_spacing"-->
+<!--                android:height="50dp"-->
+<!--                android:backgroundTint="@color/grey"-->
+<!--                android:hint="Production Date*"-->
+<!--                android:onClick="pDateClick"-->
+<!--                android:padding="@dimen/normal_spacing"-->
+<!--                android:textSize="18sp"-->
+<!--                tools:ignore="UsingOnClickInXml" />-->
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:onClick="pDateClick"
-                android:id="@+id/productionDateET"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/normal_spacing"
-                android:height="50dp"
-                android:textSize="18sp"
-                android:backgroundTint="@color/grey"
                 android:hint="Production Date*"
-                android:padding="@dimen/normal_spacing"
-                tools:ignore="UsingOnClickInXml" />
+                android:padding="0dp"
+                app:endIconMode="clear_text"
+                android:layout_marginTop="15dp"
+                app:boxCornerRadiusBottomEnd="20dp"
+                app:boxCornerRadiusBottomStart="20dp"
+                app:boxCornerRadiusTopEnd="20dp"
+                app:boxCornerRadiusTopStart="20dp"
+                >
 
-            <EditText
-                android:textSize="18sp"
-                android:autofillHints="da"
-                android:id="@+id/expiryDateET"
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/productionDateET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="10dp"
+                    android:textSize="18sp"
+                    tools:ignore="UsingOnClickInXml"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+<!--            <EditText-->
+<!--                android:id="@+id/expiryDateET"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginBottom="@dimen/normal_spacing"-->
+<!--                android:height="50dp"-->
+<!--                android:autofillHints="da"-->
+<!--                android:backgroundTint="@color/grey"-->
+<!--                android:hint="Expiry Date*"-->
+<!--                android:onClick="eDateClick"-->
+<!--                android:padding="@dimen/normal_spacing"-->
+<!--                android:textSize="18sp"-->
+<!--                tools:ignore="SpeakableTextPresentCheck" />-->
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/normal_spacing"
-                android:height="50dp"
-                android:backgroundTint="@color/grey"
-                android:hint="Expiry Date*"
-                android:padding="@dimen/normal_spacing"
-                tools:ignore="SpeakableTextPresentCheck" />
+                android:hint="Discount Price*"
+                android:padding="0dp"
+                app:endIconMode="clear_text"
+                android:layout_marginTop="15dp"
+                android:autofillHints="da"
+                app:boxCornerRadiusBottomEnd="20dp"
+                app:boxCornerRadiusBottomStart="20dp"
+                app:boxCornerRadiusTopEnd="20dp"
+                app:boxCornerRadiusTopStart="20dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/expiryDateET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="10dp"
+                    tools:ignore="UsingOnClickInXml"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
-                android:onClick="addCategory"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/small_spacing"
+                android:drawableEnd="@drawable/ic_round_add_24"
+                android:onClick="addCategory"
                 android:text="Categories"
                 android:textColor="@color/black"
-                android:layout_marginBottom="@dimen/small_spacing"
                 android:textSize="18sp"
-                android:textStyle="bold"
-                android:drawableEnd="@drawable/ic_round_add_24"
-                />
+                android:textStyle="bold" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/catRv"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:orientation="horizontal"
                 android:layout_marginBottom="@dimen/normal_spacing"
-                android:padding="@dimen/small_spacing"
-                />
+                android:orientation="horizontal"
+                android:padding="@dimen/small_spacing" />
 
 
             <Button
-                android:layout_marginBottom="@dimen/large_spacing"
-                android:backgroundTint="@color/light_blue"
                 android:id="@+id/uploadBtn"
-                android:onClick="uploadProduct"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
+                android:layout_marginBottom="@dimen/large_spacing"
+                android:backgroundTint="@color/light_blue"
+                android:onClick="uploadProduct"
                 android:text="UPLOAD"
                 android:textColor="@color/navy_blue" />
 

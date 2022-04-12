@@ -22,6 +22,9 @@
         android:theme="@style/Theme.MedLife"
         tools:replace="android:theme">
         <activity
+            android:name=".admin.Orders.AdminOrderActivity"
+            android:exported="false" />
+        <activity
             android:name=".orderHistory.orderDetails.OrderDetailsActivity"
             android:exported="false" />
         <activity

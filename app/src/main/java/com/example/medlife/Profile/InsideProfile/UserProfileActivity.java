@@ -54,7 +54,7 @@ public class UserProfileActivity extends AppCompatActivity {
     CircleImageView profilePicIV;
     ImageView selectedIV;
     LinearLayout imageLayout;
-    TextView email_TV, name_TV;
+    TextView email_TV, name_TV, gender_TV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,10 +68,12 @@ public class UserProfileActivity extends AppCompatActivity {
         changeProfile=findViewById(R.id.changeProfile);
         name_TV = findViewById(R.id.name_TV);
         email_TV = findViewById(R.id.email_TV);
+        gender_TV= findViewById(R.id.gender_TV);
 
         Picasso.get().load((SharedPrefUtils.getString(UserProfileActivity.this, getString(R.string.profile_key)))).into(profilePicIV);
         name_TV.setText(SharedPrefUtils.getString(UserProfileActivity.this, getString(R.string.name_key)));
         email_TV.setText(SharedPrefUtils.getString(UserProfileActivity.this, getString(R.string.email_id)));
+        gender_TV.setText(SharedPrefUtils.getString(UserProfileActivity.this, getString(R.string.gender_key)));
         setClickListener();
     }
 

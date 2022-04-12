@@ -7,680 +7,407 @@
     android:orientation="vertical"
     tools:context=".admin.AdminActivity">
 
-<!--    <LinearLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_margin="@dimen/normal_spacing"-->
-<!--        android:background="@drawable/box_shape"-->
-<!--        android:backgroundTint="@color/grey"-->
-<!--        android:padding="@dimen/normal_spacing">-->
-
-<!--        <GridLayout-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:columnCount="3"-->
-<!--            android:orientation="horizontal"-->
-<!--            android:useDefaultMargins="true">-->
-
-<!--            <LinearLayout-->
-<!--                android:layout_width="0dp"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_columnWeight="1"-->
-<!--                android:gravity="center"-->
-<!--                android:orientation="vertical">-->
-
-<!--                <TextView-->
-<!--                    android:textStyle="bold"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_marginBottom="@dimen/small_spacing"-->
-<!--                    android:text="New Orders"-->
-<!--                    android:textColor="@color/primaryColor" />-->
-
-<!--                <TextView-->
-<!--                    android:id="@+id/pendingOrdersTV"-->
-<!--                    android:textStyle="bold"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:textColor="@color/primaryColor"-->
-<!--                    android:textSize="16sp" />-->
-
-<!--            </LinearLayout>-->
-
-<!--            <LinearLayout-->
-<!--                android:layout_width="0dp"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_columnWeight="1"-->
-<!--                android:gravity="center"-->
-<!--                android:orientation="vertical">-->
-
-<!--                <TextView-->
-<!--                    android:textStyle="bold"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_marginBottom="@dimen/small_spacing"-->
-<!--                    android:text="Order in Process"-->
-<!--                    android:textColor="@color/navy_blue" />-->
-
-<!--                <TextView-->
-<!--                    android:id="@+id/totalOrdersTV"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:textStyle="bold"-->
-<!--                    android:textColor="@color/black"-->
-<!--                    android:textSize="16sp" />-->
-
-<!--            </LinearLayout>-->
-
-<!--            <LinearLayout-->
-<!--                android:layout_width="0dp"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_columnWeight="1"-->
-<!--                android:gravity="center"-->
-<!--                android:orientation="vertical">-->
-
-<!--                <TextView-->
-<!--                    android:textStyle="bold"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_marginBottom="@dimen/small_spacing"-->
-<!--                    android:text="Shipped Orders"-->
-<!--                    android:textColor="@color/navy_blue" />-->
-
-<!--                <TextView-->
-<!--                    android:id="@+id/shippedOrdersTV"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:textStyle="bold"-->
-<!--                    android:textColor="@color/black"-->
-<!--                    android:textSize="16sp" />-->
-
-<!--            </LinearLayout>-->
-
-<!--            <LinearLayout-->
-<!--                android:layout_width="0dp"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_columnWeight="1"-->
-<!--                android:gravity="center"-->
-<!--                android:orientation="vertical">-->
-
-<!--                <TextView-->
-<!--                    android:textStyle="bold"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_marginBottom="@dimen/small_spacing"-->
-<!--                    android:text="Total Category"-->
-<!--                    android:textColor="@color/navy_blue" />-->
-
-<!--                <TextView-->
-<!--                    android:textStyle="bold"-->
-<!--                    android:id="@+id/totalCategoriesTV"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:textColor="@color/black"-->
-<!--                    android:textSize="16sp" />-->
-
-<!--            </LinearLayout>-->
-
-<!--            <LinearLayout-->
-<!--                android:layout_width="0dp"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_columnWeight="1"-->
-<!--                android:gravity="center"-->
-<!--                android:orientation="vertical">-->
-
-<!--                <TextView-->
-<!--                    android:textStyle="bold"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_marginBottom="@dimen/small_spacing"-->
-<!--                    android:text="Customers"-->
-<!--                    android:textColor="@color/navy_blue" />-->
-
-<!--                <TextView-->
-<!--                    android:id="@+id/totalCustomersTV"-->
-<!--                    android:textStyle="bold"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-
-<!--                    android:textColor="@color/black"-->
-<!--                    android:textSize="16sp" />-->
-
-<!--            </LinearLayout>-->
-
-<!--            <LinearLayout-->
-<!--                android:layout_width="0dp"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_columnWeight="1"-->
-<!--                android:gravity="center"-->
-<!--                android:orientation="vertical">-->
-
-<!--                <TextView-->
-<!--                    android:textStyle="bold"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_marginBottom="@dimen/small_spacing"-->
-<!--                    android:text="Total Products"-->
-<!--                    android:textColor="@color/navy_blue" />-->
-
-<!--                <TextView-->
-<!--                    android:id="@+id/totalProductsTV"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:textStyle="bold"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:textColor="@color/black"-->
-<!--                    android:textSize="16sp" />-->
-
-<!--            </LinearLayout>-->
-<!--        </GridLayout>-->
-
-
-<!--    </LinearLayout>-->
-
-<!--    <TextView-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginLeft="@dimen/normal_spacing"-->
-<!--        android:layout_marginRight="@dimen/normal_spacing"-->
-<!--        android:text="Stock Management"-->
-<!--        android:textColor="@color/black"-->
-<!--        android:textSize="16sp" />-->
-
-<!--    <LinearLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:padding="@dimen/normal_spacing">-->
-
-<!--        <GridLayout-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:columnCount="3"-->
-<!--            android:orientation="horizontal"-->
-<!--            android:useDefaultMargins="true">-->
-
-<!--            <LinearLayout-->
-<!--                android:onClick="addProduct"-->
-<!--                android:id="@+id/addProduct"-->
-<!--                android:layout_width="0dp"-->
-<!--                android:layout_height="120dp"-->
-<!--                android:layout_columnWeight="2"-->
-<!--                android:orientation="vertical"-->
-<!--                android:background="@drawable/rectange_box"-->
-<!--                android:backgroundTint="@color/grey_divider">-->
-
-<!--                <ImageView-->
-<!--                    android:layout_width="50dp"-->
-<!--                    android:layout_height="50dp"-->
-<!--                    android:layout_marginBottom="@dimen/small_spacing"-->
-<!--                    android:layout_marginTop="10dp"-->
-<!--                    android:layout_gravity="center"-->
-<!--                    android:src="@drawable/add_button"-->
-<!--                    app:tint="@color/primaryColor" />-->
-
-<!--                <TextView-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_marginTop="15dp"-->
-<!--                    android:text="Upload Product"-->
-<!--                    android:textSize="15dp"-->
-<!--                    android:layout_gravity="center"-->
-<!--                    android:textColor="@color/black" />-->
-
-
-
-<!--            </LinearLayout>-->
-
-<!--            <LinearLayout-->
-<!--                android:id="@+id/productsLL"-->
-<!--                android:layout_width="0dp"-->
-<!--                android:layout_height="120dp"-->
-<!--                android:layout_columnWeight="2"-->
-<!--                android:orientation="vertical"-->
-<!--                android:background="@drawable/rectange_box"-->
-<!--                android:backgroundTint="@color/grey_divider">-->
-
-<!--                <ImageView-->
-<!--                    android:layout_width="50dp"-->
-<!--                    android:layout_height="50dp"-->
-<!--                    android:layout_marginBottom="@dimen/small_spacing"-->
-<!--                    android:layout_marginTop="10dp"-->
-<!--                    android:src="@drawable/products"-->
-<!--                    app:tint="@color/primaryColor"-->
-<!--                    android:layout_gravity="center"/>-->
-
-<!--                <TextView-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_marginTop="15dp"-->
-<!--                    android:textSize="15dp"-->
-<!--                    android:text="Products"-->
-<!--                    android:layout_gravity="center"-->
-<!--                    android:textColor="@color/black" />-->
-
-<!--            </LinearLayout>-->
-
-<!--            <LinearLayout-->
-<!--                android:layout_width="0dp"-->
-<!--                android:layout_height="120dp"-->
-<!--                android:layout_columnWeight="2"-->
-<!--                android:gravity="center"-->
-<!--                android:orientation="vertical"-->
-<!--                android:background="@drawable/rectange_box"-->
-<!--                android:backgroundTint="@color/grey_divider">-->
-
-<!--                <ImageView-->
-<!--                    android:layout_width="42dp"-->
-<!--                    android:layout_height="42dp"-->
-<!--                    android:layout_marginBottom="@dimen/small_spacing"-->
-<!--                    android:src="@drawable/ic_baseline_local_shipping_24"-->
-<!--                    app:tint="@color/primaryColor" />-->
-
-<!--                <TextView-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_marginBottom="@dimen/small_spacing"-->
-<!--                    android:text="Orders"-->
-<!--                    android:textColor="@color/black" />-->
-
-<!--            </LinearLayout>-->
-
-<!--            <LinearLayout-->
-<!--                android:id="@+id/categoryList"-->
-<!--                android:layout_width="0dp"-->
-<!--                android:layout_height="120dp"-->
-<!--                android:layout_columnWeight="2"-->
-<!--                android:gravity="center"-->
-<!--                android:orientation="vertical"-->
-<!--                android:background="@drawable/rectange_box"-->
-<!--                android:backgroundTint="@color/grey_divider">-->
-
-<!--                <ImageView-->
-<!--                    android:layout_width="42dp"-->
-<!--                    android:layout_height="42dp"-->
-<!--                    android:layout_marginBottom="@dimen/small_spacing"-->
-<!--                    android:background=""-->
-<!--                    android:src="@drawable/category"-->
-<!--                    app:tint="@color/primaryColor" />-->
-
-<!--                <TextView-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_marginBottom="@dimen/small_spacing"-->
-<!--                    android:text="Categories"-->
-<!--                    android:textColor="@color/black" />-->
-
-<!--            </LinearLayout>-->
-
-<!--            <LinearLayout-->
-<!--                android:id="@+id/addCategory"-->
-<!--                android:layout_width="0dp"-->
-<!--                android:layout_height="120dp"-->
-<!--                android:layout_columnWeight="1"-->
-<!--                android:gravity="center"-->
-<!--                android:orientation="vertical"-->
-<!--                android:background="@drawable/rectange_box"-->
-<!--                android:backgroundTint="@color/grey_divider">-->
-
-
-<!--                <ImageView-->
-<!--                    android:layout_width="42dp"-->
-<!--                    android:layout_height="42dp"-->
-<!--                    android:layout_marginBottom="@dimen/small_spacing"-->
-<!--                    android:src="@drawable/upload"-->
-<!--                    app:tint="@color/primaryColor" />-->
-
-<!--                <TextView-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_marginBottom="@dimen/small_spacing"-->
-<!--                    android:text="Add Category"-->
-<!--                    android:textColor="@color/black" />-->
-
-
-<!--            </LinearLayout>-->
-
-<!--            <LinearLayout-->
-<!--                android:id="@+id/prescriptions"-->
-<!--                android:layout_width="0dp"-->
-<!--                android:layout_height="120dp"-->
-<!--                android:layout_columnWeight="1"-->
-<!--                android:gravity="center"-->
-<!--                android:orientation="vertical"-->
-<!--                android:background="@drawable/rectange_box"-->
-<!--                android:backgroundTint="@color/grey_divider">-->
-
-<!--                <ImageView-->
-<!--                    android:layout_width="42dp"-->
-<!--                    android:layout_height="42dp"-->
-<!--                    android:layout_marginBottom="@dimen/small_spacing"-->
-<!--                    android:src="@drawable/orders"-->
-<!--                    app:tint="@color/primaryColor" />-->
-
-<!--                <TextView-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_marginBottom="@dimen/small_spacing"-->
-<!--                    android:text="Prescriptions"-->
-<!--                    android:textColor="@color/black" />-->
-
-
-<!--            </LinearLayout>-->
-
-<!--            <LinearLayout-->
-<!--                android:id="@+id/dashBoardLL"-->
-<!--                android:layout_width="0dp"-->
-<!--                android:layout_height="120dp"-->
-<!--                android:layout_columnWeight="1"-->
-<!--                android:gravity="center"-->
-<!--                android:orientation="vertical"-->
-<!--                android:background="@drawable/rectange_box"-->
-<!--                android:backgroundTint="@color/grey_divider">-->
-
-<!--                <ImageView-->
-<!--                    android:layout_width="42dp"-->
-<!--                    android:layout_height="42dp"-->
-<!--                    android:layout_marginBottom="@dimen/small_spacing"-->
-<!--                    android:src="@drawable/orders"-->
-<!--                    app:tint="@color/primaryColor" />-->
-
-<!--                <TextView-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_marginBottom="@dimen/small_spacing"-->
-<!--                    android:text="Dash Board"-->
-<!--                    android:textColor="@color/black" />-->
-
-
-<!--            </LinearLayout>-->
-
-<!--&lt;!&ndash;            <LinearLayout&ndash;&gt;-->
-<!--&lt;!&ndash;                android:layout_width="0dp"&ndash;&gt;-->
-<!--&lt;!&ndash;                android:layout_height="120dp"&ndash;&gt;-->
-<!--&lt;!&ndash;                android:layout_columnWeight="1"&ndash;&gt;-->
-<!--&lt;!&ndash;                android:orientation="vertical"&ndash;&gt;-->
-<!--&lt;!&ndash;                android:background="@drawable/rectange_box"&ndash;&gt;-->
-<!--&lt;!&ndash;                android:backgroundTint="@color/grey_divider"&ndash;&gt;-->
-<!--&lt;!&ndash;                android:layout_gravity="center"&ndash;&gt;-->
-<!--&lt;!&ndash;                android:layout_marginTop="10dp">&ndash;&gt;-->
-
-<!--&lt;!&ndash;                <ImageView&ndash;&gt;-->
-<!--&lt;!&ndash;                    android:layout_width="20dp"&ndash;&gt;-->
-<!--&lt;!&ndash;                    android:layout_height="20dp"&ndash;&gt;-->
-<!--&lt;!&ndash;                    android:src="@drawable/wishlist"&ndash;&gt;-->
-<!--&lt;!&ndash;                    app:tint="@color/navy_blue"&ndash;&gt;-->
-<!--&lt;!&ndash;                    android:layout_gravity="center"&ndash;&gt;-->
-<!--&lt;!&ndash;                    />&ndash;&gt;-->
-
-<!--&lt;!&ndash;                <TextView&ndash;&gt;-->
-<!--&lt;!&ndash;                    android:layout_width="wrap_content"&ndash;&gt;-->
-<!--&lt;!&ndash;                    android:layout_height="wrap_content"&ndash;&gt;-->
-<!--&lt;!&ndash;                    android:text="DashBoard"&ndash;&gt;-->
-<!--&lt;!&ndash;                    android:textSize="15dp"&ndash;&gt;-->
-<!--&lt;!&ndash;                    android:layout_marginTop="5dp"&ndash;&gt;-->
-<!--&lt;!&ndash;                    android:textColor="@color/navy_blue"&ndash;&gt;-->
-<!--&lt;!&ndash;                    android:layout_gravity="center"/>&ndash;&gt;-->
-
-<!--&lt;!&ndash;            </LinearLayout>&ndash;&gt;-->
-
-<!--        </GridLayout>-->
-
-<!--    </LinearLayout>-->
-
-
-<!--</LinearLayout>-->
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="14dp"
-        android:layout_gravity="center"
-        android:text="Stock Management"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        android:textSize="20dp" />
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbarThumbVertical="@null">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="@dimen/normal_spacing">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <GridLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:columnCount="2"
-            android:orientation="horizontal"
-            android:useDefaultMargins="true">
+            android:padding="@dimen/normal_spacing">
 
-            <LinearLayout
-                android:id="@+id/uploadProduct"
-                android:layout_width="0dp"
-                android:layout_height="100dp"
-                android:layout_columnWeight="1"
-                android:gravity="center"
-                android:background="@drawable/admin_box"
-                android:backgroundTint="@color/off_white"
-                android:orientation="vertical">
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="2"
+                android:orientation="horizontal"
+                android:useDefaultMargins="true">
 
-                <ImageView
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:layout_marginBottom="@dimen/small_spacing"
-                    android:src="@drawable/add_button"
-                    app:tint="@color/primaryColor" />
-
-                <TextView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/small_spacing"
-                    android:text="Upload Product"
-                    android:textSize="14dp"
-                    android:textColor="@color/black" />
+                    android:layout_columnWeight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
 
-            </LinearLayout>
+                    <ImageView
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="@dimen/small_spacing"
+                        android:src="@drawable/order" />
 
-            <LinearLayout
-                android:id="@+id/productsLL"
-                android:layout_width="0dp"
-                android:layout_height="100dp"
-                android:layout_columnWeight="1"
-                android:gravity="center"
-                android:background="@drawable/admin_box"
-                android:backgroundTint="@color/off_white"
-                android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/small_spacing"
+                        android:text="New Orders"
+                        android:textColor="@color/black" />
 
-                <ImageView
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:layout_marginBottom="@dimen/small_spacing"
-                    android:src="@drawable/products"
-                    app:tint="@color/primaryColor" />
-                <TextView
-                    android:layout_width="wrap_content"
+                    <TextView
+                        android:id="@+id/pendingOrdersTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/small_spacing"
-                    android:text="Products"
-                    android:textSize="14dp"
-                    android:textColor="@color/black" />
+                    android:layout_columnWeight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
 
+                    <ImageView
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="@dimen/small_spacing"
+                        android:src="@drawable/order_process" />
 
-            </LinearLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/small_spacing"
+                        android:text="Order in Process"
+                        android:textColor="@color/black" />
 
+                    <TextView
+                        android:id="@+id/totalOrdersTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
 
+                </LinearLayout>
 
-
-            <LinearLayout
-                android:id="@+id/categoryList"
-                android:layout_width="0dp"
-                android:layout_height="100dp"
-                android:layout_columnWeight="1"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:background="@drawable/admin_box"
-                android:backgroundTint="@color/off_white">
-
-                <ImageView
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:layout_marginBottom="@dimen/small_spacing"
-                    android:src="@drawable/category"
-                    app:tint="@color/primaryColor" />
-
-                <TextView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/small_spacing"
-                    android:text="Categories"
-                    android:textColor="@color/black"
-                    android:textSize="14dp"/>
+                    android:layout_columnWeight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_marginTop="10dp">
 
-            </LinearLayout>
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="@dimen/small_spacing"
+                        android:src="@drawable/shipped" />
 
-            <LinearLayout
-                android:id="@+id/addCategory"
-                android:layout_width="0dp"
-                android:layout_height="100dp"
-                android:layout_columnWeight="1"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:background="@drawable/admin_box"
-                android:backgroundTint="@color/off_white">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/small_spacing"
+                        android:text="Shipped Orders"
+                        android:textColor="@color/black" />
 
+                    <TextView
+                        android:id="@+id/shippedOrdersTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
 
-                <ImageView
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:layout_marginBottom="@dimen/small_spacing"
-                    android:src="@drawable/add_button"
-                    app:tint="@color/primaryColor" />
+                </LinearLayout>
 
-                <TextView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/small_spacing"
-                    android:text="Upload Category"
-                    android:textSize="14dp"
-                    android:textColor="@color/black" />
+                    android:layout_columnWeight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_marginTop="10dp">
 
-            </LinearLayout>
+                    <ImageView
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="@dimen/small_spacing"
+                        android:src="@drawable/categories" />
 
-            <LinearLayout
-                android:id="@+id/prescriptionsLL"
-                android:layout_width="0dp"
-                android:layout_height="100dp"
-                android:layout_columnWeight="1"
-                android:gravity="center"
-                android:background="@drawable/admin_box"
-                android:backgroundTint="@color/white"
-                android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/small_spacing"
+                        android:text="Total Category"
+                        android:textColor="@color/black" />
 
-                <ImageView
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:layout_marginBottom="@dimen/small_spacing"
-                    android:src="@drawable/orders"
-                    app:tint="@color/primaryColor" />
-                <TextView
-                    android:layout_width="wrap_content"
+                    <TextView
+                        android:textStyle="bold"
+                        android:id="@+id/totalCategoriesTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/small_spacing"
-                    android:text="Prescriptions"
-                    android:textSize="14dp"
-                    android:textColor="@color/black" />
+                    android:layout_columnWeight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_marginTop="10dp">
 
+                    <ImageView
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_marginBottom="@dimen/small_spacing"
+                        android:src="@drawable/customers"
+                        android:layout_marginTop="10dp"/>
 
-            </LinearLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/small_spacing"
+                        android:text="Customers"
+                        android:textColor="@color/black" />
 
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="100dp"
-                android:layout_columnWeight="1"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:background="@drawable/admin_box"
-                android:backgroundTint="@color/white">
+                    <TextView
+                        android:id="@+id/totalCustomersTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
 
-                <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_marginBottom="@dimen/small_spacing"
-                    android:src="@drawable/ic_baseline_local_shipping_24"
-                    app:tint="@color/primaryColor" />
+                </LinearLayout>
 
-                <TextView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/small_spacing"
-                    android:text="Orders"
-                    android:textSize="14dp"
-                    android:textColor="@color/black" />
+                    android:layout_columnWeight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_marginTop="10dp">
 
-            </LinearLayout>
+                    <ImageView
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="@dimen/small_spacing"
+                        android:src="@drawable/product"/>
 
-            <LinearLayout
-                android:id="@+id/dashBoardLL"
-                android:layout_width="0dp"
-                android:layout_height="100dp"
-                android:layout_columnWeight="1"
-                android:gravity="center"
-                android:background="@drawable/admin_box"
-                android:backgroundTint="@color/white"
-                android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/small_spacing"
+                        android:text="Total Products"
+                        android:textColor="@color/black" />
 
-                <ImageView
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:layout_marginBottom="@dimen/small_spacing"
-                    android:src="@drawable/orders"
-                    app:tint="@color/primaryColor" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/small_spacing"
-                    android:text="DashBoard"
-                    android:textSize="14dp"
-                    android:textColor="@color/black" />
+                    <TextView
+                        android:id="@+id/totalProductsTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+            </GridLayout>
 
 
-            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="14dp"
+            android:text="Stock Management"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="20dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/normal_spacing">
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="2"
+                android:orientation="horizontal"
+                android:useDefaultMargins="true">
+
+                <LinearLayout
+                    android:id="@+id/uploadProduct"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_columnWeight="1"
+                    android:gravity="center"
+                    android:background="@drawable/admin_box"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_marginBottom="@dimen/small_spacing"
+                        android:src="@drawable/add_button"
+                        app:tint="@color/dark_blue"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/small_spacing"
+                        android:text="Upload Product"
+                        android:textSize="14dp"
+                        android:textColor="@color/black" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/productsLL"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_columnWeight="1"
+                    android:gravity="center"
+                    android:background="@drawable/admin_box"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="43dp"
+                        android:layout_height="45dp"
+                        android:layout_marginBottom="@dimen/small_spacing"
+                        android:src="@drawable/products"
+                        app:tint="@color/dark_blue" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/small_spacing"
+                        android:text="Products"
+                        android:textSize="14dp"
+                        android:textColor="@color/black" />
+
+
+                </LinearLayout>
 
 
 
 
+                <LinearLayout
+                    android:id="@+id/categoryList"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_columnWeight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:background="@drawable/admin_box">
+
+                    <ImageView
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_marginBottom="@dimen/small_spacing"
+                        android:src="@drawable/categories"
+                        app:tint="@color/dark_blue" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/small_spacing"
+                        android:text="Categories"
+                        android:textColor="@color/black"
+                        android:textSize="14dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/addCategory"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_columnWeight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:background="@drawable/admin_box">
 
 
-            <!--            <LinearLayout-->
-            <!--                android:id="@+id/dashBoardLL"-->
-            <!--                android:layout_width="100dp"-->
-            <!--                android:layout_height="50dp"-->
-            <!--                android:orientation="vertical"-->
-            <!--                android:background="@drawable/rectange_box"-->
-            <!--                android:backgroundTint="@color/light_blue"-->
-            <!--                android:layout_gravity="center"-->
-            <!--                android:layout_marginTop="10dp">-->
+                    <ImageView
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_marginBottom="@dimen/small_spacing"
+                        android:src="@drawable/add_button"
+                        app:tint="@color/dark_blue" />
 
-            <!--                <ImageView-->
-            <!--                    android:layout_width="20dp"-->
-            <!--                    android:layout_height="20dp"-->
-            <!--                    android:src="@drawable/wishlist"-->
-            <!--                    app:tint="@color/navy_blue"-->
-            <!--                    android:layout_gravity="center"-->
-            <!--                    />-->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/small_spacing"
+                        android:text="Upload Category"
+                        android:textSize="14dp"
+                        android:textColor="@color/black" />
 
-            <!--                <TextView-->
-            <!--                    android:layout_width="wrap_content"-->
-            <!--                    android:layout_height="wrap_content"-->
-            <!--                    android:text="DashBoard"-->
-            <!--                    android:textSize="15dp"-->
-            <!--                    android:layout_marginTop="5dp"-->
-            <!--                    android:textColor="@color/navy_blue"-->
-            <!--                    android:layout_gravity="center"/>-->
+                </LinearLayout>
 
-            <!--            </LinearLayout>-->
+                <LinearLayout
+                    android:id="@+id/prescriptionsLL"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_columnWeight="1"
+                    android:gravity="center"
+                    android:background="@drawable/admin_box"
+                    android:orientation="vertical">
 
-        </GridLayout>
+                    <ImageView
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_marginBottom="@dimen/small_spacing"
+                        android:src="@drawable/orders"
+                        app:tint="@color/dark_blue" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/small_spacing"
+                        android:text="Prescriptions"
+                        android:textSize="14dp"
+                        android:textColor="@color/black" />
 
 
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ordersLL"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_columnWeight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:background="@drawable/admin_box">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginBottom="@dimen/small_spacing"
+                        android:src="@drawable/ic_baseline_local_shipping_24"
+                        app:tint="@color/dark_blue" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/small_spacing"
+                        android:text="Orders"
+                        android:textSize="14dp"
+                        android:textColor="@color/black" />
+
+                </LinearLayout>
+
+            </GridLayout>
+
+        </LinearLayout>
 
     </LinearLayout>
+
+</ScrollView>
+
+
+
 
 </LinearLayout>

@@ -17,6 +17,9 @@ public class LoginResponse {
     @SerializedName("email")
     @Expose
     private String email;
+    @SerializedName("gender")
+    @Expose
+    private String gender;
     @SerializedName("apiKey")
     @Expose
     private String apiKey;
@@ -52,6 +55,14 @@ public class LoginResponse {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
     public String getApiKey() {

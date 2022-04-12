@@ -72,6 +72,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
                                 SharedPrefUtils.setBoolean(getActivity(), getString(R.string.isLogged), true);
                                 SharedPrefUtils.setString(getActivity(), getString(R.string.name_key), loginResponse.getName());
                                 SharedPrefUtils.setString(getActivity(), getString(R.string.email_id), loginResponse.getEmail());
+                                SharedPrefUtils.setString(getActivity(), getString(R.string.gender_key), loginResponse.getGender());
                                 SharedPrefUtils.setString(getActivity(), getString(R.string.created_key), loginResponse.getCreatedAt());
                                 SharedPrefUtils.setString(getActivity(), DataHolder.PASSWORD_KEY, password);
                                 SharedPrefUtils.setString(getActivity(), getString(R.string.api_key), loginResponse.getApiKey());

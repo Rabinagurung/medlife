@@ -5,10 +5,12 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.FileProvider;
 import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Activity;
+import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.database.Cursor;
@@ -20,6 +22,7 @@ import android.provider.MediaStore;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -30,11 +33,14 @@ import com.example.medlife.api.response.RegisterResponse;
 import com.example.medlife.utils.DataHolder;
 import com.example.medlife.utils.PermissionUtils;
 import com.example.medlife.utils.SharedPrefUtils;
+import com.google.android.material.textfield.TextInputEditText;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -46,11 +52,13 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class AddProductActivity extends AppCompatActivity {
+public class AddProductActivity extends AppCompatActivity implements DatePickerFragment.DatePickerFragmentListener {
 
     List<Category> cats = new ArrayList<>();
     private static final int TAKE_PICTURE = 2;
     private static final int PICK_PICTURE = 1;
+    private static final int PRODUCTION_DATE = 3;
+    private static final int EXPIRY_DATE = 4;
     String currentPhotoPath;
     List<String> photoPath = new ArrayList<>();
     List<Uri> photoUris = new ArrayList<>();
@@ -59,8 +67,11 @@ public class AddProductActivity extends AppCompatActivity {
     AddAdapter iAdapter;
     AddAdapter cAdapter;
     Button uploadBtn;
-    EditText productNameET, descriptionET, priceET, quantityET, discountPriceET;
+    TextInputEditText productNameET, descriptionET, priceET, quantityET, discountPriceET, productionDateET, expiryDateET;
+    String selectedDate;
 
+    FragmentManager fm = getSupportFragmentManager();
+    int DATE_DIALOG = 0;
 
 
     @Override
@@ -78,8 +89,32 @@ public class AddProductActivity extends AppCompatActivity {
         priceET = findViewById(R.id.priceET);
         quantityET = findViewById(R.id.quantityET);
         discountPriceET = findViewById(R.id.discountPriceET);
+        productionDateET = findViewById(R.id.productionDateET);
+        expiryDateET = findViewById(R.id.expiryDateET);
         setImgRV();
         setCatRv();
+
+
+//        for date
+        productionDateET.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DATE_DIALOG = 1;
+                openDialog();
+            }
+        });
+        expiryDateET.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DATE_DIALOG = 2;
+                openDialog();
+            }
+        });
+    }
+
+    public void openDialog() {
+        DatePickerFragment datePickDialog = new DatePickerFragment();
+        datePickDialog.show(fm, "Start Date");
     }
 
     private void setCatRv() {
@@ -113,11 +148,16 @@ public class AddProductActivity extends AppCompatActivity {
         startActivity(addCategory);
     }
 
-    public void pDateClick(View view) {
-        DialogFragment newFragment = new DatePickerFragment();
-        newFragment.show(getSupportFragmentManager(), "datePicker");
+//    public void pDateClick(View view) {
+//        DialogFragment newFragment = new DatePickerFragment();
+//        newFragment.show(getSupportFragmentManager(), "datePicker");
+//    }
+//
+//    public void eDateClick(View view) {
+//        DialogFragment newFragment = new DatePickerFragment();
+//        newFragment.show(getSupportFragmentManager(), "datePicker");
+//    }
 
-    }
 
     private File createImageFile() throws IOException {
         // Create an image file name
@@ -163,7 +203,6 @@ public class AddProductActivity extends AppCompatActivity {
                 String picturePath = c.getString(columnIndex);
                 c.close();
                 photoPath.add(picturePath);
-
             }
         }
     }
@@ -224,7 +263,7 @@ public class AddProductActivity extends AppCompatActivity {
         String result = cats.stream()
                 .map(n -> String.valueOf(n.getId()))
                 .collect(Collectors.joining(",", "[", "]"));
-        System.out.println(result);
+//        System.out.println(result);
         RequestBody categories = RequestBody.create(MediaType.parse("text/plain"), result);
 
         Call<RegisterResponse> responseCall = ApiClient.getClient().uploadProduct(
@@ -244,8 +283,8 @@ public class AddProductActivity extends AppCompatActivity {
             public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {
 
                 progressDialog.dismiss();
-                if(response.isSuccessful()) {
-                    if(!response.body().getError()) {
+                if (response.isSuccessful()) {
+                    if (!response.body().getError()) {
                         Toast.makeText(AddProductActivity.this, "Product is successfully uploaded", Toast.LENGTH_SHORT).show();
                     } else {
                         Toast.makeText(AddProductActivity.this, "Uploaded Failed", Toast.LENGTH_SHORT).show();
@@ -282,4 +321,30 @@ public class AddProductActivity extends AppCompatActivity {
             DataHolder.category = null;
         }
     }
+
+    @Override
+    public void onDateSet(int year, int month, int day) {
+        if (DATE_DIALOG == 1) {
+            productionDateET.setText(Integer.toString(day) + "/" +
+                    Integer.toString(month + 1) + "/" +
+                    Integer.toString(year));
+        } else if (DATE_DIALOG == 2) {
+            expiryDateET.setText(Integer.toString(day) + "/" +
+                    Integer.toString(month + 1) + "/" +
+                    Integer.toString(year));
+        }
+    }
+
+//    @Override
+//    public void onDateSet(DatePicker datePicker,  int year, int month, int dayOfMonth) {
+//        Calendar mCalendar = Calendar.getInstance();
+//        mCalendar.set(Calendar.YEAR, year);
+//        mCalendar.set(Calendar.MONTH, month);
+//        mCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+//        String selectedDate = DateFormat.getDateInstance(DateFormat.FULL).format(mCalendar.getTime());
+//        productionDateET.setText(selectedDate);
+////        expiryDateET.setText(selectedDate);
+//    }
+
+
 }

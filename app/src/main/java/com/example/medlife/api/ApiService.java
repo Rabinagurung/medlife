@@ -33,19 +33,30 @@ public interface ApiService {
 
     @FormUrlEncoded
     @POST("/ecommerce/api/v1/register")
-    Call<RegisterResponse> register(@Field("name") String names, @Field("email") String email, @Field("password") String password);
+    Call<RegisterResponse> register(@Field("name") String names, @Field("email") String email, @Field("password") String password, @Field("gender") String gender);
 
     @FormUrlEncoded
     @POST("/ecommerce/api/v1/cart")
-    Call<AllProductResponse> addToCart(@Header("Apikey") String apikey, @Field("p_id") int p, @Field("quantity") int q);
+    Call<AllProductResponse> addToCart(@Header("api_key") String apikey, @Field("p_id") int p, @Field("quantity") int q);
+
+
+    @Multipart
+    @POST("/ecommerce/api/v1/upload-prescription")
+    Call<RegisterResponse> uploadPrescription(
+            @Header("api_key") String apikey,
+            @Part MultipartBody.Part files,
+            @Part("doctor_name") RequestBody doctor_name,
+            @Part("phone_number") RequestBody phone_number,
+            @Part("note") RequestBody note
+    );
 
     @FormUrlEncoded
     @POST("/ecommerce/api/v1/wishlist")
-    Call<AllProductResponse> addToWishlist(@Header("Apikey") String apikey, @Field("p_id") int p, @Field("quantity") int q);
+    Call<AllProductResponse> addToWishlist(@Header("api_key") String apikey, @Field("p_id") int p, @Field("quantity") int q);
 
-    @FormUrlEncoded
-    @POST("/ecommerce/api/v1/update-profile")
-    Call<AllProductResponse> updateprofile(@Header("Apikey") String apikey, @Field("name") String name, @Field("email") String email);
+//    @FormUrlEncoded
+//    @POST("/ecommerce/api/v1/update-profile")
+//    Call<AllProductResponse> updateprofile(@Header("api_key") String apikey, @Field("name") String name, @Field("email") String email, @Field("gender") String gender);
 
 //    @FormUrlEncoded
 //    @POST("/ecommerce/api/v1/wishlist")
@@ -53,18 +64,18 @@ public interface ApiService {
 
     @FormUrlEncoded
     @POST("/ecommerce/api/v1/forget-password")
-    Call<RegisterResponse> forgetPassword(@Header("Apikey") String apikey, @Field("password") String password);
+    Call<RegisterResponse> forgetPassword(@Header("api_key") String apikey, @Field("password") String password);
 
 
     @FormUrlEncoded
     @POST("/ecommerce/api/v1/order")
-    Call<RegisterResponse> order(@Header("Apikey") String apikey,
+    Call<RegisterResponse> order(@Header("api_key") String apikey,
                                  @Field("p_type") int p_type,
                                  @Field("address_id") int address_id,
                                  @Field("payment_refrence") String paymentRefrence);
 
     @GET("/ecommerce/api/v1/order")
-    Call<OrderHistoryResponse> orderHistory(@Header("Apikey") String apikey
+    Call<OrderHistoryResponse> orderHistory(@Header("api_key") String apikey
     );
 
 
@@ -82,24 +93,24 @@ public interface ApiService {
 
 
     @GET("/ecommerce/api/v1/cart")
-    Call<AllProductResponse> getMyCart(@Header("Apikey") String apikey);
+    Call<AllProductResponse> getMyCart(@Header("api_key") String apikey);
 
     @GET("/ecommerce/api/v1/wishlist")
-    Call<AllProductResponse> getMyWishlist(@Header("Apikey") String apikey);
+    Call<AllProductResponse> getMyWishlist(@Header("api_key") String apikey);
 
     @DELETE("/ecommerce/api/v1/cart")
-    Call<RegisterResponse> deleteFromCart(@Header("Apikey") String apikey, @Query("c_id") int cartID);
+    Call<RegisterResponse> deleteFromCart(@Header("api_key") String apikey, @Query("c_id") int cartID);
 
     @DELETE("/ecommerce/api/v1/wishlist")
-    Call<RegisterResponse> deleteFromWishlist(@Header("Apikey") String apikey, @Query("w_id") int wishlistID);
+    Call<RegisterResponse> deleteFromWishlist(@Header("api_key") String apikey, @Query("w_id") int wishlistID);
 
     @FormUrlEncoded
     @POST("/ecommerce/api/v1/address")
-    Call<AddressResponse> addAddress(@Header("Apikey") String apikey, @Field("city") String city, @Field("street") String street, @Field("province") String province, @Field("phone") String phone, @Field("description") String description);
+    Call<AddressResponse> addAddress(@Header("api_key") String apikey, @Field("city") String city, @Field("street") String street, @Field("province") String province, @Field("phone") String phone, @Field("description") String description);
 
 
     @GET("/ecommerce/api/v1/address")
-    Call<AddressResponse> getMyAddresses(@Header("Apikey") String apikey);
+    Call<AddressResponse> getMyAddresses(@Header("api_key") String apikey);
 
     @GET("ecommerce/api/v1/get-all-products")
     Call<SingleProductResponse> getProductById(@Query("id") int c_id);
@@ -107,7 +118,7 @@ public interface ApiService {
     @Multipart
     @POST("/ecommerce/api/v1/upload-category")
     Call<RegisterResponse> uploadCategory(
-            @Header("Apikey") String apikey,
+            @Header("api_key") String apikey,
             @Part MultipartBody.Part file,
             @Part("name") RequestBody name
     );
@@ -116,15 +127,15 @@ public interface ApiService {
     @Multipart
     @POST("/ecommerce/api/v1/upload-profile")
     Call<RegisterResponse> uploadProfile(
-            @Header("Apikey") String apikey,
+            @Header("api_key") String apikey,
             @Part MultipartBody.Part file
     );
 
 
     @Multipart
-    @POST("/api/v1/upload-product")
+    @POST("/ecommerce/api/v1/upload-product")
     Call<RegisterResponse> uploadProduct(
-            @Header("Apikey") String apikey,
+            @Header("api_key") String apikey,
             @Part MultipartBody.Part[] files,
             @Part("name") RequestBody name,
             @Part("price") RequestBody price,
@@ -137,14 +148,14 @@ public interface ApiService {
     );
 
     @GET("/ecommerce/api/v1/dash")
-    Call<DashResponse> getDash(@Header("Apikey") String apikey);
+    Call<DashResponse> getDash(@Header("api_key") String apikey);
 
     @DELETE("/ecommerce/api/v1/category")
-    Call<RegisterResponse> deleteCategory(@Header("Apikey") String apikey, @Query("c_id") int id);
+    Call<RegisterResponse> deleteCategory(@Header("api_key") String apikey, @Query("c_id") int id);
 
     @FormUrlEncoded
     @POST("/ecommerce/api/v1/update-profile")
-    Call<UpdateProfileResponse> updateProfile(@Header("Apikey") String apikey, @Field("name") String name, @Field("email") String email);
+    Call<UpdateProfileResponse> updateProfile(@Header("api_key") String apikey, @Field("name") String name, @Field("email") String email, @Field("gender") String gender) ;
 
 }
 

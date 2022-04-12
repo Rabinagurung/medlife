@@ -31,7 +31,7 @@ public class DashBoardActivity extends AppCompatActivity {
     }
 
     private void getDash() {
-        String key = SharedPrefUtils.getString(this, "apk");
+        String key = SharedPrefUtils.getString(this, getString(R.string.api_key));
         Call<DashResponse> addressResponseCall = ApiClient.getClient().getDash(key);
         addressResponseCall.enqueue(new Callback<DashResponse>() {
             @Override

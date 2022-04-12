@@ -37,6 +37,11 @@ public class AddNewLocationActivity extends AppCompatActivity {
         descriptionET = findViewById(R.id.descriptionET);
         addAddressLL = findViewById(R.id.addAddressLL);
         cancelLocationLL = findViewById(R.id.cancelLocationLL);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setTitle("Add new Address");
+
+
         addAddressLL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

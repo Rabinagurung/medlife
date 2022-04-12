@@ -65,7 +65,7 @@ public class HomeFragment extends Fragment {
 //    CircleImageView user_ProfileLL;
     TextView viewAllCategory, viewAllProducts;
     BottomNavigationView bottomNavigationView;
-    ImageView aboutIV, notifyIV;
+    ImageView aboutIV, notifyIV, doctorDescIV;
     TextView acTV;
 
 
@@ -99,11 +99,21 @@ public class HomeFragment extends Fragment {
 //        notifyIV = view.findViewById(R.id.notifyIV);
         aboutIV = view.findViewById(R.id.aboutIV);
         acTV = view.findViewById(R.id.acTV);
-
+        doctorDescIV= view.findViewById(R.id.doctorDescIV);
         acTV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getContext(), SearchActivity.class));
+            }
+
+
+        });
+
+        doctorDescIV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), DoctorActivity.class);
+                startActivity(intent);
             }
         });
 

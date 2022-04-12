@@ -2,11 +2,10 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="145dp"
+    android:layout_height="120dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/orderHistory"
     android:orientation="vertical">
-
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -35,7 +34,6 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/orderId"
                     android:paddingStart="@dimen/normal_spacing"
-                    android:paddingTop="@dimen/small_spacing"
                     android:text="#118"
                     android:textColor="@color/black"
                     android:textSize="18sp"
@@ -61,19 +59,18 @@
                 android:layout_height="wrap_content"
                 android:paddingStart="@dimen/normal_spacing"
                 android:text="2022-04-02 10:16:23"
-                android:layout_marginTop="10dp"
+
                 android:textColor="@color/black"
-                android:textSize="18sp"
+                android:textSize="17sp"
                 android:textStyle="normal" />
 
             <TextView
                 android:id="@+id/orderStatus"
-                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingStart="@dimen/normal_spacing"
                 android:text="pending..."
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:textStyle="normal" />
 
 

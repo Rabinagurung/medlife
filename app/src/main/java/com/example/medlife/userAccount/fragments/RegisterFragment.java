@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
@@ -17,6 +19,7 @@ import androidx.fragment.app.Fragment;
 import com.example.medlife.R;
 import com.example.medlife.api.ApiClient;
 import com.example.medlife.api.response.RegisterResponse;
+import com.google.android.material.textfield.TextInputEditText;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -24,9 +27,11 @@ import retrofit2.Response;
 
 
 public class RegisterFragment extends Fragment {
-    EditText emailET, passwordET, confirmPasswordET, nameET;
+    EditText confirmPasswordET, nameET;
     LinearLayout registerLL;
     ProgressBar circularProgress;
+    AutoCompleteTextView genderAT;
+    TextInputEditText emailET, passwordET;
 
 
     @Override
@@ -45,13 +50,17 @@ public class RegisterFragment extends Fragment {
         passwordET = view.findViewById(R.id.passwordET);
         confirmPasswordET = view.findViewById(R.id.confirmPasswordET);
         circularProgress = view.findViewById(R.id.circularProgress);
+        genderAT = view.findViewById(R.id.genderAT);
+        String[] items ={"Male", "Female","Other"};
+        ArrayAdapter<String> itemAdapter = new ArrayAdapter<>(getContext(), R.layout.item_list, items);
+        genderAT.setAdapter(itemAdapter);
         registerLL = view.findViewById(R.id.registerLL);
         registerLL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (validate()) {
                     toggleLoading(true);
-                    Call<RegisterResponse> registerCall = ApiClient.getClient().register(nameET.getText().toString(), emailET.getText().toString(), passwordET.getText().toString());
+                    Call<RegisterResponse> registerCall = ApiClient.getClient().register(nameET.getText().toString(), emailET.getText().toString(), passwordET.getText().toString(), genderAT.getText().toString());
                     registerCall.enqueue(new Callback<RegisterResponse>() {
                         @Override
                         public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {

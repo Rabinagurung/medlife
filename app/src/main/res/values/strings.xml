@@ -22,6 +22,7 @@
 
     <string name="isLogged" translatable="false">issl</string>
     <string name="profile_key" translatable="false">profile</string>
+    <string name="gender_key" translatable="false">gender</string>
     <string name="api_key" translatable="false">apk</string>
     <string name="staff_key" translatable="false">sfk</string>
     <string name="email_key" translatable="false">ek</string>

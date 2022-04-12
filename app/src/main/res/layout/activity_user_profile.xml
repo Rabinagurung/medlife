@@ -188,6 +188,30 @@
 
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/normal_spacing"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="Gender"
+                android:textColor="@color/black"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/gender_TV"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="45dp"
+                android:text="female"
+                android:textColor="@color/navy_blue"
+                android:textSize="18dp" />
+
+        </LinearLayout>
+
     </LinearLayout>
 
 </LinearLayout>

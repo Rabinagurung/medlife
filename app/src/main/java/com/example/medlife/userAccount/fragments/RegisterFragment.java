@@ -27,11 +27,11 @@ import retrofit2.Response;
 
 
 public class RegisterFragment extends Fragment {
-    EditText confirmPasswordET, nameET;
+    EditText confirmPasswordET, passwordET;
     LinearLayout registerLL;
     ProgressBar circularProgress;
     AutoCompleteTextView genderAT;
-    TextInputEditText emailET, passwordET;
+    TextInputEditText emailET, nameET;
 
 
     @Override

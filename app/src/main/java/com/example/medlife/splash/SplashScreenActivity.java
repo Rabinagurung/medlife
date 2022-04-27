@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.medlife.R;
 import com.example.medlife.home.MainActivity;
+import com.example.medlife.onBoardingScreen.IntroActivity;
 import com.example.medlife.userAccount.UserAccountActivity;
 import com.example.medlife.utils.SharedPrefUtils;
 
@@ -29,7 +30,7 @@ public class SplashScreenActivity extends AppCompatActivity {
                 if (isLoggedIn)
                     startActivity(new Intent(SplashScreenActivity.this, MainActivity.class));
                 else
-                    startActivity(new Intent(SplashScreenActivity.this, UserAccountActivity.class));
+                    startActivity(new Intent(SplashScreenActivity.this, IntroActivity.class));
 
                 finish();
             }

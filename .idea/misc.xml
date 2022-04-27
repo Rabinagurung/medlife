@@ -3,17 +3,21 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/ASUS/StudioProjects/medlife/app/src/main/res/drawable/rounded.xml" value="0.1" />
         <entry key="..\:/Users/ASUS/StudioProjects/medlife/app/src/main/res/layout/activity_add_product.xml" value="0.20742753623188406" />
         <entry key="..\:/Users/ASUS/StudioProjects/medlife/app/src/main/res/layout/activity_admin.xml" value="0.16802536231884058" />
+        <entry key="..\:/Users/ASUS/StudioProjects/medlife/app/src/main/res/layout/activity_intro.xml" value="0.1933876811594203" />
         <entry key="..\:/Users/ASUS/StudioProjects/medlife/app/src/main/res/layout/activity_notification.xml" value="0.20742753623188406" />
         <entry key="..\:/Users/ASUS/StudioProjects/medlife/app/src/main/res/layout/activity_order_details.xml" value="0.2" />
         <entry key="..\:/Users/ASUS/StudioProjects/medlife/app/src/main/res/layout/activity_order_history.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/ASUS/StudioProjects/medlife/app/src/main/res/layout/activity_profile.xml" value="0.16802536231884058" />
         <entry key="..\:/Users/ASUS/StudioProjects/medlife/app/src/main/res/layout/custom_dialog_add_profile.xml" value="0.20742753623188406" />
         <entry key="..\:/Users/ASUS/StudioProjects/medlife/app/src/main/res/layout/fragment_profile.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/ASUS/StudioProjects/medlife/app/src/main/res/layout/fragment_register.xml" value="0.264" />
         <entry key="..\:/Users/ASUS/StudioProjects/medlife/app/src/main/res/layout/item_cart_order.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/ASUS/StudioProjects/medlife/app/src/main/res/layout/item_order.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/ASUS/StudioProjects/medlife/app/src/main/res/layout/item_orders.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/ASUS/StudioProjects/medlife/app/src/main/res/layout/layout_screen.xml" value="0.128" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/MedLife/app/src/main/res/drawable-v24/ic_email.xml" value="0.2703125" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/MedLife/app/src/main/res/drawable-v24/ic_star.xml" value="0.14635416666666667" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/MedLife/app/src/main/res/drawable-v24/rectange_box.xml" value="0.14635416666666667" />

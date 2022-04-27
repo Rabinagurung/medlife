@@ -27,6 +27,7 @@
         <activity
             android:name=".orderHistory.orderDetails.OrderDetailsActivity"
             android:exported="false" />
+        <activity android:name=".onBoardingScreen.IntroActivity" />
         <activity
             android:name=".orderHistory.OrderHistoryActivity"
             android:exported="false" />

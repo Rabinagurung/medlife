@@ -54,7 +54,7 @@
                     android:id="@+id/picCI"
                     android:layout_width="wrap_content"
                     android:layout_height="150dp"
-                    android:layout_gravity="center"
+                    android:foregroundGravity="center"
                     android:scaleType="centerCrop"
                     android:src="@drawable/user_profile"
                     app:civ_border_width="1dp"

@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 
+import com.example.medlife.Profile.InsideProfile.EditProfileActivity;
 import com.example.medlife.Profile.InsideProfile.SecurityActivity;
 import com.example.medlife.Profile.InsideProfile.UserProfileActivity;
 import com.example.medlife.Profile.InsideProfile.WishlistActivity;
@@ -45,7 +46,7 @@ import retrofit2.Response;
 
 public class ProfileFragment extends Fragment {
     LinearLayout wishListLL, ordersLL, prescriptionLL, locationLL, securityLL, logoutLL, editProfileLL;
-    TextView adminTV;
+    TextView adminTV, userNameTV, userEmailTV;
     RelativeLayout profileRV;
 
     @Override
@@ -62,12 +63,17 @@ public class ProfileFragment extends Fragment {
         wishListLL = view.findViewById(R.id.wishListLL);
         ordersLL = view.findViewById(R.id.ordersLL);
         editProfileLL = view.findViewById(R.id.editProfileLL);
+        userNameTV = view.findViewById(R.id.userNameTV);
+        userEmailTV = view.findViewById(R.id.userEmailTV);
 //        prescriptionLL = view.findViewById(R.id.prescriptionLL);
         locationLL = view.findViewById(R.id.locationLL);
         securityLL = view.findViewById(R.id.securityLL);
         logoutLL = view.findViewById(R.id.logoutLL);
         adminTV = view.findViewById(R.id.adminTV);
         checkAdmin();
+
+        userNameTV.setText(SharedPrefUtils.getString(getContext(), getString(R.string.name_key)));
+        userEmailTV.setText(SharedPrefUtils.getString(getContext(), getString(R.string.email_id)));
 
         profileRV.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -9,7 +9,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-<!--        android:layout_above="@id/addToCartLL">-->
+        <!--        android:layout_above="@id/addToCartLL">-->
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -111,6 +111,7 @@
                     android:src="@drawable/ic_star" />
             </LinearLayout>
 
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -182,7 +183,6 @@
 
             </LinearLayout>
 
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -198,10 +198,11 @@
                 android:id="@+id/decTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/normal_spacing"
+                android:layout_margin="@dimen/normal_spacing"
                 android:layout_marginTop="@dimen/small_spacing"
                 android:layout_weight="1"
                 android:text="sdfadsfads adsfadsf adsfadsf"
+                android:justificationMode="inter_word"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
 

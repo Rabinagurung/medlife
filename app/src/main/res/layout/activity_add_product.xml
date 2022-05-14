@@ -150,7 +150,7 @@
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:hint="Product Name*"
                 android:padding="0dp"
                 app:endIconMode="clear_text"
@@ -163,7 +163,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/productNameET"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="50dp"
                     android:drawablePadding="10dp"
                     tools:ignore="SpeakableTextPresentCheck"/>
 
@@ -187,7 +187,7 @@
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:hint="Price*"
                 android:padding="0dp"
                 app:endIconMode="clear_text"
@@ -200,7 +200,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/priceET"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="50dp"
                     android:drawablePadding="10dp"
                     android:inputType="number"
                     tools:ignore="SpeakableTextPresentCheck"/>
@@ -266,7 +266,7 @@
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:hint="Quantity*"
                 android:padding="0dp"
                 app:endIconMode="clear_text"
@@ -279,7 +279,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/quantityET"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="50dp"
                     android:drawablePadding="10dp"
                     android:inputType="number"
                     tools:ignore="SpeakableTextPresentCheck"/>
@@ -303,7 +303,7 @@
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:hint="Discount Price*"
                 android:padding="0dp"
                 app:endIconMode="clear_text"
@@ -316,7 +316,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/discountPriceET"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="50dp"
                     android:drawablePadding="10dp"
                     android:inputType="number"
                     tools:ignore="SpeakableTextPresentCheck"/>
@@ -337,30 +337,30 @@
 <!--                android:textSize="18sp"-->
 <!--                tools:ignore="UsingOnClickInXml" />-->
 
-            <com.google.android.material.textfield.TextInputLayout
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="pDateClick"
-                android:hint="Production Date*"
-                android:padding="0dp"
-                app:endIconMode="clear_text"
-                android:layout_marginTop="15dp"
-                app:boxCornerRadiusBottomEnd="20dp"
-                app:boxCornerRadiusBottomStart="20dp"
-                app:boxCornerRadiusTopEnd="20dp"
-                app:boxCornerRadiusTopStart="20dp"
-                >
+<!--            <com.google.android.material.textfield.TextInputLayout-->
+<!--                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="55dp"-->
+<!--                android:onClick="pDateClick"-->
+<!--                android:hint="Production Date*"-->
+<!--                android:padding="0dp"-->
+<!--                app:endIconMode="clear_text"-->
+<!--                android:layout_marginTop="15dp"-->
+<!--                app:boxCornerRadiusBottomEnd="20dp"-->
+<!--                app:boxCornerRadiusBottomStart="20dp"-->
+<!--                app:boxCornerRadiusTopEnd="20dp"-->
+<!--                app:boxCornerRadiusTopStart="20dp"-->
+<!--                >-->
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/productionDateET"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:drawablePadding="10dp"
-                    android:textSize="18sp"
-                    tools:ignore="UsingOnClickInXml"/>
+<!--                <com.google.android.material.textfield.TextInputEditText-->
+<!--                    android:id="@+id/productionDateET"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="50dp"-->
+<!--                    android:drawablePadding="10dp"-->
+<!--                    android:textSize="18sp"-->
+<!--                    tools:ignore="UsingOnClickInXml"/>-->
 
-            </com.google.android.material.textfield.TextInputLayout>
+<!--            </com.google.android.material.textfield.TextInputLayout>-->
 
 <!--            <EditText-->
 <!--                android:id="@+id/expiryDateET"-->
@@ -379,8 +379,31 @@
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Discount Price*"
+                android:layout_height="55dp"
+                android:hint="Production Date*"
+                android:padding="0dp"
+                app:endIconMode="clear_text"
+                android:layout_marginTop="15dp"
+                android:autofillHints="da"
+                app:boxCornerRadiusBottomEnd="20dp"
+                app:boxCornerRadiusBottomStart="20dp"
+                app:boxCornerRadiusTopEnd="20dp"
+                app:boxCornerRadiusTopStart="20dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/productionDateET"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:drawablePadding="10dp"
+                    tools:ignore="UsingOnClickInXml"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:hint="Expiry Date*"
                 android:padding="0dp"
                 app:endIconMode="clear_text"
                 android:layout_marginTop="15dp"
@@ -393,7 +416,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/expiryDateET"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="50dp"
                     android:drawablePadding="10dp"
                     tools:ignore="UsingOnClickInXml"/>
 
@@ -401,7 +424,7 @@
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:layout_marginBottom="@dimen/small_spacing"
                 android:drawableEnd="@drawable/ic_round_add_24"
                 android:onClick="addCategory"

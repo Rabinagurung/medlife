@@ -51,9 +51,10 @@ public class IntroActivity extends AppCompatActivity {
 
         //Data
         final List<ScreenItem> mList = new ArrayList<>();
-        mList.add(new ScreenItem("Upload a prescription", "Upload a prescription and get a medicine right on the go.", R.drawable.prescription1));
-        mList.add(new ScreenItem("Upload a prescription", "Upload a prescription and get a medicine right on the go.", R.drawable.prescription1));
-        mList.add(new ScreenItem("Upload a prescription", "Upload a prescription and get a medicine right on the go.", R.drawable.prescription1));
+        mList.add(new ScreenItem("A One Stop digital healthcare solution", "For a wide range of medications, wellness products, vitamins, medical devices, baby care products.", R.drawable.ic_digital));
+        mList.add(new ScreenItem("Upload a Prescription", "Upload a prescription and get a medicine right on the go.", R.drawable.prescription1));
+        mList.add(new ScreenItem("Benefits", "To ensure safe, trustworthy and affordable medicines by saving your time and money", R.drawable.ic_benefits));
+        mList.add(new ScreenItem("Free Home Delivery", "For your convenience", R.drawable.ic_delivery));
 
         //Setup viewPager
         screenPager = findViewById(R.id.screen_viewpager);

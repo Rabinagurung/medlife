@@ -60,7 +60,7 @@ public class UserProfileActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_profile);
-        getSupportActionBar().setTitle("Rabina Gurung");
+        getSupportActionBar().setTitle("Profile");
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         editInfoLL = findViewById(R.id.editInfoLL);
@@ -109,7 +109,7 @@ public class UserProfileActivity extends AppCompatActivity {
 
     private void openAddProfileView(){
         LayoutInflater factory = LayoutInflater.from(UserProfileActivity.this);
-        View DialogView = factory.inflate(R.layout.custom_dialog_add_category, null);
+        View DialogView = factory.inflate(R.layout.custom_dialog_add_profile, null);
         Dialog main_dialog = new Dialog(UserProfileActivity.this, R.style.Base_Theme_AppCompat_Dialog);
         main_dialog.setContentView(DialogView);
         main_dialog.show();

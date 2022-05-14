@@ -156,9 +156,6 @@ public class ProfileFragment extends Fragment {
                 startActivity(intent);
             }
         });
-
-
-
     }
 
     private void checkAdmin() {
@@ -166,6 +163,4 @@ public class ProfileFragment extends Fragment {
         if (is_staff)
             adminTV.setVisibility(View.VISIBLE);
     }
-
-
 }

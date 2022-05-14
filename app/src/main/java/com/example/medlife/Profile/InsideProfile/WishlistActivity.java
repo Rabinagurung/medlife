@@ -32,7 +32,7 @@ public class WishlistActivity extends AppCompatActivity {
     List<Product> products;
     SwipeRefreshLayout swipeRefresh;
     AllProductResponse allProductResponse;
-//    LinearLayout addItemsToCartLL;
+    LinearLayout addItemsToCartLL;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,18 +45,18 @@ public class WishlistActivity extends AppCompatActivity {
 
         allProductRV = findViewById(R.id.allProductRV);
         swipeRefresh = findViewById(R.id.swipeRefresh);
-//        addItemsToCartLL = findViewById(R.id.addItemsToCartLL);
+        addItemsToCartLL = findViewById(R.id.addItemsToCartLL);
 
-//        addItemsToCartLL.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                if (allProductResponse != null && allProductResponse.getProducts().size() > 0) {
-//                    Intent intent = new Intent(getApplicationContext(), CartFragment.class);
-//                    //   intent.putExtra(CartFragment.WISHLIST_TO_CART_PRODUCTS,allProductResponse);
-//                    getApplicationContext().startActivity(intent);
-//                }
-//            }
-//        });
+        addItemsToCartLL.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (allProductResponse != null && allProductResponse.getProducts().size() > 0) {
+                    Intent intent = new Intent(getApplicationContext(), CartFragment.class);
+                    //   intent.putExtra(CartFragment.WISHLIST_TO_CART_PRODUCTS,allProductResponse);
+                    getApplicationContext().startActivity(intent);
+                }
+            }
+        });
 
         swipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override

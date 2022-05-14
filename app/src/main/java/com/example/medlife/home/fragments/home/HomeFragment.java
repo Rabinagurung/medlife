@@ -105,8 +105,6 @@ public class HomeFragment extends Fragment {
             public void onClick(View view) {
                 startActivity(new Intent(getContext(), SearchActivity.class));
             }
-
-
         });
 
         doctorDescIV.setOnClickListener(new View.OnClickListener() {

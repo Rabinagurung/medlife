@@ -88,7 +88,7 @@
                 android:id="@+id/name_TV"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="45dp"
+                android:layout_marginLeft="20dp"
                 android:text="Rabina Gurung"
                 android:textColor="@color/navy_blue"
                 android:textSize="18dp" />
@@ -181,7 +181,7 @@
                 android:id="@+id/email_TV"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="45dp"
+                android:layout_marginLeft="20dp"
                 android:text="rabina@gmail.com"
                 android:textColor="@color/navy_blue"
                 android:textSize="18dp" />
@@ -205,7 +205,7 @@
                 android:id="@+id/gender_TV"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="45dp"
+                android:layout_marginLeft="20dp"
                 android:text="female"
                 android:textColor="@color/navy_blue"
                 android:textSize="18dp" />

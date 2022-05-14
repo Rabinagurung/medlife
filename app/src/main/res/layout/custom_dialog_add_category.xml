@@ -40,7 +40,7 @@
                     android:layout_gravity="center"
                     android:textColor="@color/grey"
                     android:textSize="12dp"
-                    android:text="Upload category from your phone or open camera to upload new category" />
+                    android:text="Upload picture from your phone or open camera to upload picture" />
 
             </LinearLayout>
 
@@ -106,8 +106,6 @@
                     android:layout_height="35dp"
                     android:src="@drawable/gallery" />
 
-
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -141,14 +139,14 @@
 
 
 
-        <!--        <ImageView-->
-        <!--            android:id="@+id/selectedIV"-->
-        <!--            android:scaleType="centerCrop"-->
-        <!--            android:layout_width="150dp"-->
-        <!--            android:layout_height="150dp"-->
-        <!--            android:layout_gravity="center"-->
-        <!--            android:layout_marginBottom="@dimen/normal_spacing"-->
-        <!--            android:visibility="gone" />-->
+                <ImageView
+                    android:id="@+id/selectedIV"
+                    android:scaleType="centerCrop"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="@dimen/normal_spacing"
+                    android:visibility="gone" />
 
 
 
@@ -163,9 +161,6 @@
             android:padding="@dimen/normal_spacing"
             tools:ignore="SpeakableTextPresentCheck"
             android:drawableTint="@color/black"/>
-
-
-
 
         <Button
             android:id="@+id/upload"

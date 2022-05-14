@@ -79,21 +79,21 @@
 <!--                    android:textColor="@color/black"-->
 <!--                    android:textSize="17dp" />-->
 
-                <TextView
-                    android:id="@+id/date"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/orderId"
-                    android:layout_marginTop="15dp"
-                    android:text="Date:"
-                    android:textColor="@color/black"
-                    android:textSize="15dp" />
+<!--                <TextView-->
+<!--                    android:id="@+id/date"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_below="@+id/orderId"-->
+<!--                    android:layout_marginTop="15dp"-->
+<!--                    android:text="Date:"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="15dp" />-->
 
                 <TextView
                     android:id="@+id/orderDate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/date"
+                    android:layout_below="@+id/orderId"
                     android:layout_marginTop="15dp"
                     android:text="2022-03-30"
                     android:textStyle="bold"
@@ -196,6 +196,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
                         android:background="#ced4da" />
+
                 </LinearLayout>
 
                 <androidx.recyclerview.widget.RecyclerView

@@ -12,7 +12,6 @@ import com.example.medlife.home.fragments.AboutUsFragment;
 import com.example.medlife.home.fragments.CartFragment;
 import com.example.medlife.home.fragments.CategoryFragment;
 import com.example.medlife.home.fragments.ProfileFragment;
-import com.example.medlife.home.fragments.WishListFragment;
 import com.example.medlife.home.fragments.home.HomeFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;

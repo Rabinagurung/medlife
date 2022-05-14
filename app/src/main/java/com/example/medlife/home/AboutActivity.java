@@ -72,7 +72,7 @@ public class AboutActivity extends AppCompatActivity {
         team.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(AboutActivity.this, AboutMedLifeActivity.class);
+                Intent intent = new Intent(AboutActivity.this, OurTeamActivity.class);
                 startActivity(intent);
 
             }

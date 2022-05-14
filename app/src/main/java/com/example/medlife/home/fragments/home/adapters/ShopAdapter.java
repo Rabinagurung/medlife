@@ -152,7 +152,6 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ShopViewHolder
                 quantityTV = itemView.findViewById(R.id.quantityTV);
 
             }
-
         }
     }
 

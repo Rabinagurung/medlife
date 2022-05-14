@@ -58,6 +58,7 @@ public class AdminActivity extends AppCompatActivity {
     ImageView selectedIV;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -237,9 +238,6 @@ public class AdminActivity extends AppCompatActivity {
 //        });
 //        main_dialog.show();
 //    }
-
-
-
 
 
     private void openAddCategoryView(){

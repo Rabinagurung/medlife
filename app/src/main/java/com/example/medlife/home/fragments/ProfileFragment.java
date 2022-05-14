@@ -36,9 +36,11 @@ import com.example.medlife.orderHistory.OrderHistoryActivity;
 import com.example.medlife.uploadPrescription.UploadPrescriptionActivity;
 import com.example.medlife.userAccount.UserAccountActivity;
 import com.example.medlife.utils.SharedPrefUtils;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
+import de.hdodenhof.circleimageview.CircleImageView;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -48,6 +50,7 @@ public class ProfileFragment extends Fragment {
     LinearLayout wishListLL, ordersLL, prescriptionLL, locationLL, securityLL, logoutLL, editProfileLL;
     TextView adminTV, userNameTV, userEmailTV;
     RelativeLayout profileRV;
+    CircleImageView picCI;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -70,8 +73,9 @@ public class ProfileFragment extends Fragment {
         securityLL = view.findViewById(R.id.securityLL);
         logoutLL = view.findViewById(R.id.logoutLL);
         adminTV = view.findViewById(R.id.adminTV);
+        picCI = view.findViewById(R.id.picCI);
         checkAdmin();
-
+        Picasso.get().load((SharedPrefUtils.getString(getActivity(), getString(R.string.profile_key)))).into(picCI);
         userNameTV.setText(SharedPrefUtils.getString(getContext(), getString(R.string.name_key)));
         userEmailTV.setText(SharedPrefUtils.getString(getContext(), getString(R.string.email_id)));
 
